@@ -142,8 +142,6 @@ print('-------------------------------')
 print(final_markdown)
 print('-------------------------------')
 
-
-
 reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
                      client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
                      password='tQ#1O&4k32Xy',
