@@ -62,7 +62,7 @@ for idx, html_game in enumerate(schedule_html_games):
 	game_date = datetime.strptime(game_date, "%B %d %H:%M")
 
 	el_round = sys.argv[1] if idx == 0 else ""
-	el_date = game_date.strftime("%b %d") if idx == 0 or (idx > 0 and int(game_date.day) > cond_day) else ""
+	el_date = game_date.strftime("%b %d") if idx == 0 or (idx > 0 and int(game_date.day) != cond_day) else ""
 
 	cond_day = game_date.day
 
