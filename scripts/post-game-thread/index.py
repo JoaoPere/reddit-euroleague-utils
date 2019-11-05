@@ -316,7 +316,7 @@ reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
 
 el_sub = reddit.subreddit('Euroleague')
 
-#el_sub.submit(title=title,selftext=final_markdown)
+el_sub.submit(title=title,selftext=final_markdown)
 
 print("*" * 119)
 print(title)
