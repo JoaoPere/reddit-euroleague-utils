@@ -226,7 +226,7 @@ def getTablesMarkdown(home_team_name, away_team_name):
 def getTableMarkdown(table, name, coach):
 	table_rows = table.find_all('tr')
 
-	TEAM_MD = team_names_parsed_link_3.get(name)
+	TEAM_MD = team_names_parsed_link_full.get(name).upper()
 
 	final_table = getRedditTableHeadAndCellAlignment([NUMBER, TEAM_MD, MINUTES, POINTS, FG2, FG3, FREE_TRHOWS, OFF_REBOUNDS, DEF_REBOUNDS, TOT_REBOUNDS, ASSISTS, STEALS, TURNOVERS, BLOCKS, FOULS_COMMITED, PIR])
 
@@ -316,7 +316,7 @@ reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
 
 el_sub = reddit.subreddit('Euroleague')
 
-el_sub.submit(title=title,selftext=final_markdown)
+#el_sub.submit(title=title,selftext=final_markdown)
 
 print("*" * 119)
 print(title)
