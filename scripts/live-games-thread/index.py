@@ -52,6 +52,8 @@ team_names_parsed['Asseco Arka Gdynia'] = 'Arka Gdynia'
 team_names_parsed['Unicaja Malaga'] = 'Unicaja Malaga'
 team_names_parsed['Dolomiti Energia Trento'] = 'Aquila Basket Trento'
 
+DOUBLE_NEWLINE = '\n\n'
+
 now_time = datetime.now()
 
 def bold(text):
@@ -82,9 +84,13 @@ for game in all_games:
 		game_home_team = team_names_parsed.get(game_clubs[0].find('span', class_='name').text)
 		game_away_team = team_names_parsed.get(game_clubs[1].find('span', class_='name').text)
 
-		games_markdown.append(bold(game_home_team) + ' - ' + bold(game_away_team) + ' | ' + game_date.strftime('%H') + ':' + game_date.strftime('%M') + ' CET')
+		game_md = bold(game_home_team) + ' - ' + bold(game_away_team) + ' | ' + game_date.strftime('%H') + ':' + game_date.strftime('%M') + ' CET'
+		if sys.argv[1] == 'EC':
+			game_md = game_md + ' | Group '
 
-final_markdown = '\n\n'.join([*games_markdown,  'You can ask for and share streams in the comments here, do not submit separate threads about streaming please.'])
+		games_markdown.append(game_md)
+
+final_markdown = DOUBLE_NEWLINE.join([*games_markdown,  'You can ask for and share streams in the comments here, do not submit separate threads about streaming please.'])
 final_title = now_time.strftime('%d %B %Y') + ' ' + comp + ' Matches Live Thread'
 
 reddit = praw.Reddit(client_id='Qbl7w1uV9945aw',
@@ -98,3 +104,7 @@ el_sub = reddit.subreddit('Euroleague')
 submission = el_sub.submit(title=final_title,selftext=final_markdown)
 submission.mod.sticky()
 submission.mod.suggested_sort('new')
+
+flair_choices = submission.flair.choices()
+template_id = next(x for x in flair_choices if x['flair_text'].replace(':','') == comp)['flair_template_id']
+submission.flair.select(template_id)

@@ -1,0 +1,233 @@
+1575649577234	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile.XEZLEs1PM1IB"
+1575649578310	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575649578310	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575649578310	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575649578311	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1575649580989	Marionette	INFO	Listening on port 6029
+1575649581448	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:501:26\ngetGrids@resource://devtools/server/actors/layout.js:506:43\ngetGrids@resource://devtools/server/actors/layout.js:506:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:501:26\ngetGrids@resource://devtools/server/actors/layout.js:506:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:501:26\ngetGrids@resource://devtools/server/actors/layout.js:506:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+console.error: "Error sending event: display-change"
+console.error: "[Exception... \"Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIEventListenerService.getListenerInfoFor]\"  nsresult: \"0x80070057 (NS_ERROR_ILLEGAL_VALUE)\"  location: \"JS frame :: resource://devtools/server/actors/inspector/event-collector.js :: getDOMListeners :: line 267\"  data: no]: getDOMListeners@resource://devtools/server/actors/inspector/event-collector.js:267:22\ngetListeners@resource://devtools/server/actors/inspector/event-collector.js:329:28\nhasListeners@resource://devtools/server/actors/inspector/event-collector.js:228:17\nhasEventListeners@resource://devtools/server/actors/inspector/event-collector.js:797:21\nget _hasEventListeners@resource://devtools/server/actors/inspector/node.js:433:33\nform@resource://devtools/server/actors/inspector/node.js:259:7\nwrite@resource://devtools/shared/protocol/types.js:355:32\ntypes.addArrayType/write/<@resource://devtools/shared/protocol/types.js:220:33\nwrite@resource://devtools/shared/protocol/types.js:220:16\nwrite@resource://devtools/shared/protocol/Request.js:113:22\nwrite@resource://devtools/shared/protocol/Request.js:39:26\n_sendEvent@resource://devtools/shared/protocol/Actor.js:66:24\ninitialize/<@resource://devtools/shared/protocol/Actor.js:46:16\nemit@resource://devtools/shared/event-emitter.js:190:24\nemit@resource://devtools/shared/event-emitter.js:271:18\n_onReflows@resource://devtools/server/actors/inspector/walker.js:591:12\nemit@resource://devtools/shared/event-emitter.js:190:24\nemit@resource://devtools/shared/event-emitter.js:271:18\n_startEventLoop@resource://devtools/server/actors/reflow.js:315:12\nnotify@resource://gre/modules/Timer.jsm:62:17\n"
+[Exception... "Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIEventListenerService.getListenerInfoFor]"  nsresult: "0x80070057 (NS_ERROR_ILLEGAL_VALUE)"  location: "JS frame :: resource://devtools/server/actors/inspector/event-collector.js :: getDOMListeners :: line 267"  data: no]: getDOMListeners@resource://devtools/server/actors/inspector/event-collector.js:267:22
+getListeners@resource://devtools/server/actors/inspector/event-collector.js:329:28
+hasListeners@resource://devtools/server/actors/inspector/event-collector.js:228:17
+hasEventListeners@resource://devtools/server/actors/inspector/event-collector.js:797:21
+get _hasEventListeners@resource://devtools/server/actors/inspector/node.js:433:33
+form@resource://devtools/server/actors/inspector/node.js:259:7
+write@resource://devtools/shared/protocol/types.js:355:32
+types.addArrayType/write/<@resource://devtools/shared/protocol/types.js:220:33
+write@resource://devtools/shared/protocol/types.js:220:16
+write@resource://devtools/shared/protocol/Request.js:113:22
+write@resource://devtools/shared/protocol/Request.js:39:26
+_sendEvent@resource://devtools/shared/protocol/Actor.js:66:24
+initialize/<@resource://devtools/shared/protocol/Actor.js:46:16
+emit@resource://devtools/shared/event-emitter.js:190:24
+emit@resource://devtools/shared/event-emitter.js:271:18
+_onReflows@resource://devtools/server/actors/inspector/walker.js:591:12
+emit@resource://devtools/shared/event-emitter.js:190:24
+emit@resource://devtools/shared/event-emitter.js:271:18
+_startEventLoop@resource://devtools/server/actors/reflow.js:315:12
+notify@resource://gre/modules/Timer.jsm:62:17
+
+console.error: "Error sending event: scrollable-change"
+console.error: "[Exception... \"Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIEventListenerService.getListenerInfoFor]\"  nsresult: \"0x80070057 (NS_ERROR_ILLEGAL_VALUE)\"  location: \"JS frame :: resource://devtools/server/actors/inspector/event-collector.js :: getDOMListeners :: line 267\"  data: no]: getDOMListeners@resource://devtools/server/actors/inspector/event-collector.js:267:22\ngetListeners@resource://devtools/server/actors/inspector/event-collector.js:329:28\nhasListeners@resource://devtools/server/actors/inspector/event-collector.js:228:17\nhasEventListeners@resource://devtools/server/actors/inspector/event-collector.js:797:21\nget _hasEventListeners@resource://devtools/server/actors/inspector/node.js:433:33\nform@resource://devtools/server/actors/inspector/node.js:259:7\nwrite@resource://devtools/shared/protocol/types.js:355:32\ntypes.addArrayType/write/<@resource://devtools/shared/protocol/types.js:220:33\nwrite@resource://devtools/shared/protocol/types.js:220:16\nwrite@resource://devtools/shared/protocol/Request.js:113:22\nwrite@resource://devtools/shared/protocol/Request.js:39:26\n_sendEvent@resource://devtools/shared/protocol/Actor.js:66:24\ninitialize/<@resource://devtools/shared/protocol/Actor.js:46:16\nemit@resource://devtools/shared/event-emitter.js:190:24\nemit@resource://devtools/shared/event-emitter.js:271:18\n_onReflows@resource://devtools/server/actors/inspector/walker.js:595:12\nemit@resource://devtools/shared/event-emitter.js:190:24\nemit@resource://devtools/shared/event-emitter.js:271:18\n_startEventLoop@resource://devtools/server/actors/reflow.js:315:12\nnotify@resource://gre/modules/Timer.jsm:62:17\n"
+[Exception... "Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIEventListenerService.getListenerInfoFor]"  nsresult: "0x80070057 (NS_ERROR_ILLEGAL_VALUE)"  location: "JS frame :: resource://devtools/server/actors/inspector/event-collector.js :: getDOMListeners :: line 267"  data: no]: getDOMListeners@resource://devtools/server/actors/inspector/event-collector.js:267:22
+getListeners@resource://devtools/server/actors/inspector/event-collector.js:329:28
+hasListeners@resource://devtools/server/actors/inspector/event-collector.js:228:17
+hasEventListeners@resource://devtools/server/actors/inspector/event-collector.js:797:21
+get _hasEventListeners@resource://devtools/server/actors/inspector/node.js:433:33
+form@resource://devtools/server/actors/inspector/node.js:259:7
+write@resource://devtools/shared/protocol/types.js:355:32
+types.addArrayType/write/<@resource://devtools/shared/protocol/types.js:220:33
+write@resource://devtools/shared/protocol/types.js:220:16
+write@resource://devtools/shared/protocol/Request.js:113:22
+write@resource://devtools/shared/protocol/Request.js:39:26
+_sendEvent@resource://devtools/shared/protocol/Actor.js:66:24
+initialize/<@resource://devtools/shared/protocol/Actor.js:46:16
+emit@resource://devtools/shared/event-emitter.js:190:24
+emit@resource://devtools/shared/event-emitter.js:271:18
+_onReflows@resource://devtools/server/actors/inspector/walker.js:595:12
+emit@resource://devtools/shared/event-emitter.js:190:24
+emit@resource://devtools/shared/event-emitter.js:271:18
+_startEventLoop@resource://devtools/server/actors/reflow.js:315:12
+notify@resource://gre/modules/Timer.jsm:62:17
+
+console.error: "Error while calling actor 'domwalker's method 'getNodeFromActor'" "can't access dead object"
+console.error: "getRootBindingParent@resource://devtools/shared/layout/utils.js:442:15\nisAnonymous@resource://devtools/shared/layout/utils.js:477:29\nattachElements@resource://devtools/server/actors/inspector/walker.js:634:46\nattachElement@resource://devtools/server/actors/inspector/walker.js:613:40\ngetNodeFromActor@resource://devtools/server/actors/inspector/walker.js:2673:17\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'domwalker's method 'getNodeFromActor'" "can't access dead object"
+console.error: "getRootBindingParent@resource://devtools/shared/layout/utils.js:442:15\nisAnonymous@resource://devtools/shared/layout/utils.js:477:29\nattachElements@resource://devtools/server/actors/inspector/walker.js:634:46\nattachElement@resource://devtools/server/actors/inspector/walker.js:613:40\ngetNodeFromActor@resource://devtools/server/actors/inspector/walker.js:2673:17\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'domwalker's method 'getNodeFromActor'" "can't access dead object"
+console.error: "getRootBindingParent@resource://devtools/shared/layout/utils.js:442:15\nisAnonymous@resource://devtools/shared/layout/utils.js:477:29\nattachElements@resource://devtools/server/actors/inspector/walker.js:634:46\nattachElement@resource://devtools/server/actors/inspector/walker.js:613:40\ngetNodeFromActor@resource://devtools/server/actors/inspector/walker.js:2673:17\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'domwalker's method 'getNodeFromActor'" "can't access dead object"
+console.error: "getRootBindingParent@resource://devtools/shared/layout/utils.js:442:15\nisAnonymous@resource://devtools/shared/layout/utils.js:477:29\nattachElements@resource://devtools/server/actors/inspector/walker.js:634:46\nattachElement@resource://devtools/server/actors/inspector/walker.js:613:40\ngetNodeFromActor@resource://devtools/server/actors/inspector/walker.js:2673:17\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'domwalker's method 'getNodeFromActor'" "can't access dead object"
+console.error: "getRootBindingParent@resource://devtools/shared/layout/utils.js:442:15\nisAnonymous@resource://devtools/shared/layout/utils.js:477:29\nattachElements@resource://devtools/server/actors/inspector/walker.js:634:46\nattachElement@resource://devtools/server/actors/inspector/walker.js:613:40\ngetNodeFromActor@resource://devtools/server/actors/inspector/walker.js:2673:17\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'domwalker's method 'getNodeFromActor'" "can't access dead object"
+console.error: "getRootBindingParent@resource://devtools/shared/layout/utils.js:442:15\nisAnonymous@resource://devtools/shared/layout/utils.js:477:29\nattachElements@resource://devtools/server/actors/inspector/walker.js:634:46\nattachElement@resource://devtools/server/actors/inspector/walker.js:613:40\ngetNodeFromActor@resource://devtools/server/actors/inspector/walker.js:2673:17\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'domwalker's method 'getNodeFromActor'" "can't access dead object"
+console.error: "getRootBindingParent@resource://devtools/shared/layout/utils.js:442:15\nisAnonymous@resource://devtools/shared/layout/utils.js:477:29\nattachElements@resource://devtools/server/actors/inspector/walker.js:634:46\nattachElement@resource://devtools/server/actors/inspector/walker.js:613:40\ngetNodeFromActor@resource://devtools/server/actors/inspector/walker.js:2673:17\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'domwalker's method 'getNodeFromActor'" "can't access dead object"
+console.error: "getRootBindingParent@resource://devtools/shared/layout/utils.js:442:15\nisAnonymous@resource://devtools/shared/layout/utils.js:477:29\nattachElements@resource://devtools/server/actors/inspector/walker.js:634:46\nattachElement@resource://devtools/server/actors/inspector/walker.js:613:40\ngetNodeFromActor@resource://devtools/server/actors/inspector/walker.js:2673:17\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'domwalker's method 'getNodeFromActor'" "can't access dead object"
+console.error: "getRootBindingParent@resource://devtools/shared/layout/utils.js:442:15\nisAnonymous@resource://devtools/shared/layout/utils.js:477:29\nattachElements@resource://devtools/server/actors/inspector/walker.js:634:46\nattachElement@resource://devtools/server/actors/inspector/walker.js:613:40\ngetNodeFromActor@resource://devtools/server/actors/inspector/walker.js:2673:17\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:501:26\ngetGrids@resource://devtools/server/actors/layout.js:506:43\ngetGrids@resource://devtools/server/actors/layout.js:506:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+[GFX1-]: Failed to allocate a surface due to invalid size (CDT) Size(0,0)
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:501:26\ngetGrids@resource://devtools/server/actors/layout.js:506:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:501:26\ngetGrids@resource://devtools/server/actors/layout.js:506:43\ngetGrids@resource://devtools/server/actors/layout.js:506:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:501:26\ngetGrids@resource://devtools/server/actors/layout.js:506:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+JavaScript error: https://connect.facebook.net/en_US/fbevents.js, line 25: NS_ERROR_FAILURE: 
+JavaScript error: https://connect.facebook.net/en_US/fbevents.js, line 25: NS_ERROR_FAILURE: 
+JavaScript error: resource://devtools/server/actors/targets/browsing-context.js, line 1583: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIDocShell.domWindow]
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:501:26\ngetGrids@resource://devtools/server/actors/layout.js:506:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:501:26\ngetGrids@resource://devtools/server/actors/layout.js:506:43\nhandler@resource://devtools/shared/protocol/Actor.js:154:37\nonPacket@resource://devtools/server/main.js:1402:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+JavaScript error: https://cloud.netquest.cz/scripts/widget/script.min.js#id=3dp6, line 1: TypeError: dat.indexOf is not a function
+[Parent 24568, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 3440, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 3440, Chrome_ChildThread] WARNING: pipe error: 109: fil[Parent 24568, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+[Parent 24568, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Parent 24568, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+1575650574018	Marionette	INFO	Stopped listening on port 6029
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 14280, Chrome_ChildThread] WARNING: pipe error: 109: file
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1575653052823	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile.q1dv4Q55Gx61"
+1575653053442	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575653053442	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575653053442	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575653053442	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1575653055400	Marionette	INFO	Listening on port 7178
+1575653055446	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 25612, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 9336, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 25612, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 22008, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 22008, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chro1575653149623	Marionette	INFO	Stopped listening on port 7178
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 11888, C
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+086843	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 22232, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Parent 22232, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+console.error: (new Error("Connection closed before committing the transaction.", "resource://gre/modules/Sqlite.jsm", 683))
+1575653147028	Marionette	INFO	Stopped listening on port 7262
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 27168, Chr
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+Invalid extension permission: resource://pdf.js/
+1575653129122	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1575653131356	Marionette	INFO	Listening on port 7349
+1575653131675	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: this.browser.driver.dialogObserver is null
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: this.browser.driver.dialogObserver is null
+[Child 10036, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium[Parent 23864, Gecko_IOThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 13436, Chrome_ChildThread] WARNING: pipe error: 109: file z:/task_1568728986/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 341
+[Child 13436, Ch1575653141453	Marionette	INFO	Stopped listening on port 7349
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[GPU 20192,
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

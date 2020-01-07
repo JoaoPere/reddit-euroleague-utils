@@ -28,7 +28,6 @@ team_names_parsed['Valencia Basket'] = '[Valencia](https://www.euroleague.net/co
 team_names_parsed['Crvena Zvezda mts Belgrade'] = '[Crvena Zvezda](https://www.euroleague.net/competition/teams/showteam?clubcode=RED&seasoncode=E2019)'
 team_names_parsed['Zenit St Petersburg'] = '[Zenit](https://www.euroleague.net/competition/teams/showteam?clubcode=DYR&seasoncode=E2019)'
 
-
 r = requests.get('https://www.euroleague.net/main/standings')
 
 soup = BeautifulSoup(r.text,'html.parser')

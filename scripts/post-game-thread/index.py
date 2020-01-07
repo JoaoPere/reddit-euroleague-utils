@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import praw
 import sys
+from pprint import pprint
 
 TABLE_DELIM = '|'
 NEWLINE = '\n'
@@ -316,7 +317,13 @@ reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
 
 el_sub = reddit.subreddit('Euroleague')
 
-el_sub.submit(title=title,selftext=final_markdown)
+submission = el_sub.submit(title=title,selftext=final_markdown)
+
+flair_choices = submission.flair.choices()
+
+pprint(flair_choices)
+template_id = next(x for x in flair_choices if x['flair_text'].replace(':','') == sys.argv[1])['flair_template_id']
+submission.flair.select(template_id)
 
 print("*" * 119)
 print(title)
