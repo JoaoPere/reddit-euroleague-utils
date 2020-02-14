@@ -321,7 +321,6 @@ submission = el_sub.submit(title=title,selftext=final_markdown)
 
 flair_choices = submission.flair.choices()
 
-pprint(flair_choices)
 template_id = next(x for x in flair_choices if x['flair_text'].replace(':','') == sys.argv[1])['flair_template_id']
 submission.flair.select(template_id)
 

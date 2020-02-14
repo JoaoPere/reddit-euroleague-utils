@@ -48,8 +48,10 @@ table_rows = standings_table[0].find_all('tr')
 for idx, row in enumerate(table_rows[1: len(table_rows)]):
 	cols = row.find_all('td')
 
+	team_ahref = cols[0].find('a').text
+
 	# Strips all the leading and trailing white space, removes the digits and shifts the string 2 positions to remove the '. ' substring
-	team_name = ''.join([i for i in cols[0].text.strip() if not i.isdigit()])[2:]
+	team_name = ''.join([i for i in team_ahref.strip() if not i.isdigit()])[2:]
 
 	team_markdown = team_names_parsed.get(team_name)
 
