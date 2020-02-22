@@ -32,8 +32,8 @@ team_names_parsed['Zenit St Petersburg'] = '[ZEN](https://www.euroleague.net/com
 def appendTableDelimitors(content):
 	return TABLE_DELIM + content + TABLE_DELIM
 
-def getScheduleTable():
-	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&phasetypecode=RS&seasoncode=E2019'.format(sys.argv[1]))
+def getScheduleTable(week):
+	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&phasetypecode=RS&seasoncode=E2019'.format(week))
 	
 	soup = BeautifulSoup(r.text,'html.parser')
 	
@@ -62,7 +62,7 @@ def getScheduleTable():
 		game_date = game_date.strip()[:len(game_date) - 4]
 		game_date = datetime.strptime(game_date, "%B %d %H:%M")
 	
-		el_round = sys.argv[1] if idx == 0 else ""
+		el_round = str(week) if idx == 0 else ""
 		el_date = game_date.strftime("%b %d") if idx == 0 or (idx > 0 and int(game_date.day) != cond_day) else ""
 	
 		cond_day = game_date.day
@@ -71,7 +71,9 @@ def getScheduleTable():
 	
 		final_table = NEWLINE.join([final_table, row_markdown])
 	
+	# Add note
+	final_table = NEWLINE.join([final_table, '**Note:** All CET times'])
 	return final_table
 
 if __name__ == '__main__':
-	print(getScheduleTable())
+	print(getScheduleTable(sys.argv[1]))

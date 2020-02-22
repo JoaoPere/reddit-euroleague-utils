@@ -43,7 +43,7 @@ TeamNameParsed = namedtuple('TeamNameParsed', 'official reddit letter3_md full_m
 teams_flashscore_parsed['CSKA Moscow'] = TeamNameParsed('CSKA Moscow', 'CSKA Moscow', '[CSK](https://www.euroleague.net/competition/teams/showteam?clubcode=CSK&seasoncode=E2019)', '[CSKA Moscow](https://www.euroleague.net/competition/teams/showteam?clubcode=CSK&seasoncode=E2019)')
 teams_flashscore_parsed['Fenerbahce'] = TeamNameParsed('Fenerbahce Beko Istanbul', 'Fenerbahce', '[FNB](https://www.euroleague.net/competition/teams/showteam?clubcode=ULK&seasoncode=E2019)', '[Fenerbahçe](https://www.euroleague.net/competition/teams/showteam?clubcode=ULK&seasoncode=E2019)')
 teams_flashscore_parsed['Anadolu Efes'] = TeamNameParsed('Anadolu Efes Istanbul', 'Anadolu Efes', '[EFS](https://www.euroleague.net/competition/teams/showteam?clubcode=IST&seasoncode=E2019)', '[Anadolu Efes](https://www.euroleague.net/competition/teams/showteam?clubcode=IST&seasoncode=E2019)')
-teams_flashscore_parsed['Bayern'] = TeamNameParsed('FC Bayern Munich', 'Bayern Munich', '[BAY](https://www.euroleague.net/competition/teams/showteam?clubcode=MUN&seasoncode=E2019', '[Bayern Munich](https://www.euroleague.net/competition/teams/showteam?clubcode=MUN&seasoncode=E2019)')
+teams_flashscore_parsed['Bayern'] = TeamNameParsed('FC Bayern Munich', 'Bayern Munich', '[BAY](https://www.euroleague.net/competition/teams/showteam?clubcode=MUN&seasoncode=E2019)', '[Bayern Munich](https://www.euroleague.net/competition/teams/showteam?clubcode=MUN&seasoncode=E2019)')
 teams_flashscore_parsed['Barcelona'] = TeamNameParsed('FC Barcelona', 'Barcelona', '[BAR](https://www.euroleague.net/competition/teams/showteam?clubcode=BAR&seasoncode=E2019)', '[Barcelona](https://www.euroleague.net/competition/teams/showteam?clubcode=BAR&seasoncode=E2019)')
 teams_flashscore_parsed['Olympiacos'] = TeamNameParsed('Olympiacos Piraeus', 'Olympiacos', '[OLY](https://www.euroleague.net/competition/teams/showteam?clubcode=OLY&seasoncode=E2019)', '[Olympiacos](https://www.euroleague.net/competition/teams/showteam?clubcode=OLY&seasoncode=E2019)')
 teams_flashscore_parsed['Khimki M.'] = TeamNameParsed('Khimki Moscow Region', 'Khimki', '[KHI](https://www.euroleague.net/competition/teams/showteam?clubcode=KHI&seasoncode=E2019)', '[Khimki](https://www.euroleague.net/competition/teams/showteam?clubcode=KHI&seasoncode=E2019)')
@@ -56,8 +56,8 @@ teams_flashscore_parsed['Panathinaikos'] = TeamNameParsed('Panathinaikos OPAP At
 teams_flashscore_parsed['Lyon-Villeurbanne'] = TeamNameParsed('LDLC ASVEL Villeurbanne', 'ASVEL', '[ASV](https://www.euroleague.net/competition/teams/showteam?clubcode=ASV&seasoncode=E2019)', '[ASVEL](https://www.euroleague.net/competition/teams/showteam?clubcode=ASV&seasoncode=E2019)')
 teams_flashscore_parsed['Alba Berlin'] = TeamNameParsed('ALBA Berlin', 'Alba Berlin', '[BER](https://www.euroleague.net/competition/teams/showteam?clubcode=BER&seasoncode=E2019)', '[Alba Berlin](https://www.euroleague.net/competition/teams/showteam?clubcode=BER&seasoncode=E2019)')
 teams_flashscore_parsed['Valencia'] = TeamNameParsed('Valencia Basket', 'Valencia', '[VBC](https://www.euroleague.net/competition/teams/showteam?clubcode=PAM&seasoncode=E2019)', '[Valencia](https://www.euroleague.net/competition/teams/showteam?clubcode=PAM&seasoncode=E2019)')
-teams_flashscore_parsed['Crvena Zvezda mts'] = TeamNameParsed('Crvena Zvezda mts Belgrade', 'Crvena Zvezda', '[CZV](https://www.euroleague.net/competition/teams/showteam?clubcode=RED&seasoncode=E2019)', '[Crvena Zvezda](https://www.euroleague.net/competition/teams/showteam?clubcode=RED&seasoncode=E2019)')
-teams_flashscore_parsed['Zenit St Petersburg'] = TeamNameParsed('Zenit St Petersburg', 'Zenit', '[ZEN](https://www.euroleague.net/competition/teams/showteam?clubcode=DYR&seasoncode=E2019)', '[Zenit](https://www.euroleague.net/competition/teams/showteam?clubcode=DYR&seasoncode=E2019)')
+teams_flashscore_parsed['Crvena zvezda mts'] = TeamNameParsed('Crvena Zvezda mts Belgrade', 'Crvena Zvezda', '[CZV](https://www.euroleague.net/competition/teams/showteam?clubcode=RED&seasoncode=E2019)', '[Crvena Zvezda](https://www.euroleague.net/competition/teams/showteam?clubcode=RED&seasoncode=E2019)')
+teams_flashscore_parsed['Zenit Petersburg'] = TeamNameParsed('Zenit St Petersburg', 'Zenit', '[ZEN](https://www.euroleague.net/competition/teams/showteam?clubcode=DYR&seasoncode=E2019)', '[Zenit](https://www.euroleague.net/competition/teams/showteam?clubcode=DYR&seasoncode=E2019)')
 
 #Eurocup teams
 teams_flashscore_parsed['Tofas'] = TeamNameParsed('Tofas Bursa', 'Tofas', '[TOF](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=BUR&seasoncode=U2019)', '[Tofas](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=BUR&seasoncode=U2019)')
@@ -197,19 +197,10 @@ def getScoresTable(soup, home_team, away_team):
 
     return getFinalScoreMarkdown(home_team, home_team_score, away_team, away_team_score)
 
-def createEmptyThread(home_team, away_team, comp):
-    if(comp == 'EL'):
-        url = 'https://www.euroleague.net/main/results'
-        home_link = 'https://www.euroleague.net'
-        competition = 'EuroLeague'
-    elif(comp == 'EC'):
-        url = 'https://www.eurocupbasketball.com/eurocup/games/results'
-        home_link = 'https://www.eurocupbasketball.com'
-        competition = 'EuroCup'
-        
-    r = requests.get(url)
+def createEmptyThread(home_team, away_team, args_info):     
+    r = requests.get(args_info.comp_results_link)
     soup = BeautifulSoup(r.text,'html.parser')
-    
+        
     home_team_parsed = teams_flashscore_parsed.get(home_team)
     away_team_parsed = teams_flashscore_parsed.get(away_team)
     
@@ -227,21 +218,21 @@ def createEmptyThread(home_team, away_team, comp):
         away_club_name = clubs[1].find('span', class_='name').text
         
         if home_team_parsed.official == home_club_name and away_team_parsed.official == away_club_name:
-            game_link = home_link + a_game['href']
+            game_link = args_info.comp_home_link + a_game['href']
             
-    title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(comp=competition, home_team=home_team_parsed.reddit, away_team=away_team_parsed.reddit, comp_round=comp_round, comp_stage=comp_stage)
+    title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(comp=args_info.comp_full_name, home_team=home_team_parsed.reddit, away_team=away_team_parsed.reddit, comp_round=comp_round, comp_stage=comp_stage)
     final_markdown = REDDIT_THREAD_PLACEHOLDER_TEXT
     
     submission = el_sub.submit(title=title,selftext=final_markdown)
     flair_choices = submission.flair.choices()
 
-    template_id = next(x for x in flair_choices if x['flair_text'].replace(':','') == comp)['flair_template_id']
+    template_id = next(x for x in flair_choices if x['flair_text'].replace(':','') == args_info.comp_small_name)['flair_template_id']
     submission.flair.select(template_id)
     
     return (submission,game_link)
 
 def checkIfPageReady(soup):
-	# Checks if the top scores panel exists
+    # Checks if the top scores panel exists
     return not (soup.find('div', id='ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_gamescorestatic') is None)
 
 # Returns the submission and a boolean representing if the game was updated or not
@@ -270,35 +261,29 @@ def getTodaysThreads():
     now = datetime.utcnow()# - timedelta(days=30)
     threads = list()
     
-    new_submissions = el_sub.new(limit=500)
+    new_submissions = el_sub.new(limit=100)
     
     for submission in new_submissions:
         timestamp = submission.created_utc
         time = datetime.fromtimestamp(timestamp)
     
-        #print(submission.title)    
         # Figure out why it is not possible to break the loop inside the ternary operator
-        if time.date() > now.date():
+        if time.date() == now.date():
             threads.append(submission)
         else:
             break
         
     return threads
 
-def getTodaysPostGameThreads(comp):
+def getTodaysPostGameThreads(args_info):
     todays_threads = getTodaysThreads()
     
     title_regex = r"Post-Match Thread: (.*?)-(.*?)\[(EuroLeague|EuroCup)(.*?)\]"    
     post_game_threads = [(thread, extractThreadTitleInformation(thread.title)) for thread in todays_threads if re.match(title_regex, thread.title)]
 
     # Hardcoded position of the competition field contained in the tuple
-    
-    if(comp == 'EL'):
-        competition = 'EuroLeague'
-    elif(comp == 'EC'):
-        competition = 'EuroCup'
-        
-    post_game_threads = list(filter(lambda p: p[1][2] == competition, post_game_threads))
+             
+    post_game_threads = list(filter(lambda p: p[1][2] == args_info.comp_full_name, post_game_threads))
 
     return post_game_threads    
 
