@@ -94,10 +94,10 @@ final_markdown = DOUBLE_NEWLINE.join([*games_markdown,  'You can ask for and sha
 final_title = now_time.strftime('%d %B %Y') + ' ' + comp + ' Matches Live Thread'
 
 reddit = praw.Reddit(client_id='Qbl7w1uV9945aw',
-                     client_secret='a8S1qsebIhlWQyPrVTHp0mH5dAA',
-                     password='tQ#1O&4k32Xy',
-                     user_agent='Euroleague Live Game Thread Script',
-                     username='Al-Farrekt-Aminu')
+					 client_secret='a8S1qsebIhlWQyPrVTHp0mH5dAA',
+					 password='tQ#1O&4k32Xy',
+					 user_agent='Euroleague Live Game Thread Script',
+					 username='Al-Farrekt-Aminu')
 
 el_sub = reddit.subreddit('Euroleague')
 

@@ -88,249 +88,249 @@ teams_flashscore_parsed['Trento'] = TeamNameParsed('Dolomiti Energia Trento', 'A
 CELL_ALLIGNMENT = ':-'
 
 reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
-                     client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
-                     password='tQ#1O&4k32Xy',
-                     user_agent='Euroleague Post-Game Thread Script',
-                     username='Al-Farrekt-Aminu')
+					 client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
+					 password='tQ#1O&4k32Xy',
+					 user_agent='Euroleague Post-Game Thread Script',
+					 username='Al-Farrekt-Aminu')
 
 el_sub = reddit.subreddit('Euroleague')
 
 def appendTableDelimitors(content):
-    return TABLE_DELIM + content + TABLE_DELIM
+	return TABLE_DELIM + content + TABLE_DELIM
 
 def getRedditTableHeadAndCellAlignment(table_head):
-    # Formatting table headings
-    reddit_table_head = appendTableDelimitors(TABLE_DELIM.join(table_head))
+	# Formatting table headings
+	reddit_table_head = appendTableDelimitors(TABLE_DELIM.join(table_head))
 
-    # Reddit cell alignment
-    reddit_cell_allignment = appendTableDelimitors(TABLE_DELIM.join([CELL_ALLIGNMENT] * len(table_head)))
+	# Reddit cell alignment
+	reddit_cell_allignment = appendTableDelimitors(TABLE_DELIM.join([CELL_ALLIGNMENT] * len(table_head)))
 
-    return NEWLINE.join([reddit_table_head, reddit_cell_allignment])
+	return NEWLINE.join([reddit_table_head, reddit_cell_allignment])
 
 def bold(text):
-    return '**' + text + '** '
+	return '**' + text + '** '
 
 def getQuarterScoresMarkdown(soup, home_team, away_team):
-    quarter_table = soup.find(id="ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_PartialsStatsByQuarter_dgPartials")
-    quarter_table_rows = quarter_table.find_all('tr')
+	quarter_table = soup.find(id="ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_PartialsStatsByQuarter_dgPartials")
+	quarter_table_rows = quarter_table.find_all('tr')
 
-    final_table = getRedditTableHeadAndCellAlignment(['BY QUARTER','1','2','3','4'])
+	final_table = getRedditTableHeadAndCellAlignment(['BY QUARTER','1','2','3','4'])
 
-    for idx, row in enumerate(quarter_table_rows[1:]):
-        quarter_table_cols = row.find_all('td')
-        quarter_table_cols = [ele.text.strip() for ele in quarter_table_cols]
+	for idx, row in enumerate(quarter_table_rows[1:]):
+		quarter_table_cols = row.find_all('td')
+		quarter_table_cols = [ele.text.strip() for ele in quarter_table_cols]
 
-        # Overrides the team name
-        quarter_table_cols[0] = teams_flashscore_parsed.get(home_team).full_md if idx == 0 else teams_flashscore_parsed.get(away_team).full_md
+		# Overrides the team name
+		quarter_table_cols[0] = teams_flashscore_parsed.get(home_team).full_md if idx == 0 else teams_flashscore_parsed.get(away_team).full_md
 
-        cols_markdown = appendTableDelimitors(TABLE_DELIM.join(quarter_table_cols))
+		cols_markdown = appendTableDelimitors(TABLE_DELIM.join(quarter_table_cols))
 
-        final_table = NEWLINE.join([final_table, cols_markdown])
+		final_table = NEWLINE.join([final_table, cols_markdown])
 
-    return final_table
+	return final_table
 
 def getTablesMarkdown(soup, home_team_name, away_team_name):
-    home_away_tables = soup.find_all(id='tblPlayerPhaseStatistics')
-    
-    home_table = home_away_tables[0]
-    away_table = home_away_tables[1]
+	home_away_tables = soup.find_all(id='tblPlayerPhaseStatistics')
+	
+	home_table = home_away_tables[0]
+	away_table = home_away_tables[1]
 
-    home_coach = soup.find(id="ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_LocalClubStats_lblHeadCoach").text
-    away_coach = soup.find(id="ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_RoadClubStats_lblHeadCoach").text
+	home_coach = soup.find(id="ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_LocalClubStats_lblHeadCoach").text
+	away_coach = soup.find(id="ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_RoadClubStats_lblHeadCoach").text
 
-    return getTableMarkdown(home_table, home_team_name, home_coach), getTableMarkdown(away_table, away_team_name, away_coach)
+	return getTableMarkdown(home_table, home_team_name, home_coach), getTableMarkdown(away_table, away_team_name, away_coach)
 
 def getTableMarkdown(table, name, coach):
-    table_rows = table.find_all('tr')
+	table_rows = table.find_all('tr')
 
-    TEAM_MD = teams_flashscore_parsed.get(name).full_md.upper()
+	TEAM_MD = teams_flashscore_parsed.get(name).full_md.upper()
 
-    final_table = getRedditTableHeadAndCellAlignment([NUMBER, TEAM_MD, MINUTES, POINTS, FG2, FG3, FREE_TRHOWS, OFF_REBOUNDS, DEF_REBOUNDS, TOT_REBOUNDS, ASSISTS, STEALS, TURNOVERS, BLOCKS, FOULS_COMMITED, PIR])
+	final_table = getRedditTableHeadAndCellAlignment([NUMBER, TEAM_MD, MINUTES, POINTS, FG2, FG3, FREE_TRHOWS, OFF_REBOUNDS, DEF_REBOUNDS, TOT_REBOUNDS, ASSISTS, STEALS, TURNOVERS, BLOCKS, FOULS_COMMITED, PIR])
 
-    for idx, row in enumerate(table_rows[2: len(table_rows) - 1]):
-        cols = row.find_all('td')
-        cols = [ele.text.strip() for ele in cols]
+	for idx, row in enumerate(table_rows[2: len(table_rows) - 1]):
+		cols = row.find_all('td')
+		cols = [ele.text.strip() for ele in cols]
 
-        # Removes the blocks against and fouls drawn columns
-        cols.pop(16)
-        cols.pop(14)
+		# Removes the blocks against and fouls drawn columns
+		cols.pop(16)
+		cols.pop(14)
 
-        cols_markdown = appendTableDelimitors(TABLE_DELIM.join(cols))
-        final_table = NEWLINE.join([final_table, cols_markdown])
+		cols_markdown = appendTableDelimitors(TABLE_DELIM.join(cols))
+		final_table = NEWLINE.join([final_table, cols_markdown])
 
-    head_coach_markdown = bold("Head Coach:") + coach
-    final_table = NEWLINE.join([head_coach_markdown, NEWLINE, final_table])
+	head_coach_markdown = bold("Head Coach:") + coach
+	final_table = NEWLINE.join([head_coach_markdown, NEWLINE, final_table])
 
-    return final_table
+	return final_table
 
 def getFinalScoreMarkdown(home_team_name, home_team_score, away_team_name, away_team_score):
-    final_table = getRedditTableHeadAndCellAlignment(['TEAM', 'SCORE'])
+	final_table = getRedditTableHeadAndCellAlignment(['TEAM', 'SCORE'])
 
-    home_team_md = teams_flashscore_parsed.get(home_team_name).full_md
-    away_team_md = teams_flashscore_parsed.get(away_team_name).full_md
+	home_team_md = teams_flashscore_parsed.get(home_team_name).full_md
+	away_team_md = teams_flashscore_parsed.get(away_team_name).full_md
 
-    home_team_name_score = appendTableDelimitors(TABLE_DELIM.join([home_team_md, home_team_score]))
-    away_team_name_score = appendTableDelimitors(TABLE_DELIM.join([away_team_md, away_team_score]))
+	home_team_name_score = appendTableDelimitors(TABLE_DELIM.join([home_team_md, home_team_score]))
+	away_team_name_score = appendTableDelimitors(TABLE_DELIM.join([away_team_md, away_team_score]))
 
-    final_table = NEWLINE.join([final_table, home_team_name_score, away_team_name_score])
+	final_table = NEWLINE.join([final_table, home_team_name_score, away_team_name_score])
 
-    return final_table
+	return final_table
 
 def getGameInformationMarkdown(soup):
-    date_stadium_info_div = soup.find('div', class_='dates')
+	date_stadium_info_div = soup.find('div', class_='dates')
 
-    date_info_cet = (date_stadium_info_div.find('div', class_='date cet').text).replace('CET: ','') + ' CET'
-    stadium_info = date_stadium_info_div.find('span', class_='stadium').text
-    attendance_info = soup.find(id='ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_lblAudience').text
-    referees_info = soup.find(id='ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_lblReferees').text
+	date_info_cet = (date_stadium_info_div.find('div', class_='date cet').text).replace('CET: ','') + ' CET'
+	stadium_info = date_stadium_info_div.find('span', class_='stadium').text
+	attendance_info = soup.find(id='ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_lblAudience').text
+	referees_info = soup.find(id='ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_lblReferees').text
 
-    date_info_cet_markdown = bold('Event Date:') + date_info_cet
-    stadium_info_markdown = bold('Stadium:') + stadium_info
-    attendance_info_markdown = bold('Attendance:') + attendance_info
-    referees_info_markdown = bold('Referees:') + referees_info
+	date_info_cet_markdown = bold('Event Date:') + date_info_cet
+	stadium_info_markdown = bold('Stadium:') + stadium_info
+	attendance_info_markdown = bold('Attendance:') + attendance_info
+	referees_info_markdown = bold('Referees:') + referees_info
 
-    return NEWLINE.join([date_info_cet_markdown, NEWLINE, stadium_info_markdown, NEWLINE, attendance_info_markdown, NEWLINE, referees_info_markdown])
+	return NEWLINE.join([date_info_cet_markdown, NEWLINE, stadium_info_markdown, NEWLINE, attendance_info_markdown, NEWLINE, referees_info_markdown])
 
 def getScoresTable(soup, home_team, away_team):
-    home_team_score = soup.find(class_="sg-score").find(class_="local").find(class_="score").text
-    away_team_score = soup.find(class_="sg-score").find(class_="road").find(class_="score").text
+	home_team_score = soup.find(class_="sg-score").find(class_="local").find(class_="score").text
+	away_team_score = soup.find(class_="sg-score").find(class_="road").find(class_="score").text
 
-    return getFinalScoreMarkdown(home_team, home_team_score, away_team, away_team_score)
+	return getFinalScoreMarkdown(home_team, home_team_score, away_team, away_team_score)
 
 # TODO: Extract game_link retrieval to method so that it can be called when reinitializing bot with threads in placeholder mode
 def createEmptyThread(home_team, away_team, args_info):     
-    r = requests.get(args_info.comp_results_link)
-    soup = BeautifulSoup(r.text,'html.parser')
-        
-    home_team_parsed = teams_flashscore_parsed.get(home_team)
-    away_team_parsed = teams_flashscore_parsed.get(away_team)
-    
-    stage_round_spans = soup.find('div', class_='gc-title').find_all('span')
-    comp_stage = stage_round_spans[1].text
-    comp_round = stage_round_spans[2].text
-    
-    all_games_div = soup.find('div', class_='wp-module-asidegames')
-    all_game_links = all_games_div.find_all('a', class_='game-link')
-    
-    for a_game in all_game_links:
-        clubs = a_game.find_all('div', class_='club')
-        
-        home_club_name = clubs[0].find('span', class_='name').text
-        away_club_name = clubs[1].find('span', class_='name').text
-        
-        if home_team_parsed.official == home_club_name and away_team_parsed.official == away_club_name:
-            game_link = args_info.comp_home_link + a_game['href']
-            
-    title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(comp=args_info.comp_full_name, home_team=home_team_parsed.reddit, away_team=away_team_parsed.reddit, comp_round=comp_round, comp_stage=comp_stage)
-    final_markdown = REDDIT_THREAD_PLACEHOLDER_TEXT
-    
-    submission = el_sub.submit(title=title,selftext=final_markdown)
-    flair_choices = submission.flair.choices()
-
-    template_id = next(x for x in flair_choices if x['flair_text'].replace(':','') == args_info.comp_small_name)['flair_template_id']
-    submission.flair.select(template_id)
-    
-    return (submission,game_link)
-
-def getGameLink(home_team, away_team):
 	r = requests.get(args_info.comp_results_link)
-    soup = BeautifulSoup(r.text,'html.parser')
-        
-    home_team_parsed = teams_flashscore_parsed.get(home_team)
-    away_team_parsed = teams_flashscore_parsed.get(away_team)
-    
-    stage_round_spans = soup.find('div', class_='gc-title').find_all('span')
-    comp_stage = stage_round_spans[1].text
-    comp_round = stage_round_spans[2].text
-    
-    all_games_div = soup.find('div', class_='wp-module-asidegames')
-    all_game_links = all_games_div.find_all('a', class_='game-link')
-    
-    for a_game in all_game_links:
-        clubs = a_game.find_all('div', class_='club')
-        
-        home_club_name = clubs[0].find('span', class_='name').text
-        away_club_name = clubs[1].find('span', class_='name').text
-        
-        if home_team_parsed.official == home_club_name and away_team_parsed.official == away_club_name:
-            game_link = args_info.comp_home_link + a_game['href']
+	soup = BeautifulSoup(r.text,'html.parser')
+		
+	home_team_parsed = teams_flashscore_parsed.get(home_team)
+	away_team_parsed = teams_flashscore_parsed.get(away_team)
+	
+	stage_round_spans = soup.find('div', class_='gc-title').find_all('span')
+	comp_stage = stage_round_spans[1].text
+	comp_round = stage_round_spans[2].text
+	
+	all_games_div = soup.find('div', class_='wp-module-asidegames')
+	all_game_links = all_games_div.find_all('a', class_='game-link')
+	
+	for a_game in all_game_links:
+		clubs = a_game.find_all('div', class_='club')
+		
+		home_club_name = clubs[0].find('span', class_='name').text
+		away_club_name = clubs[1].find('span', class_='name').text
+		
+		if home_team_parsed.official == home_club_name and away_team_parsed.official == away_club_name:
+			game_link = args_info.comp_home_link + a_game['href']
+			
+	title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(comp=args_info.comp_full_name, home_team=home_team_parsed.reddit, away_team=away_team_parsed.reddit, comp_round=comp_round, comp_stage=comp_stage)
+	final_markdown = REDDIT_THREAD_PLACEHOLDER_TEXT
+	
+	submission = el_sub.submit(title=title,selftext=final_markdown)
+	flair_choices = submission.flair.choices()
+
+	template_id = next(x for x in flair_choices if x['flair_text'].replace(':','') == args_info.comp_small_name)['flair_template_id']
+	submission.flair.select(template_id)
+	
+	return (submission,game_link)
+
+def getGameLink(home_team, away_team, args_info):
+	r = requests.get(args_info.comp_results_link)
+	soup = BeautifulSoup(r.text,'html.parser')
+		
+	home_team_parsed = teams_flashscore_parsed.get(home_team)
+	away_team_parsed = teams_flashscore_parsed.get(away_team)
+	
+	stage_round_spans = soup.find('div', class_='gc-title').find_all('span')
+	comp_stage = stage_round_spans[1].text
+	comp_round = stage_round_spans[2].text
+	
+	all_games_div = soup.find('div', class_='wp-module-asidegames')
+	all_game_links = all_games_div.find_all('a', class_='game-link')
+	
+	for a_game in all_game_links:
+		clubs = a_game.find_all('div', class_='club')
+		
+		home_club_name = clubs[0].find('span', class_='name').text
+		away_club_name = clubs[1].find('span', class_='name').text
+		
+		if home_team_parsed.official == home_club_name and away_team_parsed.official == away_club_name:
+			game_link = args_info.comp_home_link + a_game['href']
 
 def checkIfPageReady(soup):
-    # Checks if the top scores panel exists
-    return not (soup.find('div', id='ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_gamescorestatic') is None)
+	# Checks if the top scores panel exists
+	return not (soup.find('div', id='ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_gamescorestatic') is None)
 
 # Returns the submission and a boolean representing if the game was updated or not
 def updateThread(home_team, away_team, submission, game_link):
-    r = requests.get(game_link)
-    
-    soup = BeautifulSoup(r.text,'html.parser')  
-    
-    updated = False  
+	r = requests.get(game_link)
+	
+	soup = BeautifulSoup(r.text,'html.parser')  
+	
+	updated = False  
 
-    if checkIfPageReady(soup):
-        final_game_information_markdown = getGameInformationMarkdown(soup)
-        final_score_markdown = getScoresTable(soup, home_team, away_team)
-        final_quarters_score_markdown = getQuarterScoresMarkdown(soup, home_team, away_team)
-        home_table_markdown, away_table_markdown = getTablesMarkdown(soup, home_team, away_team)
-        
-        final_markdown = NEWLINE.join([final_game_information_markdown, REDDIT_HR, final_score_markdown, REDDIT_HR, final_quarters_score_markdown, REDDIT_HR, home_table_markdown, NEWLINE, away_table_markdown])
-        
-        submission.edit(final_markdown)
-        
-        updated = True
+	if checkIfPageReady(soup):
+		final_game_information_markdown = getGameInformationMarkdown(soup)
+		final_score_markdown = getScoresTable(soup, home_team, away_team)
+		final_quarters_score_markdown = getQuarterScoresMarkdown(soup, home_team, away_team)
+		home_table_markdown, away_table_markdown = getTablesMarkdown(soup, home_team, away_team)
+		
+		final_markdown = NEWLINE.join([final_game_information_markdown, REDDIT_HR, final_score_markdown, REDDIT_HR, final_quarters_score_markdown, REDDIT_HR, home_table_markdown, NEWLINE, away_table_markdown])
+		
+		submission.edit(final_markdown)
+		
+		updated = True
 
-    return submission, updated
+	return submission, updated
 
 def getTodaysThreads():
-    now = datetime.utcnow()# - timedelta(days=30)
-    threads = list()
-    
-    new_submissions = el_sub.new(limit=100)
-    
-    for submission in new_submissions:
-        timestamp = submission.created_utc
-        time = datetime.fromtimestamp(timestamp)
-    
-        # Figure out why it is not possible to break the loop inside the ternary operator
-        if time.date() == now.date():
-            threads.append(submission)
-        else:
-            break
-        
-    return threads
+	now = datetime.utcnow()# - timedelta(days=30)
+	threads = list()
+	
+	new_submissions = el_sub.new(limit=100)
+	
+	for submission in new_submissions:
+		timestamp = submission.created_utc
+		time = datetime.fromtimestamp(timestamp)
+	
+		# Figure out why it is not possible to break the loop inside the ternary operator
+		if time.date() == now.date():
+			threads.append(submission)
+		else:
+			break
+		
+	return threads
 
 def getTodaysPostGameThreads(args_info):
-    todays_threads = getTodaysThreads()
-    
-    title_regex = r"Post-Match Thread: (.*?)-(.*?)\[(EuroLeague|EuroCup)(.*?)\]"    
-    post_game_threads = [(thread, extractThreadTitleInformation(thread.title)) for thread in todays_threads if re.match(title_regex, thread.title)]
+	todays_threads = getTodaysThreads()
+	
+	title_regex = r"Post-Match Thread: (.*?)-(.*?)\[(EuroLeague|EuroCup)(.*?)\]"    
+	post_game_threads = [(thread, extractThreadTitleInformation(thread.title)) for thread in todays_threads if re.match(title_regex, thread.title)]
 
-    # Hardcoded position of the competition field contained in the tuple
-             
-    post_game_threads = list(filter(lambda p: p[1][2] == args_info.comp_full_name, post_game_threads))
+	# Hardcoded position of the competition field contained in the tuple
+			 
+	post_game_threads = list(filter(lambda p: p[1][2] == args_info.comp_full_name, post_game_threads))
 
-    return post_game_threads    
+	return post_game_threads    
 
 def extractThreadTitleInformation(thread_title):
-    # Return home_team, away_team, and competition in Reddit format 
-    
-    title_group_regex = r"Post-Match Thread: (?P<home_team>.*?) - (?P<away_team>.*?) \[(?P<competition>(\w+))"
-    title_group = re.search(title_group_regex, thread_title)
-    
-    home_team = findFlashScoreNameByRedditName(title_group.group('home_team').strip())
-    away_team = findFlashScoreNameByRedditName(title_group.group('away_team').strip())
-    competition = title_group.group('competition').strip()
-    
-    return (home_team, away_team, competition)
+	# Return home_team, away_team, and competition in Reddit format 
+	
+	title_group_regex = r"Post-Match Thread: (?P<home_team>.*?) - (?P<away_team>.*?) \[(?P<competition>(\w+))"
+	title_group = re.search(title_group_regex, thread_title)
+	
+	home_team = findFlashScoreNameByRedditName(title_group.group('home_team').strip())
+	away_team = findFlashScoreNameByRedditName(title_group.group('away_team').strip())
+	competition = title_group.group('competition').strip()
+	
+	return (home_team, away_team, competition)
 
 def findFlashScoreNameByRedditName(name):
-    for fsname in teams_flashscore_parsed.keys():
-        other_names = teams_flashscore_parsed[fsname]
-        
-        if other_names.reddit == name:
-            return fsname
-        
-    return None
+	for fsname in teams_flashscore_parsed.keys():
+		other_names = teams_flashscore_parsed[fsname]
+		
+		if other_names.reddit == name:
+			return fsname
+		
+	return None
 
 if __name__ == '__main__':
-    pprint(getTodaysPostGameThreads('EL'))
+	pprint(getTodaysPostGameThreads('EL'))

@@ -37,10 +37,10 @@ if __name__ == '__main__':
 	schedule_table = getScheduleTable(gameweek_number + 1)
 
 	reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
-	                     client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
-	                     password='tQ#1O&4k32Xy',
-	                     user_agent='Euroleague Post-Game Thread Script',
-	                     username='Al-Farrekt-Aminu')
+						 client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
+						 password='tQ#1O&4k32Xy',
+						 user_agent='Euroleague Post-Game Thread Script',
+						 username='Al-Farrekt-Aminu')
 	
 	el_sub = reddit.subreddit('Euroleague')
 	

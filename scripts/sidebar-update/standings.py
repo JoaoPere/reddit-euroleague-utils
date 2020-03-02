@@ -28,7 +28,7 @@ team_names_parsed['Zenit St Petersburg'] = '[Zenit](https://www.euroleague.net/c
 
 def appendTableDelimitors(content):
 	return TABLE_DELIM + content + TABLE_DELIM
-#
+	
 def getStandingsTable():
 	r = requests.get('https://www.euroleague.net/main/standings')
 

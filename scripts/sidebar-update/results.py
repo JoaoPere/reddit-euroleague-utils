@@ -32,82 +32,82 @@ teams_flashscore_parsed['Crvena zvezda mts'] = TeamNameParsed('Crvena Zvezda mts
 teams_flashscore_parsed['Zenit Petersburg'] = TeamNameParsed('Zenit St Petersburg', 'Zenit', '[ZEN](https://www.euroleague.net/competition/teams/showteam?clubcode=DYR&seasoncode=E2019)', '[Zenit](https://www.euroleague.net/competition/teams/showteam?clubcode=DYR&seasoncode=E2019)')
 
 def appendTableDelimitors(content):
-    return TABLE_DELIM + content + TABLE_DELIM
+	return TABLE_DELIM + content + TABLE_DELIM
 
 # TODO: Rename this
 def findOtherValueByValue(search_index, search_condition, result_index):            
-    for value in teams_flashscore_parsed.values(): 
-        if value[search_index] == search_condition:
-            return value[result_index]
-        
-    return None
+	for value in teams_flashscore_parsed.values(): 
+		if value[search_index] == search_condition:
+			return value[result_index]
+		
+	return None
    
 # Returns the href to the result thread 
 # For now, only covering regular season  
 def getResultThread(home_team, away_team, el_round):
-    reddit_home_team = findOtherValueByValue(0, home_team, 1)
-    reddit_away_team = findOtherValueByValue(0, away_team, 1)
-    
-    reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
-        client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
-              password='tQ#1O&4k32Xy',
-                       user_agent='Euroleague Post-Game Thread Script',
-                                   username='Al-Farrekt-Aminu')
-    
-    el_sub = reddit.subreddit('Euroleague')
-    new_submissions = el_sub.new(limit=100)
-    
-    #TODO: Change title to constant?
-    for submission in new_submissions:
-        if submission.title == 'Post-Match Thread: {home_team} - {away_team} [EuroLeague Regular Season, Round {el_round}]'.format(home_team=reddit_home_team, away_team=reddit_away_team, el_round=el_round):
-            return submission.url
-        
-    return None
+	reddit_home_team = findOtherValueByValue(0, home_team, 1)
+	reddit_away_team = findOtherValueByValue(0, away_team, 1)
+	
+	reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
+		client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
+			  password='tQ#1O&4k32Xy',
+					   user_agent='Euroleague Post-Game Thread Script',
+								   username='Al-Farrekt-Aminu')
+	
+	el_sub = reddit.subreddit('Euroleague')
+	new_submissions = el_sub.new(limit=100)
+	
+	#TODO: Change title to constant?
+	for submission in new_submissions:
+		if submission.title == 'Post-Match Thread: {home_team} - {away_team} [EuroLeague Regular Season, Round {el_round}]'.format(home_team=reddit_home_team, away_team=reddit_away_team, el_round=el_round):
+			return submission.url
+		
+	return None
 
 # TODO: Add support to playoffs
 def getResultsTable(week):
-    r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&phasetypecode=RS&seasoncode=E2019'.format(week))
-    
-    soup = BeautifulSoup(r.text,'html.parser')
-    
-    reddit_table_head = appendTableDelimitors(TABLE_DELIM.join(['ROUND','HOME','AWAY','RESULT']))
-    reddit_cell_allignment = appendTableDelimitors(TABLE_DELIM.join([CELL_ALLIGNMENT] * 4))
-    
-    final_table = NEWLINE.join([reddit_table_head, reddit_cell_allignment])
-    
-    # Result in 2nd element
-    livescores = soup.find_all("div", class_="livescore")
-    
-    schedule_html = livescores[1]
-    
-    schedule_html_games = schedule_html.find_all("div", class_="game")
-    
-    for idx, html_game in enumerate(schedule_html_games):
-        both_clubs = html_game.find_all("div", class_="club")
-        
-        home_team_official = both_clubs[0].find("span", class_="name").text
-        away_team_official = both_clubs[1].find("span", class_="name").text
-        
-        home_team_name = findOtherValueByValue(0, home_team_official, 2)
-        home_team_score = both_clubs[0].find("span", class_="score").attrs['data-score']
-    
-        away_team_name = findOtherValueByValue(0, away_team_official, 2)
-        away_team_score = both_clubs[1].find("span", class_="score").attrs['data-score']
-    
-        # Only assign to the first row of the table - Reddit markdown syntax related
-        el_round = str(week) if idx == 0 else ""
-        
-        submission_url = getResultThread(home_team_official, away_team_official, str(week))
-        
-        result = "[{home_team_score}-{away_team_score}]({submission_url})".format(home_team_score=home_team_score, away_team_score=away_team_score,submission_url=submission_url)
-    
-        row_markdown = appendTableDelimitors(TABLE_DELIM.join([el_round, home_team_name, away_team_name, result]))
-    
-        final_table = NEWLINE.join([final_table, row_markdown])
-        
-    final_table = NEWLINE.join([final_table, '**Note:** Access the post-match threads by clicking in the result'])
-    
-    return final_table
+	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&phasetypecode=RS&seasoncode=E2019'.format(week))
+	
+	soup = BeautifulSoup(r.text,'html.parser')
+	
+	reddit_table_head = appendTableDelimitors(TABLE_DELIM.join(['ROUND','HOME','AWAY','RESULT']))
+	reddit_cell_allignment = appendTableDelimitors(TABLE_DELIM.join([CELL_ALLIGNMENT] * 4))
+	
+	final_table = NEWLINE.join([reddit_table_head, reddit_cell_allignment])
+	
+	# Result in 2nd element
+	livescores = soup.find_all("div", class_="livescore")
+	
+	schedule_html = livescores[1]
+	
+	schedule_html_games = schedule_html.find_all("div", class_="game")
+	
+	for idx, html_game in enumerate(schedule_html_games):
+		both_clubs = html_game.find_all("div", class_="club")
+		
+		home_team_official = both_clubs[0].find("span", class_="name").text
+		away_team_official = both_clubs[1].find("span", class_="name").text
+		
+		home_team_name = findOtherValueByValue(0, home_team_official, 2)
+		home_team_score = both_clubs[0].find("span", class_="score").attrs['data-score']
+	
+		away_team_name = findOtherValueByValue(0, away_team_official, 2)
+		away_team_score = both_clubs[1].find("span", class_="score").attrs['data-score']
+	
+		# Only assign to the first row of the table - Reddit markdown syntax related
+		el_round = str(week) if idx == 0 else ""
+		
+		submission_url = getResultThread(home_team_official, away_team_official, str(week))
+		
+		result = "[{home_team_score}-{away_team_score}]({submission_url})".format(home_team_score=home_team_score, away_team_score=away_team_score,submission_url=submission_url)
+	
+		row_markdown = appendTableDelimitors(TABLE_DELIM.join([el_round, home_team_name, away_team_name, result]))
+	
+		final_table = NEWLINE.join([final_table, row_markdown])
+		
+	final_table = NEWLINE.join([final_table, '**Note:** Access the post-match threads by clicking in the result'])
+	
+	return final_table
 
 if __name__ == '__main__':
-    print(getResultsTable(sys.argv[1]))
+	print(getResultsTable(sys.argv[1]))

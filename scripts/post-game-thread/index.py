@@ -310,10 +310,10 @@ final_markdown = NEWLINE.join([final_game_information_markdown, REDDIT_HR, final
 title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(comp=competition, home_team=home_team_name, away_team=away_team_name, comp_round= comp_round, comp_stage=comp_stage)
 
 reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
-                     client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
-                     password='tQ#1O&4k32Xy',
-                     user_agent='Euroleague Post-Game Thread Script',
-                     username='Al-Farrekt-Aminu')
+					 client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
+					 password='tQ#1O&4k32Xy',
+					 user_agent='Euroleague Post-Game Thread Script',
+					 username='Al-Farrekt-Aminu')
 
 el_sub = reddit.subreddit('Euroleague')
 
