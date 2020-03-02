@@ -197,6 +197,7 @@ def getScoresTable(soup, home_team, away_team):
 
     return getFinalScoreMarkdown(home_team, home_team_score, away_team, away_team_score)
 
+# TODO: Extract game_link retrieval to method so that it can be called when reinitializing bot with threads in placeholder mode
 def createEmptyThread(home_team, away_team, args_info):     
     r = requests.get(args_info.comp_results_link)
     soup = BeautifulSoup(r.text,'html.parser')
@@ -230,6 +231,29 @@ def createEmptyThread(home_team, away_team, args_info):
     submission.flair.select(template_id)
     
     return (submission,game_link)
+
+def getGameLink(home_team, away_team):
+	r = requests.get(args_info.comp_results_link)
+    soup = BeautifulSoup(r.text,'html.parser')
+        
+    home_team_parsed = teams_flashscore_parsed.get(home_team)
+    away_team_parsed = teams_flashscore_parsed.get(away_team)
+    
+    stage_round_spans = soup.find('div', class_='gc-title').find_all('span')
+    comp_stage = stage_round_spans[1].text
+    comp_round = stage_round_spans[2].text
+    
+    all_games_div = soup.find('div', class_='wp-module-asidegames')
+    all_game_links = all_games_div.find_all('a', class_='game-link')
+    
+    for a_game in all_game_links:
+        clubs = a_game.find_all('div', class_='club')
+        
+        home_club_name = clubs[0].find('span', class_='name').text
+        away_club_name = clubs[1].find('span', class_='name').text
+        
+        if home_team_parsed.official == home_club_name and away_team_parsed.official == away_club_name:
+            game_link = args_info.comp_home_link + a_game['href']
 
 def checkIfPageReady(soup):
     # Checks if the top scores panel exists

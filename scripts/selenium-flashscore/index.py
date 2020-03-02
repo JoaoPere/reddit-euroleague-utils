@@ -112,8 +112,7 @@ class RepeatedTimer(object):
 
 def updateTodaysGamesFlashScore(driver, games_list, args_info):
     soup = BeautifulSoup(driver.page_source,'html.parser')
-    todays_games = list()
-
+	
     live_table = soup.find('div', class_='leagues--live')
     all_live_games_table = live_table.find_all('div', {"class": "event__match"})
 
@@ -124,9 +123,9 @@ def updateTodaysGamesFlashScore(driver, games_list, args_info):
         reddit_game_thread = RedditGameThread(home_team, away_team, args_info.comp_full_name)
         
         if reddit_game_thread not in games_list:
-            todays_games.append(reddit_game_thread)
+            games_list.append(reddit_game_thread)
             
-    return todays_games
+    return games_list
 
 def updateThreads(games_list, args_info):
     num_games_completed = 0
@@ -171,7 +170,7 @@ def loop(games_list, args_info):
         game_state = game_table.find('div', class_='event__stage--block').text
 
         # Parse FlashScore states to match the application states
-        game_state = GameState.FINISHED if game_state == 'Finished' else GameState.UNFINISHED
+        game_state = GameState.FINISHED if game_state == 'Finished' or game_state == 'After Overtime' else GameState.UNFINISHED
 
         reddit_game_thread = RedditGameThread(home_team, away_team, args_info.comp_full_name, game_state=game_state)
         
@@ -195,7 +194,7 @@ def populateExistingPostMatchThreads(args_info):
         
         thread_state = ThreadState.PUBLISHED if submission.selftext == REDDIT_THREAD_PLACEHOLDER_TEXT else ThreadState.COMPLETED
         
-        home_team, away_team = game_thread[1]
+        home_team, away_team, _ = game_thread[1]
    
         reddit_game_thread = RedditGameThread(home_team, away_team, args_info.comp_full_name, thread_state = thread_state , game_state = GameState.FINISHED, reddit_submission = submission)
         games_list.append(reddit_game_thread)
