@@ -8,7 +8,8 @@ import os
 from functools import partial
 from collections import namedtuple
 
-from postgame import createEmptyThread, updateThread, getTodaysPostGameThreads, REDDIT_THREAD_PLACEHOLDER_TEXT
+#TODO: Improve imports, perhaps circunstancial function declarations changes
+from postgame import REDDIT_THREAD_PLACEHOLDER_TEXT, createEmptyThread, updateThread, getTodaysPostGameThreads, getGameLink
 
 class ThreadState(Enum):
 	UNPUBLISHED = 0,
@@ -19,18 +20,17 @@ class GameState(Enum):
 	UNFINISHED = 0,
 	FINISHED = 1
 	
-
 class RedditGameThread():
 	def __init__(self, home_team, away_team, competition, game_state=GameState.UNFINISHED, thread_state=ThreadState.UNPUBLISHED, game_link=None, reddit_submission=None):
-		self._home_team = home_team
-		self._away_team = away_team
-		self._competition = competition
+		self.home_team = home_team
+		self.away_team = away_team
+		self.competition = competition
 		
-		self._game_state = game_state
-		self._thread_state = thread_state
+		self.game_state = game_state
+		self.thread_state = thread_state
 		
-		self._game_link = game_link
-		self._reddit_submission = reddit_submission
+		self.game_link = game_link
+		self.reddit_submission = reddit_submission
 
 	def __eq__(self, other):
 		"""Overrides the default implementation"""
@@ -41,14 +41,38 @@ class RedditGameThread():
 	@property
 	def home_team(self):
 		return self._home_team
+
+	@home_team.setter
+	def home_team(self, value):
+		self._home_team = value
 	
 	@property
 	def away_team(self):
 		return self._away_team
+
+	@away_team.setter
+	def away_team(self, value):
+		self.away_team = value
 	
 	@property
 	def competition(self):
 		return self._competition
+
+	@competition.setter
+	def competition(self, value):
+		self._competition = value
+
+	@property
+	def game_state(self):
+		return self._game_state
+
+	#TODO: Perhaps look into updating thread state when game state is altered
+	@game_state.setter
+	def game_state(self, value):
+		if value not in GameState:
+			raise ValueError('Invalid game state')
+
+		self._game_state = value
 	
 	@property
 	def thread_state(self):
@@ -58,29 +82,38 @@ class RedditGameThread():
 	def thread_state(self, value):
 		if value not in ThreadState:
 			raise ValueError('Invalid thread state')
+		else:
+			self.thread_state = value
 
-		self._thread_state = value
+			if self.thread_state == ThreadState.PUBLISHED:
+				self.game_link = getGameLink(self.home_team, self.away_team, self.args_info)
 
 	@property
-	def game_state(self):
-		return self._game_state
+	def game_link(self):
+		return self._game_link
+	
+	@game_link.setter
+	def game_link(self, value):
+		self._game_link = game_link
+	
+	@property
+	def reddit_submission(self):
+		return self._reddit_submission
 
-	@game_state.setter
-	def game_state(self, value):
-		if value not in GameState:
-			raise ValueError('Invalid game state')
-
-		self._game_state = value
+	@reddit_submission.setter
+	def reddit_submission(self, value):
+		self._reddit_submission = value
 
 	def publishThread(self, args_info):
-		self._reddit_submission, self._game_link = createEmptyThread(self.home_team, self.away_team, args_info)
-		self._thread_state = ThreadState.PUBLISHED
+		self.thread_state = ThreadState.PUBLISHED
+		self.reddit_submission = createEmptyThread(self.home_team, self.away_team, self.args_info)
 		
 	def updateThread(self):
-		if self._reddit_submission is None:
+		if self.reddit_submission is None:
 			raise ValueError('Reddit Thread should not be null')
 			
-		self._reddit_submission, updated = updateThread(self._home_team, self._away_team, self._reddit_submission, self._game_link)
+		self.reddit_submission, updated = updateThread(self._home_team, self._away_team, self._reddit_submission, self._game_link)
+
 		if updated:
 			self._thread_state = ThreadState.COMPLETED
 
@@ -192,9 +225,9 @@ def populateExistingPostMatchThreads(args_info):
 	for game_thread in post_game_threads:
 		submission = game_thread[0]
 		
-		thread_state = ThreadState.PUBLISHED if submission.selftext == REDDIT_THREAD_PLACEHOLDER_TEXT else ThreadState.COMPLETED
+		thread_state = ThreadState.PUBLISHED if submission.selftext == REDDIT_THREAD_PLACEHOLDER_TEXT else  ThreadState.COMPLETED
 		
-		home_team, away_team, _ = game_thread[1]
+		home_team, away_team = game_thread[1]
    
 		reddit_game_thread = RedditGameThread(home_team, away_team, args_info.comp_full_name, thread_state = thread_state , game_state = GameState.FINISHED, reddit_submission = submission)
 		games_list.append(reddit_game_thread)
@@ -215,16 +248,15 @@ if __name__ == '__main__':
 		printUsage()
 		sys.exit()
 	
-	args_info = args_dict.get(sys.argv[1])
+	RedditGameThread.args_info = args_dict.get(sys.argv[1])
 	
 	driver = webdriver.Firefox()
-	#driver.get(url)
-	driver.get(args_info.fslink)
+	driver.get(RedditGameThread.args_info.fslink)
 	
-	games_list = populateExistingPostMatchThreads(args_info)
+	games_list = populateExistingPostMatchThreads(RedditGameThread.args_info)
 	print('Populated {} games from Reddit'.format(len(games_list)))
-	games_list = updateTodaysGamesFlashScore(driver, games_list, args_info)
+	games_list = updateTodaysGamesFlashScore(driver, games_list, RedditGameThread.args_info)
 	print('FlashScore added the total ammount of today\'s games to {}'.format(len(games_list)))
 	
-	rt = RepeatedTimer(30, loop, games_list, args_info) # it auto-starts, no need of rt.start()
+	rt = RepeatedTimer(30, loop, games_list, RedditGameThread.args_info) # it auto-starts, no need of rt.start()
 	signal.signal(signal.SIGUSR1, partial(service_shutdown, driver, rt))
