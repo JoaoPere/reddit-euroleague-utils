@@ -52,7 +52,7 @@ class RedditGameThread():
 
 	@away_team.setter
 	def away_team(self, value):
-		self.away_team = value
+		self._away_team = value
 	
 	@property
 	def competition(self):
@@ -66,7 +66,6 @@ class RedditGameThread():
 	def game_state(self):
 		return self._game_state
 
-	#TODO: Perhaps look into updating thread state when game state is altered
 	@game_state.setter
 	def game_state(self, value):
 		if value not in GameState:
@@ -83,7 +82,7 @@ class RedditGameThread():
 		if value not in ThreadState:
 			raise ValueError('Invalid thread state')
 		else:
-			self.thread_state = value
+			self._thread_state = value
 
 			if self.thread_state == ThreadState.PUBLISHED:
 				self.game_link = getGameLink(self.home_team, self.away_team, self.args_info)
@@ -94,7 +93,7 @@ class RedditGameThread():
 	
 	@game_link.setter
 	def game_link(self, value):
-		self._game_link = game_link
+		self._game_link = value
 	
 	@property
 	def reddit_submission(self):
