@@ -112,7 +112,7 @@ class RedditGameThread():
 		if self.reddit_submission is None:
 			raise ValueError('Reddit Thread should not be null')
 			
-		self.reddit_submission, updated = updateThread(self._home_team, self._away_team, self._reddit_submission, self._game_link)
+		self.reddit_submission, updated = updateThread(self.home_team, self.away_team, self.reddit_submission, self.game_link)
 
 		if updated:
 			self._thread_state = ThreadState.COMPLETED
@@ -225,7 +225,7 @@ def populateExistingPostMatchThreads(args_info):
 	for game_thread in post_game_threads:
 		submission = game_thread[0]
 		
-		thread_state = ThreadState.PUBLISHED if submission.selftext == REDDIT_THREAD_PLACEHOLDER_TEXT else  ThreadState.COMPLETED
+		thread_state = ThreadState.PUBLISHED if submission.selftext == REDDIT_THREAD_PLACEHOLDER_TEXT else ThreadState.COMPLETED
 		
 		home_team, away_team = game_thread[1]
    
