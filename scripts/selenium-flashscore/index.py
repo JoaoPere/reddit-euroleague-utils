@@ -19,6 +19,8 @@ class ThreadState(Enum):
 class GameState(Enum):
 	UNFINISHED = 0,
 	FINISHED = 1
+
+LOOP_TIME = 20
 	
 class RedditGameThread():
 	def __init__(self, home_team, away_team, competition, game_state=GameState.UNFINISHED, thread_state=ThreadState.UNPUBLISHED, game_link=None, reddit_submission=None):
@@ -166,8 +168,6 @@ def updateTodaysGamesFlashScore(driver, games_list, args_info):
 def updateThreads(games_list, args_info):
 	num_games_completed = 0
 	
-	print('---------------------------------')
-
 	for game_reddit in games_list:
 		print(game_reddit)
 		if game_reddit.game_state == GameState.FINISHED:
@@ -254,8 +254,8 @@ if __name__ == '__main__':
 	games_list = populateExistingPostMatchThreads(RedditGameThread.args_info)
 	print('Populated {} games from Reddit'.format(len(games_list)))
 	games_list = updateTodaysGamesFlashScore(driver, games_list, RedditGameThread.args_info)
-	print('FlashScore added the total ammount of today\'s games to {}'.format(len(games_list)))
+	print('FlashScore added the total ammount of today\'s games to {}\n'.format(len(games_list)))
 	games_list = getGamesLinks(games_list, RedditGameThread.args_info)
 
-	rt = RepeatedTimer(30, loop, games_list, RedditGameThread.args_info) # it auto-starts, no need of rt.start()
+	rt = RepeatedTimer(LOOP_TIME, loop, games_list, RedditGameThread.args_info) # it auto-starts, no need of rt.start()
 	#signal.signal(signal.SIGUSR1, partial(service_shutdown, driver, rt))
