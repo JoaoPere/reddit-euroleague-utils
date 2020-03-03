@@ -23,10 +23,13 @@ class GameState(Enum):
 LOOP_TIME = 20
 	
 class RedditGameThread():
-	def __init__(self, home_team, away_team, competition, game_state=GameState.UNFINISHED, thread_state=ThreadState.UNPUBLISHED, game_link=None, reddit_submission=None):
+	def __init__(self, home_team, away_team, competition, comp_round=None, comp_stage=None, game_state=GameState.UNFINISHED, thread_state=ThreadState.UNPUBLISHED, game_link=None, reddit_submission=None):
 		self.home_team = home_team
 		self.away_team = away_team
 		self.competition = competition
+		
+		self.comp_round = comp_round
+		self.comp_stage = comp_stage
 		
 		self.game_state = game_state
 		self.thread_state = thread_state
@@ -66,6 +69,22 @@ class RedditGameThread():
 	@competition.setter
 	def competition(self, value):
 		self._competition = value
+		
+	@property
+	def comp_round(self):
+		return self._comp_round
+
+	@comp_round.setter
+	def comp_round(self, value):
+		self._comp_round = value
+		
+	@property
+	def comp_stage(self):
+		return self._comp_stage
+
+	@comp_stage.setter
+	def comp_stage(self, value):
+		self._comp_stage = value
 
 	@property
 	def game_state(self):
@@ -107,7 +126,7 @@ class RedditGameThread():
 
 	# Improve error handling
 	def publishThread(self, args_info):
-		self.reddit_submission = createEmptyThread(self.home_team, self.away_team, self.args_info)
+		self.reddit_submission = createEmptyThread(self.home_team, self.away_team, self.comp_round, self.comp_stage, self.args_info)
 
 		if self.reddit_submission is not None:
 			self.thread_state = ThreadState.PUBLISHED

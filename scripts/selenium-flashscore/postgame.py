@@ -191,7 +191,6 @@ def getGamesLinks(games_list, args_info):
 
 	return games_list
 
-
 def getGameLink(home_team, away_team, comp_home_link, all_game_links):
 	home_team_parsed = team_info_by_fs.get(home_team)
 	away_team_parsed = team_info_by_fs.get(away_team)
