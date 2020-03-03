@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup
 import sys
 import praw
 from collections import namedtuple
+from dotenv import load_dotenv
+from pathlib import Path
+import os
 
 team_names_parsed = dict()
 
@@ -120,6 +123,11 @@ def getEuroLeagueGames(now_time, soup):
 def bold(text):
 	return '**' + text + '**'
 
+def prepareDotEnv():
+	load_dotenv()
+	env_path = Path('..') / 'credentials.env'
+	load_dotenv(dotenv_path=env_path)
+
 if __name__ == '__main__':
 	ArgsParseTuple = namedtuple('ArgsParseTuple', 'results_url comp_full_name comp_small_name markdown_function')
 	args_dict = dict()
@@ -129,6 +137,8 @@ if __name__ == '__main__':
 	
 	if(sys.argv[1] not in args_dict):
 		sys.exit()
+
+	prepareDotEnv()
 		
 	args_info = args_dict.get(sys.argv[1])
 
@@ -140,11 +150,11 @@ if __name__ == '__main__':
 	final_markdown = DOUBLE_NEWLINE.join([*(list(zip(*games_markdown))[1]),  'You can ask for and share streams in the comments here, do not submit separate threads about streaming please.'])
 	final_title = "{today_date} {competition} Matches Live Thread".format(today_date=now_time.strftime('%d %B %Y'), competition=args_info.comp_full_name)
 
-	reddit = praw.Reddit(client_id='Qbl7w1uV9945aw',
-						client_secret='a8S1qsebIhlWQyPrVTHp0mH5dAA',
-						password='tQ#1O&4k32Xy',
-						user_agent='Euroleague Live Game Thread Script',
-						username='Al-Farrekt-Aminu')
+	reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
+						client_secret=os.getenv("REDDIT_APP_SECRET"),
+						password=os.getenv("REDDIT_PASSWORD"),
+						username=os.getenv("REDDIT_ACCOUNT"),
+						user_agent="r/EuroLeague Live Game Thread Generator Script")
 
 	el_sub = reddit.subreddit('Euroleague')
 
