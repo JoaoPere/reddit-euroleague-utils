@@ -197,7 +197,7 @@ def getScoresTable(soup, home_team, away_team):
 
 	return getFinalScoreMarkdown(home_team, home_team_score, away_team, away_team_score)
 
-def createEmptyThread(home_team, away_team, args_info): 
+def createEmptyThread(home_team, away_team, comp_round, comp_stage, args_info): 
 	home_team_parsed = teams_flashscore_parsed.get(home_team)
 	away_team_parsed = teams_flashscore_parsed.get(away_team)
  
@@ -226,6 +226,8 @@ def getGamesLinks(games_list, args_info):
 	# Possibly change this for a map/list solution if class variable assignments is a thing
 	for game in games_list:
 		game.game_link = getGameLink(game.home_team, game.away_team, args_info.comp_home_link, all_game_links)
+		game.comp_round = comp_round
+		game.comp_stage = comp_stage
 
 	return games_list
 
