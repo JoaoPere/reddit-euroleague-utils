@@ -157,30 +157,10 @@ def getScoresTable(soup, home_team, away_team):
 
 	return getFinalScoreMarkdown(home_team, home_team_score, away_team, away_team_score)
 
-# TODO: Extract game_link retrieval to method so that it can be called when reinitializing bot with threads in placeholder mode
-def createEmptyThread(home_team, away_team, args_info):     
-	r = requests.get(args_info.comp_results_link)
-	soup = BeautifulSoup(r.text,'html.parser')
-		
-	home_team_parsed = team_info_by_fs.get(home_team)
-	away_team_parsed = team_info_by_fs.get(away_team)
-	
-	stage_round_spans = soup.find('div', class_='gc-title').find_all('span')
-	comp_stage = stage_round_spans[1].text
-	comp_round = stage_round_spans[2].text
-	
-	all_games_div = soup.find('div', class_='wp-module-asidegames')
-	all_game_links = all_games_div.find_all('a', class_='game-link')
-	
-	for a_game in all_game_links:
-		clubs = a_game.find_all('div', class_='club')
-		
-		home_club_name = clubs[0].find('span', class_='name').text
-		away_club_name = clubs[1].find('span', class_='name').text
-		
-		if home_team_parsed.official == home_club_name and away_team_parsed.official == away_club_name:
-			game_link = args_info.comp_home_link + a_game['href']
-			
+def createEmptyThread(home_team, away_team, comp_round, comp_stage, args_info): 
+	home_team_parsed = team_info_by_fs.get(home_team).reddit
+	away_team_parsed = team_info_by_fs.get(away_team).reddit
+ 
 	title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(comp=args_info.comp_full_name, home_team=home_team_parsed.reddit, away_team=away_team_parsed.reddit, comp_round=comp_round, comp_stage=comp_stage)
 	final_markdown = REDDIT_THREAD_PLACEHOLDER_TEXT
 	
@@ -190,22 +170,32 @@ def createEmptyThread(home_team, away_team, args_info):
 	template_id = next(x for x in flair_choices if x['flair_text'].replace(':','') == args_info.comp_small_name)['flair_template_id']
 	submission.flair.select(template_id)
 	
-	return (submission,game_link)
+	return submission
 
-def getGameLink(home_team, away_team, args_info):
+def getGamesLinks(games_list, args_info):
 	r = requests.get(args_info.comp_results_link)
 	soup = BeautifulSoup(r.text,'html.parser')
-		
-	home_team_parsed = team_info_by_fs.get(home_team)
-	away_team_parsed = team_info_by_fs.get(away_team)
-	
+
 	stage_round_spans = soup.find('div', class_='gc-title').find_all('span')
 	comp_stage = stage_round_spans[1].text
 	comp_round = stage_round_spans[2].text
 	
 	all_games_div = soup.find('div', class_='wp-module-asidegames')
 	all_game_links = all_games_div.find_all('a', class_='game-link')
-	
+
+	# Possibly change this for a map/list solution if class variable assignments is a thing
+	for game in games_list:
+		game.game_link = getGameLink(game.home_team, game.away_team, args_info.comp_home_link, all_game_links)
+		game.comp_round = comp_round
+		game.comp_stage = comp_stage
+
+	return games_list
+
+
+def getGameLink(home_team, away_team, comp_home_link, all_game_links):
+	home_team_parsed = team_info_by_fs.get(home_team)
+	away_team_parsed = team_info_by_fs.get(away_team)
+
 	for a_game in all_game_links:
 		clubs = a_game.find_all('div', class_='club')
 		
@@ -213,7 +203,11 @@ def getGameLink(home_team, away_team, args_info):
 		away_club_name = clubs[1].find('span', class_='name').text
 		
 		if home_team_parsed.official == home_club_name and away_team_parsed.official == away_club_name:
-			game_link = args_info.comp_home_link + a_game['href']
+			game_link = comp_home_link + a_game['href']
+
+			return game_link
+
+	return None
 
 def checkIfPageReady(soup):
 	# Checks if the top scores panel exists
@@ -259,29 +253,23 @@ def getTodaysThreads():
 		
 	return threads
 
-def getTodaysPostGameThreads(args_info):
+def getTodaysPostGameThreads(comp_full_name):
 	todays_threads = getTodaysThreads()
 	
-	title_regex = r"Post-Match Thread: (.*?)-(.*?)\[(EuroLeague|EuroCup)(.*?)\]"    
+	title_regex = r"Post-Match Thread: (.*?)-(.*?)\[" + re.escape(comp_full_name) + r"(.*?)\]"    
 	post_game_threads = [(thread, extractThreadTitleInformation(thread.title)) for thread in todays_threads if re.match(title_regex, thread.title)]
 
-	# Hardcoded position of the competition field contained in the tuple
-			 
-	post_game_threads = list(filter(lambda p: p[1][2] == args_info.comp_full_name, post_game_threads))
-
-	return post_game_threads    
+	return post_game_threads
 
 def extractThreadTitleInformation(thread_title):
-	# Return home_team, away_team, and competition in Reddit format 
-	
+	# Return home_team and away team in Reddit format 
 	title_group_regex = r"Post-Match Thread: (?P<home_team>.*?) - (?P<away_team>.*?) \[(?P<competition>(\w+))"
 	title_group = re.search(title_group_regex, thread_title)
 	
 	home_team = findFlashScoreNameByRedditName(title_group.group('home_team').strip())
 	away_team = findFlashScoreNameByRedditName(title_group.group('away_team').strip())
-	competition = title_group.group('competition').strip()
 	
-	return (home_team, away_team, competition)
+	return home_team, away_team
 
 def findFlashScoreNameByRedditName(name):
 	for fsname in team_info_by_fs.keys():
