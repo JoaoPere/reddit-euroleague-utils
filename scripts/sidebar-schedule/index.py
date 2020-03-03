@@ -4,36 +4,19 @@ import praw
 import sys
 from datetime import datetime, timezone, tzinfo
 
+sys.path.append('..')
+
+from team_structs import team_info_by_official
+
 CELL_ALLIGNMENT = ':-:'
 TABLE_DELIM = '|'
 NEWLINE = '\n'
 
-team_names_parsed = dict()
-
-team_names_parsed['CSKA Moscow'] = '[CSK](https://www.euroleague.net/competition/teams/showteam?clubcode=CSK&seasoncode=E2019)'
-team_names_parsed['Fenerbahce Beko Istanbul'] = '[FNB](https://www.euroleague.net/competition/teams/showteam?clubcode=ULK&seasoncode=E2019)'
-team_names_parsed['Anadolu Efes Istanbul'] = '[EFS](https://www.euroleague.net/competition/teams/showteam?clubcode=IST&seasoncode=E2019)'
-team_names_parsed['FC Bayern Munich'] = '[BAY](https://www.euroleague.net/competition/teams/showteam?clubcode=MUN&seasoncode=E2019)'
-team_names_parsed['FC Barcelona'] = '[BAR](https://www.euroleague.net/competition/teams/showteam?clubcode=BAR&seasoncode=E2019)'
-team_names_parsed['Olympiacos Piraeus'] = '[OLY](https://www.euroleague.net/competition/teams/showteam?clubcode=OLY&seasoncode=E2019)'
-team_names_parsed['Khimki Moscow Region'] = '[KHI](https://www.euroleague.net/competition/teams/showteam?clubcode=KHI&seasoncode=E2019)'
-team_names_parsed['Maccabi FOX Tel Aviv'] = '[MTA](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2019)'
-team_names_parsed['Zalgiris Kaunas'] = '[ZAL](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2019)'
-team_names_parsed['KIROLBET Baskonia Vitoria-Gasteiz'] = '[KBA](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2019)'
-team_names_parsed['Real Madrid'] = '[RMA](https://www.euroleague.net/competition/teams/showteam?clubcode=MAD&seasoncode=E2019)'
-team_names_parsed['AX Armani Exchange Milan'] = '[MIL](https://www.euroleague.net/competition/teams/showteam?clubcode=MIL&seasoncode=E2019)'
-team_names_parsed['Panathinaikos OPAP Athens'] = '[PAO](https://www.euroleague.net/competition/teams/showteam?clubcode=PAN&seasoncode=E2019)'
-team_names_parsed['LDLC ASVEL Villeurbanne'] = '[ASV](https://www.euroleague.net/competition/teams/showteam?clubcode=ASV&seasoncode=E2019)'
-team_names_parsed['ALBA Berlin'] = '[BER](https://www.euroleague.net/competition/teams/showteam?clubcode=BER&seasoncode=E2019)'
-team_names_parsed['Valencia Basket'] = '[VBC](https://www.euroleague.net/competition/teams/showteam?clubcode=PAM&seasoncode=E2019)'
-team_names_parsed['Crvena Zvezda mts Belgrade'] = '[CZV](https://www.euroleague.net/competition/teams/showteam?clubcode=RED&seasoncode=E2019)'
-team_names_parsed['Zenit St Petersburg'] = '[ZEN](https://www.euroleague.net/competition/teams/showteam?clubcode=DYR&seasoncode=E2019)'
-
 def appendTableDelimitors(content):
 	return TABLE_DELIM + content + TABLE_DELIM
 
-def getScheduleTable():
-	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&phasetypecode=RS&seasoncode=E2019'.format(sys.argv[1]))
+def getScheduleTable(week):
+	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&phasetypecode=RS&seasoncode=E2019'.format(week))
 	
 	soup = BeautifulSoup(r.text,'html.parser')
 	
@@ -54,8 +37,8 @@ def getScheduleTable():
 	for idx, html_game in enumerate(schedule_html_games):
 		both_clubs = html_game.find_all("div", class_="club")
 		
-		home_team_name = team_names_parsed.get(str(both_clubs[0].find("span", class_="name").get_text()))
-		away_team_name = team_names_parsed.get(str(both_clubs[1].find("span", class_="name").get_text()))
+		home_team_name = team_info_by_official.get(str(both_clubs[0].find("span", class_="name").get_text())).letter3_md
+		away_team_name = team_info_by_official.get(str(both_clubs[1].find("span", class_="name").get_text())).letter3_md
 		game_date = html_game.find("span", class_="date").get_text()
 	
 		# Removes "CET" from the string
@@ -74,4 +57,4 @@ def getScheduleTable():
 	return final_table
 
 if __name__ == '__main__':
-	print(getScheduleTable())
+	print(getScheduleTable(sys.argv[1]))
