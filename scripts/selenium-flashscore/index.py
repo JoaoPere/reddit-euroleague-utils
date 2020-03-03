@@ -179,8 +179,7 @@ def updateThreads(games_list, args_info):
 				num_games_completed += 1
 
 	if num_games_completed == len(games_list):
-		#os.kill(os.getpid(), signal.SIGUSR1)
-		pass
+		os.kill(os.getpid(), signal.SIGUSR1)
 
 #TODO: Improve checking conditions for finished games. Possible try/catch blocks
 def loop(games_list, args_info):
@@ -258,4 +257,4 @@ if __name__ == '__main__':
 	games_list = getGamesLinks(games_list, RedditGameThread.args_info)
 
 	rt = RepeatedTimer(LOOP_TIME, loop, games_list, RedditGameThread.args_info) # it auto-starts, no need of rt.start()
-	#signal.signal(signal.SIGUSR1, partial(service_shutdown, driver, rt))
+	signal.signal(signal.SIGUSR1, partial(service_shutdown, driver, rt))
