@@ -223,6 +223,7 @@ def getGamesLinks(games_list, args_info):
 	all_games_div = soup.find('div', class_='wp-module-asidegames')
 	all_game_links = all_games_div.find_all('a', class_='game-link')
 
+	# Possibly change this for a map/list solution if class variable assignments is a thing
 	for game in games_list:
 		game.game_link = getGameLink(game.home_team, game.away_team, args_info.comp_home_link, all_game_links)
 
@@ -289,10 +290,10 @@ def getTodaysThreads():
 		
 	return threads
 
-def getTodaysPostGameThreads(args_info):
+def getTodaysPostGameThreads(comp_full_name):
 	todays_threads = getTodaysThreads()
 	
-	title_regex = r"Post-Match Thread: (.*?)-(.*?)\[" + re.escape(args_info.comp_full_name) + r"(.*?)\]"    
+	title_regex = r"Post-Match Thread: (.*?)-(.*?)\[" + re.escape(comp_full_name) + r"(.*?)\]"    
 	post_game_threads = [(thread, extractThreadTitleInformation(thread.title)) for thread in todays_threads if re.match(title_regex, thread.title)]
 
 	return post_game_threads

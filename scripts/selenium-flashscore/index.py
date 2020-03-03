@@ -218,7 +218,7 @@ def service_shutdown(driver, timer, *args):
 	
 def populateExistingPostMatchThreads(args_info):    
 	games_list = list()
-	post_game_threads = getTodaysPostGameThreads(args_info)
+	post_game_threads = getTodaysPostGameThreads(args_info.comp_full_name)
 	
 	for game_thread in post_game_threads:
 		submission = game_thread[0]
@@ -256,8 +256,6 @@ if __name__ == '__main__':
 	games_list = updateTodaysGamesFlashScore(driver, games_list, RedditGameThread.args_info)
 	print('FlashScore added the total ammount of today\'s games to {}'.format(len(games_list)))
 	games_list = getGamesLinks(games_list, RedditGameThread.args_info)
-
-	[print(game_reddit) for game_reddit in games_list]
 
 	rt = RepeatedTimer(30, loop, games_list, RedditGameThread.args_info) # it auto-starts, no need of rt.start()
 	#signal.signal(signal.SIGUSR1, partial(service_shutdown, driver, rt))
