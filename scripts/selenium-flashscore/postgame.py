@@ -197,7 +197,6 @@ def getScoresTable(soup, home_team, away_team):
 
 	return getFinalScoreMarkdown(home_team, home_team_score, away_team, away_team_score)
 
-# TODO: Extract game_link retrieval to method so that it can be called when reinitializing bot with threads in placeholder mode
 def createEmptyThread(home_team, away_team, args_info): 
 	home_team_parsed = teams_flashscore_parsed.get(home_team)
 	away_team_parsed = teams_flashscore_parsed.get(away_team)
@@ -213,20 +212,26 @@ def createEmptyThread(home_team, away_team, args_info):
 	
 	return submission
 
-def getGameLink(home_team, away_team, args_info):
-	home_team_parsed = teams_flashscore_parsed.get(home_team)
-	away_team_parsed = teams_flashscore_parsed.get(away_team)
-
+def getGamesLinks(games_list, args_info):
 	r = requests.get(args_info.comp_results_link)
 	soup = BeautifulSoup(r.text,'html.parser')
-	
+
 	stage_round_spans = soup.find('div', class_='gc-title').find_all('span')
 	comp_stage = stage_round_spans[1].text
 	comp_round = stage_round_spans[2].text
 	
 	all_games_div = soup.find('div', class_='wp-module-asidegames')
 	all_game_links = all_games_div.find_all('a', class_='game-link')
-	
+
+	for game in games_list:
+		game.game_link = getGameLink(game.home_team, game.away_team, args_info.comp_home_link, all_game_links)
+
+	return games_list
+
+def getGameLink(home_team, away_team, comp_home_link, all_game_links):
+	home_team_parsed = teams_flashscore_parsed.get(home_team)
+	away_team_parsed = teams_flashscore_parsed.get(away_team)
+
 	for a_game in all_game_links:
 		clubs = a_game.find_all('div', class_='club')
 		
@@ -234,7 +239,7 @@ def getGameLink(home_team, away_team, args_info):
 		away_club_name = clubs[1].find('span', class_='name').text
 		
 		if home_team_parsed.official == home_club_name and away_team_parsed.official == away_club_name:
-			game_link = args_info.comp_home_link + a_game['href']
+			game_link = comp_home_link + a_game['href']
 
 			return game_link
 

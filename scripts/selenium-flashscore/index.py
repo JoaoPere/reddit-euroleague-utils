@@ -9,7 +9,7 @@ from functools import partial
 from collections import namedtuple
 
 #TODO: Improve imports, perhaps circunstancial function declarations changes
-from postgame import REDDIT_THREAD_PLACEHOLDER_TEXT, createEmptyThread, updateThread, getTodaysPostGameThreads, getGameLink
+from postgame import REDDIT_THREAD_PLACEHOLDER_TEXT, createEmptyThread, updateThread, getTodaysPostGameThreads, getGamesLinks
 
 class ThreadState(Enum):
 	UNPUBLISHED = 0,
@@ -31,6 +31,9 @@ class RedditGameThread():
 		
 		self.game_link = game_link
 		self.reddit_submission = reddit_submission
+
+	def __str__(self):
+		return "{} vs {} in {} - {} / {}\nGame Link: {}\nReddit Submission: {}\n".format(self.home_team, self.away_team, self.competition, self.game_state, self.thread_state, self.game_link, self.reddit_submission)
 
 	def __eq__(self, other):
 		"""Overrides the default implementation"""
@@ -81,11 +84,8 @@ class RedditGameThread():
 	def thread_state(self, value):
 		if value not in ThreadState:
 			raise ValueError('Invalid thread state')
-		else:
-			self._thread_state = value
 
-			if self.thread_state == ThreadState.PUBLISHED:
-				self.game_link = getGameLink(self.home_team, self.away_team, self.args_info)
+		self._thread_state = value
 
 	@property
 	def game_link(self):
@@ -103,10 +103,14 @@ class RedditGameThread():
 	def reddit_submission(self, value):
 		self._reddit_submission = value
 
+	# Improve error handling
 	def publishThread(self, args_info):
-		self.thread_state = ThreadState.PUBLISHED
 		self.reddit_submission = createEmptyThread(self.home_team, self.away_team, self.args_info)
-		
+
+		if self.reddit_submission is not None:
+			self.thread_state = ThreadState.PUBLISHED
+
+	# Improve error handling
 	def updateThread(self):
 		if self.reddit_submission is None:
 			raise ValueError('Reddit Thread should not be null')
@@ -165,23 +169,18 @@ def updateThreads(games_list, args_info):
 	print('---------------------------------')
 
 	for game_reddit in games_list:
-		print('{} vs {} => {} - {}'.format(game_reddit.home_team, game_reddit.away_team, game_reddit.game_state, game_reddit.thread_state))
+		print(game_reddit)
 		if game_reddit.game_state == GameState.FINISHED:
 			if game_reddit.thread_state == ThreadState.UNPUBLISHED:
-				print('Publishing thread')
 				game_reddit.publishThread(args_info)
 			elif game_reddit.thread_state == ThreadState.PUBLISHED:
-				print('Trying to update thread')
 				game_reddit.updateThread()
 			elif game_reddit.thread_state == ThreadState.COMPLETED:
-				print('Post-Match thread complete')
 				num_games_completed += 1
-				
-		elif game_reddit.game_state == GameState.UNFINISHED:
-			   print('Game is yet to end')
-							  
+
 	if num_games_completed == len(games_list):
-		os.kill(os.getpid(), signal.SIGUSR1)
+		#os.kill(os.getpid(), signal.SIGUSR1)
+		pass
 
 #TODO: Improve checking conditions for finished games. Possible try/catch blocks
 def loop(games_list, args_info):
@@ -206,8 +205,8 @@ def loop(games_list, args_info):
 
 		reddit_game_thread = RedditGameThread(home_team, away_team, args_info.comp_full_name, game_state=game_state)
 		
-		if reddit_game_thread in games_list:
-			index = games_list.index(reddit_game_thread)
+		index = games_list.index(reddit_game_thread)
+		if index is not None:
 			games_list[index].game_state = game_state
 			
 	updateThreads(games_list, args_info)
@@ -237,7 +236,7 @@ def printUsage():
 	pass
 	
 if __name__ == '__main__':
-	ArgsParseTuple = namedtuple('ArgsParseTuple', 'fslink comp_results_link comp_home_link comp_full_name comp_small_name')
+	ArgsParseTuple = namedtuple('ArgsParseTuple', 'fs_link comp_results_link comp_home_link comp_full_name comp_small_name')
 	args_dict = dict()
 	
 	args_dict['EL'] = ArgsParseTuple('https://www.flashscore.com/basketball/europe/euroleague/', 'https://www.euroleague.net/main/results', 'https://www.euroleague.net', 'EuroLeague', 'EL')
@@ -250,12 +249,15 @@ if __name__ == '__main__':
 	RedditGameThread.args_info = args_dict.get(sys.argv[1])
 	
 	driver = webdriver.Firefox()
-	driver.get(RedditGameThread.args_info.fslink)
+	driver.get(RedditGameThread.args_info.fs_link)
 	
 	games_list = populateExistingPostMatchThreads(RedditGameThread.args_info)
 	print('Populated {} games from Reddit'.format(len(games_list)))
 	games_list = updateTodaysGamesFlashScore(driver, games_list, RedditGameThread.args_info)
 	print('FlashScore added the total ammount of today\'s games to {}'.format(len(games_list)))
-	
+	games_list = getGamesLinks(games_list, RedditGameThread.args_info)
+
+	[print(game_reddit) for game_reddit in games_list]
+
 	rt = RepeatedTimer(30, loop, games_list, RedditGameThread.args_info) # it auto-starts, no need of rt.start()
-	signal.signal(signal.SIGUSR1, partial(service_shutdown, driver, rt))
+	#signal.signal(signal.SIGUSR1, partial(service_shutdown, driver, rt))
