@@ -4,6 +4,11 @@ from results import getResultsTable
 import sys
 import praw
 import re
+import os
+
+sys.path.append('..')
+
+from prepare_dot_env import prepareDotEnv
 
 def updateOldReddit(subreddit, sidebar_tables):
 	results_table_old_urls = re.sub('https://www.reddit.com/', 'https://old.reddit.com/', sidebar_tables['Results'])
@@ -31,16 +36,18 @@ def updateNewReddit(subreddit, sidebar_tables):
 if __name__ == '__main__':
 	gameweek_number = int(sys.argv[1])
 
+	prepareDotEnv()
+
 	# TODO: Add support to playoffs
 	standings_table = getStandingsTable()
 	results_table = getResultsTable(gameweek_number)
 	schedule_table = getScheduleTable(gameweek_number + 1)
 
-	reddit = praw.Reddit(client_id='DqcFxX1SwJkLDQ',
-						 client_secret='mbFOhcHP9sxbs5PmnoojCqjxDm0',
-						 password='tQ#1O&4k32Xy',
-						 user_agent='Euroleague Post-Game Thread Script',
-						 username='Al-Farrekt-Aminu')
+	reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
+						client_secret=os.getenv("REDDIT_APP_SECRET"),
+						password=os.getenv("REDDIT_PASSWORD"),
+						username=os.getenv("REDDIT_ACCOUNT"),
+						user_agent="r/EuroLeague Sidebar Update Script")
 	
 	el_sub = reddit.subreddit('Euroleague')
 	

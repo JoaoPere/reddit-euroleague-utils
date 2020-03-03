@@ -1,30 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
+import sys
+
+sys.path.append('..')
+
+from team_structs import team_info_by_official
 
 CELL_ALLIGNMENT = ':-:'
 TABLE_DELIM = '|'
 NEWLINE = '\n'
-
-team_names_parsed = dict()
-
-team_names_parsed['CSKA Moscow'] = '[CSKA Moscow](https://www.euroleague.net/competition/teams/showteam?clubcode=CSK&seasoncode=E2019)'
-team_names_parsed['Fenerbahce Beko Istanbul'] = '[Fenerbahçe](https://www.euroleague.net/competition/teams/showteam?clubcode=ULK&seasoncode=E2019)'
-team_names_parsed['Anadolu Efes Istanbul'] = '[Anadolu Efes](https://www.euroleague.net/competition/teams/showteam?clubcode=IST&seasoncode=E2019)'
-team_names_parsed['FC Bayern Munich'] = '[Bayern Munich](https://www.euroleague.net/competition/teams/showteam?clubcode=MUN&seasoncode=E2019)'
-team_names_parsed['FC Barcelona'] = '[Barcelona](https://www.euroleague.net/competition/teams/showteam?clubcode=BAR&seasoncode=E2019)'
-team_names_parsed['Olympiacos Piraeus'] = '[Olympiacos](https://www.euroleague.net/competition/teams/showteam?clubcode=OLY&seasoncode=E2019)'
-team_names_parsed['Khimki Moscow Region'] = '[Khimki](https://www.euroleague.net/competition/teams/showteam?clubcode=KHI&seasoncode=E2019)'
-team_names_parsed['Maccabi FOX Tel Aviv'] = '[Maccabi Tel Aviv](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2019)'
-team_names_parsed['Zalgiris Kaunas'] = '[Zalgiris Kaunas](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2019)'
-team_names_parsed['KIROLBET Baskonia Vitoria-Gasteiz'] = '[Saski Baskonia](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2019)'
-team_names_parsed['Real Madrid'] = '[Real Madrid](https://www.euroleague.net/competition/teams/showteam?clubcode=MAD&seasoncode=E2019)'
-team_names_parsed['AX Armani Exchange Milan'] = '[Olimpia Milano](https://www.euroleague.net/competition/teams/showteam?clubcode=MIL&seasoncode=E2019)'
-team_names_parsed['Panathinaikos OPAP Athens'] = '[Panathinaikos](https://www.euroleague.net/competition/teams/showteam?clubcode=PAN&seasoncode=E2019)'
-team_names_parsed['LDLC ASVEL Villeurbanne'] = '[ASVEL](https://www.euroleague.net/competition/teams/showteam?clubcode=ASV&seasoncode=E2019)'
-team_names_parsed['ALBA Berlin'] = '[Alba Berlin](https://www.euroleague.net/competition/teams/showteam?clubcode=BER&seasoncode=E2019)'
-team_names_parsed['Valencia Basket'] = '[Valencia](https://www.euroleague.net/competition/teams/showteam?clubcode=PAM&seasoncode=E2019)'
-team_names_parsed['Crvena Zvezda mts Belgrade'] = '[Crvena Zvezda](https://www.euroleague.net/competition/teams/showteam?clubcode=RED&seasoncode=E2019)'
-team_names_parsed['Zenit St Petersburg'] = '[Zenit](https://www.euroleague.net/competition/teams/showteam?clubcode=DYR&seasoncode=E2019)'
 
 def appendTableDelimitors(content):
 	return TABLE_DELIM + content + TABLE_DELIM
@@ -52,7 +36,7 @@ def getStandingsTable():
 		# Strips all the leading and trailing white space, removes the digits and shifts the string 2 positions to remove the '. ' substring
 		team_name = ''.join([i for i in team_ahref.strip() if not i.isdigit()])[2:]
 	
-		team_markdown = team_names_parsed.get(team_name)
+		team_markdown = team_info_by_official.get(team_name).full_md
 	
 		position = str(idx + 1)
 		wins = cols[1].text.strip()
