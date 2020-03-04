@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import praw
 from pprint import pprint
-from collections import namedtuple
 from datetime import datetime, timedelta
 import re
 import sys
@@ -12,7 +11,7 @@ import os
 sys.path.append('..')
 
 from team_structs import team_info_by_fs
-from prepareDotEnv import prepareDotEnv
+from prepare_dot_env import prepareDotEnv
 
 s = requests.Session()
 s.mount('http://', HTTPAdapter(max_retries=sys.maxsize))
@@ -51,7 +50,7 @@ reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
 					client_secret=os.getenv("REDDIT_APP_SECRET"),
 					password=os.getenv("REDDIT_PASSWORD"),
 					username=os.getenv("REDDIT_ACCOUNT"),
-					user_agent="r/EuroLeague Post Game Thread Generator Script")
+					user_agent="r/EuroLeague Master Script")
 
 el_sub = reddit.subreddit('Euroleague')
 
