@@ -160,7 +160,7 @@ def createEmptyThread(home_team, away_team, comp_round, comp_stage, args_info):
 	home_team_parsed = team_info_by_fs.get(home_team).reddit
 	away_team_parsed = team_info_by_fs.get(away_team).reddit
  
-	title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(comp=args_info.comp_full_name, home_team=home_team_parsed.reddit, away_team=away_team_parsed.reddit, comp_round=comp_round, comp_stage=comp_stage)
+	title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(comp=args_info.comp_full_name, home_team=home_team_parsed, away_team=away_team_parsed, comp_round=comp_round, comp_stage=comp_stage)
 	final_markdown = REDDIT_THREAD_PLACEHOLDER_TEXT
 	
 	submission = el_sub.submit(title=title,selftext=final_markdown)
