@@ -73,7 +73,8 @@ def getQuarterScoresMarkdown(soup, home_team, away_team):
 	quarter_table = soup.find(id="ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_PartialsStatsByQuarter_dgPartials")
 	quarter_table_rows = quarter_table.find_all('tr')
 
-	final_table = getRedditTableHeadAndCellAlignment(['BY QUARTER','1','2','3','4'])
+	table_head_elements = [th.text.upper() for th in quarter_table_rows[0].find_all('th')]
+	final_table = getRedditTableHeadAndCellAlignment(table_head_elements)
 
 	for idx, row in enumerate(quarter_table_rows[1:]):
 		quarter_table_cols = row.find_all('td')
