@@ -33,7 +33,7 @@ def getResultThread(home_team, away_team, el_round, new_submissions):
 
 # TODO: Add support to playoffs
 def getResultsTable(week):
-	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&phasetypecode=RS&seasoncode=E2019'.format(week))
+	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&seasoncode=E2019'.format(week))
 	
 	soup = BeautifulSoup(r.text,'html.parser')
 	
