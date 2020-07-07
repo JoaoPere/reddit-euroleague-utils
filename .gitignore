@@ -1,7 +1,8 @@
-scripts/selenium-flashscore/__pycache__
 scripts/selenium-flashscore/geckodriver.log
 scripts/selenium-flashscore/postgame.pyc
-scripts/sidebar-update/__pycache__
-scripts/__pycache__
+__pycache__/
 credentials.env
 credentials_bot.env
+redditutils.egg-info/
+.vscode
+geckodriver
