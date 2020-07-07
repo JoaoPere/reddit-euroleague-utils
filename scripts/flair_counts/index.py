@@ -1,3 +1,4 @@
+from prepare_dot_env import prepareDotEnv
 import praw
 import os
 from dotenv import load_dotenv
@@ -10,7 +11,6 @@ import sys
 
 sys.path.append('..')
 
-from prepare_dot_env import prepareDotEnv
 
 def printAllFlairsAssigned(subreddit):
     redditors_flairs = [re.sub(r":.*:\s", "", template['flair_text'])
@@ -22,20 +22,23 @@ def printAllFlairsAssigned(subreddit):
     print('Flair| Count')
     print('---|---')
     for flair_count in all_elements:
-        print('{} | {}'.format(flair_count[0],flair_count[1]))
+        print('{} | {}'.format(flair_count[0], flair_count[1]))
 
     print()
-    print('Total number of teams with flairs assigned: {}'.format(len(redditors_flairs_counter)))
+    print('Total number of teams with flairs assigned: {}'.format(
+        len(redditors_flairs_counter)))
     print('Total flairs assigned: {}'.format(len(redditors_flairs)))
+
 
 def printRedditorsFromClub(subreddit, club):
     redditors_flairs_club = [(re.sub(r":.*:\s", "", template['flair_text']), template['user'].name)
-                        for template in subreddit.flair(limit=None)]
+                             for template in subreddit.flair(limit=None)]
 
     club_fans = list(filter(lambda f: f[0] == club, redditors_flairs_club))
     redditor_names = list(map(lambda f: 'u/{}'.format(f[1]), club_fans))
 
     print(', '.join(redditor_names))
+
 
 if __name__ == "__main__":
     prepareDotEnv()

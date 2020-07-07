@@ -13,7 +13,8 @@ SUBREDDIT_NAME = 'Euroleague'
 
 
 def getCommentAndSubmissionStreams(subreddit):
-    comment_stream = subreddit.stream.comments(pause_after=-1, skip_existing=True)
+    comment_stream = subreddit.stream.comments(
+        pause_after=-1, skip_existing=True)
     submission_stream = subreddit.stream.submissions(
         pause_after=-1, skip_existing=True)
 
