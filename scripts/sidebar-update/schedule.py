@@ -16,7 +16,7 @@ def appendTableDelimitors(content):
 	return TABLE_DELIM + content + TABLE_DELIM
 
 def getScheduleTable(week):
-	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&seasoncode=E2019'.format(week))
+	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&seasoncode=E2020'.format(week))
 	
 	soup = BeautifulSoup(r.text,'html.parser')
 	

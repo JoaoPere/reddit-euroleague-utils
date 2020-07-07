@@ -1,9 +1,11 @@
 If you can't find the flair you wish on the list, contact the mod team or read the "flairs" section of the [rules page](https://old.reddit.com/r/Euroleague/wiki/rules).
 
+Having trouble or don't know how to set your flair? Learn how to do so [here](https://old.reddit.com/r/Euroleague/comments/hjc9bh/a_guide_on_how_to_setup_your_own_user_flair/).
+
 -----------------------------------------
 
 ##About r/Euroleague
-Even though this subreddit is named after a European basketball tournament organiser (EuroLeague), this is a space where we **aim to cover all International basketball activities (excluding the NBA)**, while preserving the focus on both EuroLeague and EuroCup during club season.
+Even though this subreddit is named after EuroLeague and EuroCup's governing body (Euroleague Basketball), this is a space where we aim to cover all European basketball activities including relevant national team competitions, European youth basketball and all levels of European club basketball.
 
 r/Euroleague was created in 2011, but was activated in 2018.
 
@@ -15,10 +17,6 @@ All rules can be found [here](https://old.reddit.com/r/Euroleague/wiki/rules). R
 
 -----------------------------------------
 
-Join the official [r/Euroleague fantasy league](https://fantasychallenge.euroleague.net) with code P6MY76W2
-
------------------------------------------
-
 {standings}
 
 -----------------------------------------
@@ -27,9 +25,10 @@ Join the official [r/Euroleague fantasy league](https://fantasychallenge.eurolea
 
 -----------------------------------------
 
-{scheule}
+{schedule}
 
 -----------------------------------------
+
 
 ##Official Links
 

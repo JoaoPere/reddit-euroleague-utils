@@ -126,7 +126,7 @@ class Game():
 
 # Works solely for regular season
 def getResultsTableForRegularSeason(week):
-	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&seasoncode=E2019'.format(week))
+	r = requests.get('https://www.euroleague.net/main/results?gamenumber={}&seasoncode=E2020'.format(week))
 	
 	soup = BeautifulSoup(r.text,'html.parser')
 	
@@ -215,6 +215,8 @@ def getResultsTableForPlayoffs(week):
 
 def getResultsTable(week):
 	week_int = int(week)
+	if week_int == 0:
+		return "**Round 1 hasn't finished. No results available right now**"
 	if week_int < 31:
 		return getResultsTableForRegularSeason(week)
 	else:
