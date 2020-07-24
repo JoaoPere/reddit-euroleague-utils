@@ -61,9 +61,8 @@ def handleNewComment(comment, toaster):
     print('Body: {}'.format(comment_body))
     print()
 
-    if not comment_author == me:
-        toaster.show_toast(title=comment_submission_title, msg=comment_by_author, icon_path='reddit.ico',
-                           duration=5, threaded=False, callback_on_click=lambda: openRedditSubmission(comment_url))
+    toaster.show_toast(title=comment_submission_title, msg=comment_by_author, icon_path='reddit.ico',
+                       duration=5, threaded=False, callback_on_click=lambda: openRedditSubmission(comment_url))
 
 
 def handleNewSubmission(submission, toaster):
@@ -81,11 +80,8 @@ def handleNewSubmission(submission, toaster):
     print('Author: {}'.format(submission_author))
     print('URL: {}'.format(submission_url))
     print()
-
-    # Do not show if it is my own
-    if not submission_author == me:
-        toaster.show_toast(title=submission_title, msg=submission_by_author, icon_path='reddit.ico',
-                           duration=5, threaded=False, callback_on_click=lambda: openRedditSubmission(submission_url))
+    toaster.show_toast(title=submission_title, msg=submission_by_author, icon_path='reddit.ico',
+                       duration=5, threaded=False, callback_on_click=lambda: openRedditSubmission(submission_url))
 
 
 def openRedditSubmission(url):
@@ -93,12 +89,10 @@ def openRedditSubmission(url):
 
 
 if __name__ == '__main__':
-    me = os.getenv("REDDIT_ACCOUNT")
-
     reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
                          client_secret=os.getenv("REDDIT_APP_SECRET"),
                          password=os.getenv("REDDIT_PASSWORD"),
-                         username=me,
+                         username=os.getenv("REDDIT_ACCOUNT"),
                          user_agent="r/EuroLeague Sidebar Update Script")
 
     el_sub = reddit.subreddit(SUBREDDIT_NAME)

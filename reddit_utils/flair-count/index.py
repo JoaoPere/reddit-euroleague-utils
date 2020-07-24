@@ -50,4 +50,4 @@ if __name__ == "__main__":
     subreddit = reddit.subreddit("Euroleague")
 
     printAllFlairsAssigned(subreddit)
-    #printRedditorsFromClub(subreddit, 'Auxilium Torino')
+    #printRedditorsFromClub(subreddit, 'Nizhny Novgorod')

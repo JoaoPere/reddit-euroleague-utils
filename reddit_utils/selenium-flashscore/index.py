@@ -210,7 +210,7 @@ def updateThreads(games_list, args_info):
                 num_games_completed += 1
 
     if num_games_completed == len(games_list):
-        os.kill(os.getpid(), signal.SIGUSR1)
+        os.kill(os.getpid(), signal.SIGUSR1)  # pylint: disable=E1101
 
 # TODO: Improve checking conditions for finished games. Possible try/catch blocks
 
@@ -305,4 +305,5 @@ if __name__ == '__main__':
 
     # it auto-starts, no need of rt.start()
     rt = RepeatedTimer(LOOP_TIME, loop, games_list, RedditGameThread.args_info)
-    signal.signal(signal.SIGUSR1, partial(service_shutdown, driver, rt))
+    signal.signal(signal.SIGUSR1, partial(  # pylint: disable=E1101
+        service_shutdown, driver, rt))
