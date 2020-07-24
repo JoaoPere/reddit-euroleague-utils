@@ -6,3 +6,4 @@ credentials_bot.env
 redditutils.egg-info/
 .vscode
 geckodriver
+reddit_utils/flair-dm/el_flairs.db
