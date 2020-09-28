@@ -1,4 +1,4 @@
-from reddit_utils import pre
+from reddit_utils import prepare_dot_env
 from reddit_utils.team_structs import team_info_by_official
 import requests
 from bs4 import BeautifulSoup
@@ -35,11 +35,11 @@ CELL_ALLIGNMENT = ':-'
 
 if sys.argv[1] == 'EL':
     r = requests.get(
-        'https://www.euroleague.net/main/results/showgame?gamecode={}&seasoncode=E2019'.format(sys.argv[2]))
+        'https://www.euroleague.net/main/results/showgame?gamecode={}&seasoncode=E2020'.format(sys.argv[2]))
     competition = 'EuroLeague'
 elif sys.argv[1] == 'EC':
     r = requests.get(
-        'https://www.eurocupbasketball.com/eurocup/games/results/showgame?gamecode={}&seasoncode=U2019'.format(sys.argv[2]))
+        'https://www.eurocupbasketball.com/eurocup/games/results/showgame?gamecode={}&seasoncode=U2020'.format(sys.argv[2]))
     competition = 'EuroCup'
 
 soup = BeautifulSoup(r.text, 'html.parser')
@@ -73,7 +73,7 @@ def getQuarterScoresMarkdown():
                            for th in quarter_table_rows[0].find_all('th')]
     final_table = getRedditTableHeadAndCellAlignment(table_head_elements)
 
-    for idx, row in enumerate(quarter_table_rows[1:]):
+    for row in quarter_table_rows[1:]:
         quarter_table_cols = row.find_all('td')
         quarter_table_cols = [ele.text.strip() for ele in quarter_table_cols]
 
@@ -110,7 +110,7 @@ def getTableMarkdown(table, name, coach):
     final_table = getRedditTableHeadAndCellAlignment([NUMBER, TEAM_MD, MINUTES, POINTS, FG2, FG3, FREE_TRHOWS,
                                                       OFF_REBOUNDS, DEF_REBOUNDS, TOT_REBOUNDS, ASSISTS, STEALS, TURNOVERS, BLOCKS, FOULS_COMMITED, PIR])
 
-    for idx, row in enumerate(table_rows[2: len(table_rows) - 1]):
+    for row in table_rows[2: len(table_rows) - 1]:
         cols = row.find_all('td')
         cols = [ele.text.strip() for ele in cols]
 

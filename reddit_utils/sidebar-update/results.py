@@ -133,8 +133,6 @@ class Game():
             [game_or_round_md, home_team_3lmd, away_team_3lmd, result]))
         return row_markdown
 
-# Works solely for regular season
-
 
 def getResultsTableForRegularSeason(week):
     r = requests.get(
@@ -192,7 +190,7 @@ def getResultsTableForPlayoffs(week):
 
     while week_loop <= week_int:
         r = requests.get(
-            'https://www.euroleague.net/main/results?gamenumber={}&seasoncode=E2019'.format(week_loop))
+            'https://www.euroleague.net/main/results?gamenumber={}&seasoncode=E2020'.format(week_loop))
         soup = BeautifulSoup(r.text, 'html.parser')
 
         # Result in 2nd element
@@ -207,7 +205,7 @@ def getResultsTableForPlayoffs(week):
         comp_stage = gc_title_spans[1].text
         game_str = gc_title_spans[2].text
 
-        for idx, html_game in enumerate(schedule_html_games):
+        for html_game in schedule_html_games:
             both_clubs = html_game.find_all("div", class_="club")
 
             home_team_official = both_clubs[0].find("span", class_="name").text

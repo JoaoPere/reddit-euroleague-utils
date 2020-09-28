@@ -112,12 +112,12 @@ def getTablesMarkdown(soup, home_team_name, away_team_name):
 def getTableMarkdown(table, name, coach):
     table_rows = table.find_all('tr')
 
-    TEAM_MD = team_info_by_fs.get(name).full_md.upper()
+    TEAM_MD = team_info_by_fs.get(name).full_md
 
     final_table = getRedditTableHeadAndCellAlignment([NUMBER, TEAM_MD, MINUTES, POINTS, FG2, FG3, FREE_TRHOWS,
                                                       OFF_REBOUNDS, DEF_REBOUNDS, TOT_REBOUNDS, ASSISTS, STEALS, TURNOVERS, BLOCKS, FOULS_COMMITED, PIR])
 
-    for idx, row in enumerate(table_rows[2: len(table_rows) - 1]):
+    for row in table_rows[2: len(table_rows) - 1]:
         cols = row.find_all('td')
         cols = [ele.text.strip() for ele in cols]
 
