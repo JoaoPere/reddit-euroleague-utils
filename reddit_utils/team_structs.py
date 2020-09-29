@@ -109,12 +109,12 @@ team_info_by_official['Olympiacos Piraeus'] = OfficialTeamParse('Olympiacos', '[
                                                                 '[Olympiacos](https://www.euroleague.net/competition/teams/showteam?clubcode=OLY&seasoncode=E2020)')
 team_info_by_official['Khimki Moscow Region'] = OfficialTeamParse(
     'Khimki', '[KHI](https://www.euroleague.net/competition/teams/showteam?clubcode=KHI&seasoncode=E2020)', '[Khimki](https://www.euroleague.net/competition/teams/showteam?clubcode=KHI&seasoncode=E2020)')
-team_info_by_official['Maccabi FOX Tel Aviv'] = OfficialTeamParse('Maccabi Tel Aviv', '[MTA](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2020)',
-                                                                  '[Maccabi Tel Aviv](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2020)')
+team_info_by_official['Maccabi Playtika Tel Aviv'] = OfficialTeamParse('Maccabi Tel Aviv', '[MTA](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2020)',
+                                                                       '[Maccabi Tel Aviv](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2020)')
 team_info_by_official['Zalgiris Kaunas'] = OfficialTeamParse('Zalgiris Kaunas', '[ZAL](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2020)',
                                                              '[Zalgiris Kaunas](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2020)')
-team_info_by_official['KIROLBET Baskonia Vitoria-Gasteiz'] = OfficialTeamParse('Saski Baskonia', '[KBA](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2020)',
-                                                                               '[Saski Baskonia](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2020)')
+team_info_by_official['TD Systems Baskonia Vitoria-Gasteiz'] = OfficialTeamParse('Saski Baskonia', '[KBA](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2020)',
+                                                                                 '[Saski Baskonia](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2020)')
 team_info_by_official['Real Madrid'] = OfficialTeamParse('Real Madrid', '[RMA](https://www.euroleague.net/competition/teams/showteam?clubcode=MAD&seasoncode=E2020)',
                                                          '[Real Madrid](https://www.euroleague.net/competition/teams/showteam?clubcode=MAD&seasoncode=E2020)')
 team_info_by_official['AX Armani Exchange Milan'] = OfficialTeamParse(
@@ -143,7 +143,7 @@ team_info_by_official['MoraBanc Andorra'] = OfficialTeamParse('BC Andorra', '[AN
                                                               '[BC Andorra](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=ANR&seasoncode=U2020)')
 team_info_by_official['ratiopharm Ulm'] = OfficialTeamParse('ratiopharm Ulm', '[ULM](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=ULM&seasoncode=U2020)',
                                                             '[ratiopharm Ulm](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=ULM&seasoncode=U2020)')
-team_info_by_official['Segafredo Virtus Bologna'] = OfficialTeamParse('Virtus Bologna', '[VIR](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=VIR&seasoncode=U2020)',
+team_info_by_official['Virtus Segafredo Bologna'] = OfficialTeamParse('Virtus Bologna', '[VIR](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=VIR&seasoncode=U2020)',
                                                                       '[Virtus Bologna](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=VIR&seasoncode=U2020)')
 team_info_by_official['Partizan NIS Belgrade'] = OfficialTeamParse('Partizan', '[PAR](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=PAR&seasoncode=U2020)',
                                                                    '[Partizan](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=PAR&seasoncode=U2020)')
@@ -155,8 +155,8 @@ team_info_by_official['Nanterre 92'] = OfficialTeamParse('Nanterre 92', '[NTR](h
                                                          '[Nanterre 92](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=NTR&seasoncode=U2020)')
 team_info_by_official['Joventut Badalona'] = OfficialTeamParse('Joventut Badalona', '[CJB](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=JOV&seasoncode=U2020)',
                                                                '[Joventut Badalona](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=JOV&seasoncode=U2020)')
-team_info_by_official['Germani Brescia Leonessa'] = OfficialTeamParse('Brescia Leonessa', '[BRE](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=BRE&seasoncode=U2020)',
-                                                                      '[Brescia Leonessa](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=BRE&seasoncode=U2020)')
+team_info_by_official['Germani Brescia'] = OfficialTeamParse('Brescia Leonessa', '[BRE](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=BRE&seasoncode=U2020)',
+                                                             '[Brescia Leonessa](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=BRE&seasoncode=U2020)')
 team_info_by_official['UNICS Kazan'] = OfficialTeamParse('UNICS Kazan', '[UNK](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=UNK&seasoncode=U2020)',
                                                          '[UNICS Kazan](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=UNK&seasoncode=U2020)')
 team_info_by_official['Cedevita Olimpija Ljubljana'] = OfficialTeamParse('Cedevita Olimpija Ljubljana', '[COL](https://www.eurocupbasketball.com/eurocup/competition/teams/showteam?clubcode=LJU&seasoncode=U2020)',
