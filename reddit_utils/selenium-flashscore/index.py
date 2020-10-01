@@ -23,7 +23,7 @@ class GameState(Enum):
     FINISHED = 1
 
 
-LOOP_TIME = 20
+LOOP_TIME = 120
 
 
 class RedditGameThread():

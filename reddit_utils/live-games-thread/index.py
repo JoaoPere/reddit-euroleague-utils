@@ -115,7 +115,7 @@ if __name__ == '__main__':
         print("No games today in {}".format(args_info.comp_full_name))
         sys.exit()
     final_markdown = DOUBLE_NEWLINE.join(
-        [*(list(zip(*games_markdown))[1]),  'You can ask for and share streams in the comments here, do not submit separate threads about streaming please.'])
+        [*(list(zip(*games_markdown))[1]),  'Asking for or sharing illegal streams is NOT allowed!'])
     final_title = "{today_date} {competition} Matches Live Thread".format(
         today_date=now_time.strftime('%d %B %Y'), competition=args_info.comp_full_name)
 

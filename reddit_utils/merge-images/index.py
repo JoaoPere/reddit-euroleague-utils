@@ -47,6 +47,7 @@ for idx, (club_code, im) in enumerate(el_images):
     new_im.paste(im, (x_offset, max_height))
     x_offset += im.size[0]
 
+    # For some reason, the x offset has to be negative
     css_rules.append(placeholder_css.format(
         code=club_code, x=str(idx * -22), y="22"))
     css_base_rules.append(placeholder_css_base.format(code=club_code))
