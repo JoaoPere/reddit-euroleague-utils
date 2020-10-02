@@ -14,8 +14,9 @@ from postgame import REDDIT_THREAD_PLACEHOLDER_TEXT, createEmptyThread, updateTh
 
 class ThreadState(Enum):
     UNPUBLISHED = 0,
-    PUBLISHED = 1,
-    COMPLETED = 2
+    PUBLISHING = 1
+    PUBLISHED = 2,
+    COMPLETED = 3
 
 
 class GameState(Enum):
@@ -130,6 +131,8 @@ class RedditGameThread():
 
     # Improve error handling
     def publishThread(self, args_info):
+        self.thread_state = ThreadState.PUBLISHING
+
         self.reddit_submission = createEmptyThread(
             self.home_team, self.away_team, self.comp_round, self.comp_stage, self.args_info)
 
