@@ -1,0 +1,67 @@
+1601714919730	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilew34vx8"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601714923933	Marionette	INFO	Listening on port 2287
+1601714923972	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601714925646	Marionette	INFO	Stopped listening on port 2287
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1601715116960	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilegNJQdN"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601715119994	Marionette	INFO	Listening on port 2374
+1601715120102	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601715140542	Marionette	INFO	Stopped listening on port 2374
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1601718118242	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileXmlH9d"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601718122301	Marionette	INFO	Listening on port 2822
+1601718122451	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601718122453	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"127.0.0.1:2812","noProxy":[],"sslProxy":"127.0.0.1:2812"}
+1601718754451	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, reason: error
+1601718986936	Marionette	INFO	Stopped listening on port 2822
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+: Error reading cache file:" (new Error("", "(unknown module)"))
+1601718195473	Marionette	INFO	Listening on port 3012
+1601718195626	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601718195629	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"127.0.0.1:3002","noProxy":[],"sslProxy":"127.0.0.1:3002"}
+JavaScript error: https://www.googletagmanager.com/gtm.js?id=GTM-M3GLTNX, line 960: uncaught exception: [object Object]
+JavaScript error: https://www.googletagmanager.com/gtm.js?id=GTM-M3GLTNX, line 960: uncaught exception: [object Object]
+1601718226312	Marionette	INFO	Stopped listening on port 3012
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1601718246927	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile8PXOA8"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601718249457	Marionette	INFO	Listening on port 3192
+1601718249606	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601718249609	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"127.0.0.1:3178","noProxy":[],"sslProxy":"127.0.0.1:3178"}
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://euroleague.tv"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://euroleague.tv"
+[Parent 18192, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1601718280752	Marionette	INFO	Stopped listening on port 3192
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

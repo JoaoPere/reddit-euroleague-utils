@@ -10,7 +10,7 @@ import os
 
 def updateOldReddit(subreddit, sidebar_tables):
     results_table_old_urls = re.sub(
-        'https://www.reddit.com/', 'https://old.reddit.com/', sidebar_tables['Results'])
+        'https://www.reddit.com/', 'http://old.reddit.com/', sidebar_tables['Results'])
 
     with open('old_sidebar_boilerplate.txt', mode='r') as bp:
         bp_content = bp.read()

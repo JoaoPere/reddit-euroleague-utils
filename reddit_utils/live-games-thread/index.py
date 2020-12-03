@@ -26,13 +26,12 @@ def getEuroCupGames(now_time, soup):
         group_games = group.find_all('div', class_='game')
 
         for game in group_games:
-            game_date = game.find('span', class_='date')
+            has_date = game.find('span', class_='date')
 
-            # Date is not set, continue to next game
-            if game_date is None:
+            if not has_date:
                 continue
 
-            game_date = game_date.text
+            game_date = has_date.text
 
             game_date = game_date.strip()[:len(game_date) - 4]
             game_date = datetime.strptime(game_date, "%B %d %H:%M")
@@ -62,7 +61,12 @@ def getEuroLeagueGames(now_time, soup):
     games_markdown = list()
 
     for game in all_games:
-        game_date = game.find('span', class_='date').text
+        has_date = game.find('span', class_='date')
+
+        if not has_date:
+            continue
+
+        game_date = has_date.text
 
         game_date = game_date.strip()[:len(game_date) - 4]
         game_date = datetime.strptime(game_date, "%B %d %H:%M")
@@ -125,6 +129,7 @@ if __name__ == '__main__':
                          username=os.getenv("REDDIT_ACCOUNT"),
                          user_agent="r/EuroLeague Live Game Thread Generator Script")
 
+    reddit.validate_on_submit = True
     el_sub = reddit.subreddit('Euroleague')
 
     submission = el_sub.submit(title=final_title, selftext=final_markdown)

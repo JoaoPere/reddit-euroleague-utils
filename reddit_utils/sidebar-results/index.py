@@ -51,7 +51,8 @@ def getResultsTable(week):
             "span", class_="score").attrs['data-score']
 
         el_round = sys.argv[1] if idx == 0 else ""
-        result = "[{}-{}]()".format(home_team_score, away_team_score)
+        result = "[{}-{}]()".format(home_team_score,
+                                    away_team_score) if home_team_score != '-' and away_team_score != '-' else 'POSTPONED'
 
         row_markdown = appendTableDelimitors(TABLE_DELIM.join(
             [el_round, home_team_name, away_team_name, result]))

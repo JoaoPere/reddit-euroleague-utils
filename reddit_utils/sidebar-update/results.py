@@ -119,8 +119,7 @@ class Game():
             self.home_team, self.away_team, self.comp_stage, self.game_str)
 
         result = "[{home_team_score}-{away_team_score}]({submission_url})".format(home_team_score=str(
-            self.score[0]), away_team_score=str(self.score[1]), submission_url=submission_url)
-        #result = "{}-{}".format(str(self.score[0]), str(self.score[1]))
+            self.score[0]), away_team_score=str(self.score[1]), submission_url=submission_url) if self.score[0] != '-' and self.score[1] != '-' else 'POSTPONED'
 
         home_team_3lmd = team_info_by_official.get(self.home_team).letter3_md
         away_team_3lmd = team_info_by_official.get(self.away_team).letter3_md

@@ -20,7 +20,7 @@ team_info_by_fs['Khimki M.'] = FlashScoreTeamParse('Khimki Moscow Region', 'Khim
                                                    '[Khimki](https://www.euroleague.net/competition/teams/showteam?clubcode=KHI&seasoncode=E2020)')
 team_info_by_fs['Maccabi Tel Aviv'] = FlashScoreTeamParse('Maccabi Playtika Tel Aviv', 'Maccabi Tel Aviv', '[MTA](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2020)',
                                                           '[Maccabi Tel Aviv](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2020)')
-team_info_by_fs['Zalgiris Kaunas'] = FlashScoreTeamParse('Zalgiris Kaunas', 'Zalgiris Kaunas', '[ZAL](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2020)',
+team_info_by_fs['Zalgiris Kaunas'] = FlashScoreTeamParse('Zalgiris Kaunas', 'Zalgiris', '[ZAL](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2020)',
                                                          '[Zalgiris Kaunas](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2020)')
 team_info_by_fs['Baskonia'] = FlashScoreTeamParse('TD Systems Baskonia Vitoria-Gasteiz', 'Saski Baskonia', '[KBA](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2020)',
                                                   '[Saski Baskonia](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2020)')

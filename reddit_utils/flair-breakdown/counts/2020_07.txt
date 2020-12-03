@@ -1,0 +1,57 @@
+Flair| Count
+---|---
+Žalgiris | 93
+Fenerbahçe | 69
+Panathinaikos | 65
+Olympiacos | 45
+Crvena Zvezda | 28
+Partizan | 25
+Maccabi Tel Aviv | 24
+Anadolu Efes | 23
+Real Madrid | 19
+Olimpia Milano | 19
+Barcelona | 17
+Saski Baskonia | 16
+Alba Berlin | 15
+Rytas | 12
+EuroLeague | 8
+CSKA Moscow | 7
+Bayern München | 6
+Budućnost | 6
+Olimpija Ljubljana | 5
+Galatasaray | 5
+Porto | 5
+ASVEL | 4
+Cedevita Olimpija Ljubljana | 3
+AEK | 3
+Valencia Basket | 3
+EuroCup | 3
+Unicaja Malaga | 3
+PAOK | 3
+Virtus Bologna | 3
+Gran Canaria | 2
+Estudiantes | 2
+Auxilium Torino | 2
+Cibona Zagreb | 2
+Skyliners Frankfurt | 2
+Fortitudo Bologna | 1
+Cedevita Zagreb | 1
+Joventut | 1
+Mornar Bar | 1
+Oostende | 1
+UNICS Kazan | 1
+Darüşşafaka | 1
+Tofaş | 1
+BCM Gravelines-Dunkerque | 1
+Beşiktaş | 1
+Zenit | 1
+Antwerp Giants | 1
+Promitheas Patras | 1
+Neptūnas | 1
+AS Monaco | 1
+Khimki | 1
+Türk Telekom | 1
+Nizhny Novgorod | 1
+BK Ventspils | 1
+Aquila Trento | 1
+CB Canarias | 1

@@ -46,25 +46,31 @@ def getScheduleTable(week):
             str(both_clubs[0].find("span", class_="name").get_text())).letter3_md
         away_team_name = team_info_by_official.get(
             str(both_clubs[1].find("span", class_="name").get_text())).letter3_md
-        game_date = html_game.find("span", class_="date").get_text()
-
-        # Removes "CET" from the string
-        game_date = game_date.strip()[:len(game_date) - 4]
-        game_date = datetime.strptime(game_date, "%B %d %H:%M")
 
         el_round = str(week) if idx == 0 else ""
-        el_date = game_date.strftime("%b %d") if idx == 0 or (
-            idx > 0 and int(game_date.day) != cond_day) else ""
+        game_date = html_game.find("span", class_="date")
+        if game_date is not None:
+            game_date_text = game_date.get_text()
 
-        cond_day = game_date.day
+            # Removes "CET" from the string
+            game_date_text = game_date_text.strip()[:len(game_date_text) - 4]
+            game_date_text = datetime.strptime(game_date_text, "%B %d %H:%M")
 
-        row_markdown = appendTableDelimitors(TABLE_DELIM.join(
-            [el_round, el_date, home_team_name, away_team_name, game_date.strftime("%H:%M")]))
+            el_date = game_date_text.strftime("%b %d") if idx == 0 or (
+                idx > 0 and int(game_date_text.day) != cond_day) else ""
+            cond_day = game_date_text.day
+            row_markdown = appendTableDelimitors(TABLE_DELIM.join(
+                [el_round, el_date, home_team_name, away_team_name, game_date_text.strftime("%H:%M")]))
+        else:
+            el_date = ''
+            row_markdown = appendTableDelimitors(TABLE_DELIM.join(
+                [el_round, el_date, home_team_name, away_team_name, 'PP']))
 
         final_table = NEWLINE.join([final_table, row_markdown])
 
     # Add note
-    final_table = NEWLINE.join([final_table, '**Note:** All CET times'])
+    final_table = NEWLINE.join(
+        [final_table, '**Note:** All CET times // PP = Postponed'])
     return final_table
 
 
