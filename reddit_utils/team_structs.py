@@ -111,7 +111,7 @@ team_info_by_official['Khimki Moscow Region'] = OfficialTeamParse(
     'Khimki', '[KHI](https://www.euroleague.net/competition/teams/showteam?clubcode=KHI&seasoncode=E2020)', '[Khimki](https://www.euroleague.net/competition/teams/showteam?clubcode=KHI&seasoncode=E2020)')
 team_info_by_official['Maccabi Playtika Tel Aviv'] = OfficialTeamParse('Maccabi Tel Aviv', '[MTA](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2020)',
                                                                        '[Maccabi Tel Aviv](https://www.euroleague.net/competition/teams/showteam?clubcode=TEL&seasoncode=E2020)')
-team_info_by_official['Zalgiris Kaunas'] = OfficialTeamParse('Zalgiris Kaunas', '[ZAL](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2020)',
+team_info_by_official['Zalgiris Kaunas'] = OfficialTeamParse('Zalgiris', '[ZAL](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2020)',
                                                              '[Zalgiris Kaunas](https://www.euroleague.net/competition/teams/showteam?clubcode=ZAL&seasoncode=E2020)')
 team_info_by_official['TD Systems Baskonia Vitoria-Gasteiz'] = OfficialTeamParse('Saski Baskonia', '[KBA](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2020)',
                                                                                  '[Saski Baskonia](https://www.euroleague.net/competition/teams/showteam?clubcode=BAS&seasoncode=E2020)')
