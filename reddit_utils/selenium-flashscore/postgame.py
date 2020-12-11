@@ -2,14 +2,15 @@ from reddit_utils import prepare_dot_env
 from reddit_utils.team_structs import team_info_by_fs
 
 import requests
+from requests.adapters import HTTPAdapter
 from bs4 import BeautifulSoup
-import praw
 from pprint import pprint
 from datetime import datetime, timedelta
+import praw
 import re
 import sys
-from requests.adapters import HTTPAdapter
 import os
+import urllib.parse
 
 s = requests.Session()
 s.mount('http://', HTTPAdapter(max_retries=sys.maxsize))
@@ -32,9 +33,9 @@ ASSISTS = 'AST'
 STEALS = 'STL'
 TURNOVERS = 'TO'
 BLOCKS = 'BLK'
-#BLOCKS_AGAINST = 'Ag'
+# BLOCKS_AGAINST = 'Ag'
 FOULS_COMMITED = 'PF'
-#FOULS_RECEIVED = 'Rv'
+# FOULS_RECEIVED = 'Rv'
 PIR = 'PIR'
 REDDIT_HR = NEWLINE + '----' + NEWLINE
 
@@ -197,25 +198,47 @@ def createEmptyThread(home_team, away_team, comp_round, comp_stage, args_info):
     return submission
 
 
-def getGamesLinks(games_list, args_info):
-    r = requests.get(args_info.comp_results_link)
+def getGamesLinks(games_list, args_info, game_number=None):
+    if game_number is None:
+        r = requests.get(args_info.comp_results_link)
+    else:
+        url_args_dict = dict()
+        url_args_dict['gamenumber'] = game_number
+        params = urllib.parse.urlencode(url_args_dict, doseq=True)
+        r = requests.get('{}?{}'.format(
+            args_info.comp_results_link, params))
+
     soup = BeautifulSoup(r.text, 'html.parser')
 
     stage_round_spans = soup.find('div', class_='gc-title').find_all('span')
     comp_stage = stage_round_spans[1].text
     comp_round = stage_round_spans[2].text
 
+    # Assumes postponments only
+    round_int = int(comp_round.replace("Round ", ""))
+
     all_games_div = soup.find('div', class_='wp-module-asidegames')
     all_game_links = all_games_div.find_all('a', class_='game-link')
 
-    # Possibly change this for a map/list solution if class variable assignments is a thing
-    for game in games_list:
-        game.game_link = getGameLink(
-            game.home_team, game.away_team, args_info.comp_home_link, all_game_links)
-        game.comp_round = comp_round
-        game.comp_stage = comp_stage
+    has_none_game_link = False
 
-    return games_list
+    for game in games_list:
+        if game.game_link is None:
+            game_link = getGameLink(
+                game.home_team, game.away_team, args_info.comp_home_link, all_game_links)
+
+            if game_link is None:
+                has_none_game_link = True
+            else:
+                game.game_link = game_link
+                game.comp_round = comp_round
+                game.comp_stage = comp_stage
+
+    if has_none_game_link:
+        round_int -= 1
+        getGamesLinks(games_list, args_info, round_int)
+    else:
+        return games_list
 
 
 def getGameLink(home_team, away_team, comp_home_link, all_game_links):
