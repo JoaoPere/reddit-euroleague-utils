@@ -1,5 +1,5 @@
-scripts/selenium-flashscore/geckodriver.log
-scripts/selenium-flashscore/postgame.pyc
+reddit_utils/selenium-flashscore/geckodriver.log
+reddit_utils/selenium-flashscore/postgame.pyc
 __pycache__/
 credentials.env
 credentials_bot.env
