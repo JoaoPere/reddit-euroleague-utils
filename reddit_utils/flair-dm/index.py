@@ -45,7 +45,6 @@ def sendDirectMessageToRedditor(conn, users_that_have_been_sent_dms, entry_autho
             return None
         except Exception:
             print('Unable to send PM. Trying again')
-            print('')
 
             time.sleep(5)
 
@@ -83,7 +82,6 @@ def handleRedditStreams(subreddit):
                                submission, dm_title, dm_boilerplate)
         except Exception:
             print('Unable to connect to PRAW. Trying again')
-            print('')
             comment_stream, submission_stream = getCommentAndSubmissionStreams(
                 subreddit)
 
