@@ -1,19 +1,18 @@
 from reddit_utils import prepare_dot_env
 from reddit_utils.team_structs import team_info_by_official
 from datetime import datetime
-import requests
 from bs4 import BeautifulSoup
+from collections import namedtuple
+import urllib.parse
+import requests
 import sys
 import praw
-from collections import namedtuple
 import os
 
 
-team_names_parsed = dict()
-
 DOUBLE_NEWLINE = '\n\n'
 
-# Perhaps look into refactoring both functions into one and/or refactor some common operations between both
+# TODO: Perhaps look into refactoring both functions into one and/or refactor some common operations between both
 
 
 def getEuroCupGames(now_time, soup):
@@ -44,12 +43,10 @@ def getEuroCupGames(now_time, soup):
                 game_away_team = team_info_by_official.get(
                     game_clubs[1].find('span', class_='name').text).reddit
 
-                game_md = "{home_team} - {away_team} | {hours}:{minutes} CET  | {group_name}".format(home_team=bold(game_home_team), away_team=bold(
+                game_md = "{home_team} - {away_team} | {hours}:{minutes} CET | {group_name}".format(home_team=bold(game_home_team), away_team=bold(
                     game_away_team), hours=game_date.strftime('%H'), minutes=game_date.strftime('%M'), group_name=group_name)
 
                 games_markdown.append((game_date, game_md))
-
-        games_markdown.sort(key=lambda d: d[0])
 
     return games_markdown
 
@@ -94,6 +91,32 @@ def bold(text):
     return '**' + text + '**'
 
 
+def get_games_markdown_list(args_info, now_time, games_markdown=[], game_number=None):
+    if game_number is None:
+        r = requests.get(args_info.results_url)
+    else:
+        url_args_dict = dict()
+        url_args_dict['gamenumber'] = game_number
+        params = urllib.parse.urlencode(url_args_dict, doseq=True)
+        r = requests.get('{}?{}'.format(args_info.results_url, params))
+
+    soup = BeautifulSoup(r.text, 'html.parser')
+
+    day_markdown = args_info.markdown_function(now_time, soup)
+    games_markdown.extend(day_markdown)
+
+    if game_number == 1:
+        return games_markdown
+    else:
+        stage_round_spans = soup.find(
+            'div', class_='gc-title').find_all('span')
+        comp_round = stage_round_spans[2].text
+        round_int = int(comp_round.replace("Round ", ""))
+        round_int -= 1
+
+        return get_games_markdown_list(args_info, now_time, games_markdown, round_int)
+
+
 if __name__ == '__main__':
     ArgsParseTuple = namedtuple(
         'ArgsParseTuple', 'results_url comp_full_name comp_small_name markdown_function')
@@ -108,12 +131,10 @@ if __name__ == '__main__':
         sys.exit()
 
     args_info = args_dict.get(sys.argv[1])
-
     now_time = datetime.now()
-    r = requests.get(args_info.results_url)
-    soup = BeautifulSoup(r.text, 'html.parser')
 
-    games_markdown = args_info.markdown_function(now_time, soup)
+    games_markdown = get_games_markdown_list(args_info, now_time)
+    games_markdown.sort(key=lambda d: d[0])
 
     if len(games_markdown) < 1:
         print("No games today in {}".format(args_info.comp_full_name))
@@ -122,6 +143,8 @@ if __name__ == '__main__':
         [*(list(zip(*games_markdown))[1]),  'Asking for or sharing illegal streams is NOT allowed!'])
     final_title = "{today_date} {competition} Matches Live Thread".format(
         today_date=now_time.strftime('%d %B %Y'), competition=args_info.comp_full_name)
+
+    print(final_markdown)
 
     reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
                          client_secret=os.getenv("REDDIT_APP_SECRET"),
