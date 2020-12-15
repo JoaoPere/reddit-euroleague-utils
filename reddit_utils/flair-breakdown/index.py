@@ -1,6 +1,7 @@
+from itertools import repeat
 import os
 import sys
-from itertools import repeat
+import argparse
 
 
 def get_path_from_month_and_year(year: int, month: int):
@@ -78,12 +79,23 @@ def get_counts(year: int, month: int):
     return count_month_active, count_month_last
 
 
-if __name__ == '__main__':
+def main():
+    parser = argparse.ArgumentParser(
+        description='Flair breakdown monthly table builder')
+    time_group = parser.add_argument_group('time')
+    time_group.add_argument('year', type=int, choices=[2020, 2021])
+    time_group.add_argument('month', type=int, choices=range(1, 13))
+    args = parser.parse_args()
+
     count_month_active, count_month_last = get_counts(
-        int(sys.argv[1]), int(sys.argv[2]))
+        args.year, args.month)
     difference_list = get_difference_list(count_month_active, count_month_last)
     markdown = get_markdown(difference_list)
     print(markdown)
     print()
     print('Amount of new flairs: {}'.format(
         sum(func_sort(d) for d in difference_list)))
+
+
+if __name__ == '__main__':
+    main()

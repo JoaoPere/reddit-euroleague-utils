@@ -1,4 +1,4 @@
-from reddit_utils import prepare_dot_env
+from reddit_utils.subreddit import get_subreddit
 from dotenv import load_dotenv
 from pathlib import Path
 from pprint import pprint
@@ -60,13 +60,7 @@ if __name__ == "__main__":
     parser.add_argument('--save, -s', dest='save', type=int, nargs=2)
     args = parser.parse_args()
 
-    reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
-                         client_secret=os.getenv("REDDIT_APP_SECRET"),
-                         password=os.getenv("REDDIT_PASSWORD"),
-                         username=os.getenv("REDDIT_ACCOUNT"),
-                         user_agent="r/EuroLeague Post Game Thread Generator Script")
-
-    subreddit = reddit.subreddit("Euroleague")
+    subreddit = get_subreddit()
 
     try:
         team_name = args.team[0]

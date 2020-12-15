@@ -1,29 +1,18 @@
 from reddit_utils.team_structs import team_info_by_official
-import requests
+import reddit_utils.helpers as rh
 from bs4 import BeautifulSoup
+import requests
 import sys
+import argparse
 
 
-CELL_ALLIGNMENT = ':-:'
-TABLE_DELIM = '|'
-NEWLINE = '\n'
-
-
-def appendTableDelimitors(content):
-    return TABLE_DELIM + content + TABLE_DELIM
-
-
-def getStandingsTable():
+def get_standings_table():
     r = requests.get('https://www.euroleague.net/main/standings')
 
     soup = BeautifulSoup(r.text, 'html.parser')
 
-    reddit_table_head = appendTableDelimitors(
-        TABLE_DELIM.join(['#', '', 'W', 'L', '+/-']))
-    reddit_cell_allignment = appendTableDelimitors(
-        TABLE_DELIM.join([CELL_ALLIGNMENT] * 5))
-
-    final_table = NEWLINE.join([reddit_table_head, reddit_cell_allignment])
+    final_table = rh.get_reddit_table_head_and_cell_alignment(
+        ['#', '', 'W', 'L', '+/-'])
 
     # Returns only the standings table
     standings_table = soup.find_all("table")
@@ -49,13 +38,17 @@ def getStandingsTable():
         plus_minus = '+' + \
             plus_minus if plus_minus[0].isdigit() else plus_minus
 
-        cols_markdown = appendTableDelimitors(TABLE_DELIM.join(
-            [position, team_markdown, wins, losses, plus_minus]))
+        cols_markdown = rh.build_table_delimitors(
+            [position, team_markdown, wins, losses, plus_minus])
 
-        final_table = NEWLINE.join([final_table, cols_markdown])
+        final_table = rh.newline_join([final_table, cols_markdown])
 
     return final_table
 
 
+def main():
+    print(get_standings_table())
+
+
 if __name__ == '__main__':
-    print(getStandingsTable())
+    main()

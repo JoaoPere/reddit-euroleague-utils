@@ -1,5 +1,7 @@
 from reddit_utils import prepare_dot_env
 from reddit_utils.team_structs import team_info_by_official
+import reddit_utils.helpers as rh
+import reddit_utils.subreddit as sr
 from datetime import datetime
 from bs4 import BeautifulSoup
 from collections import namedtuple
@@ -8,14 +10,10 @@ import requests
 import sys
 import praw
 import os
+import argparse
 
 
-DOUBLE_NEWLINE = '\n\n'
-
-# TODO: Perhaps look into refactoring both functions into one and/or refactor some common operations between both
-
-
-def getEuroCupGames(now_time, soup):
+def get_eurocup_games(now_time, soup):
     group_container = soup.find_all('div', class_='group-container')
     games_markdown = list()
 
@@ -43,7 +41,7 @@ def getEuroCupGames(now_time, soup):
                 game_away_team = team_info_by_official.get(
                     game_clubs[1].find('span', class_='name').text).reddit
 
-                game_md = "{home_team} - {away_team} | {hours}:{minutes} CET | {group_name}".format(home_team=bold(game_home_team), away_team=bold(
+                game_md = "{home_team} - {away_team} | {hours}:{minutes} CET | {group_name}".format(home_team=rh.bold(game_home_team), away_team=rh.bold(
                     game_away_team), hours=game_date.strftime('%H'), minutes=game_date.strftime('%M'), group_name=group_name)
 
                 games_markdown.append((game_date, game_md))
@@ -51,7 +49,7 @@ def getEuroCupGames(now_time, soup):
     return games_markdown
 
 
-def getEuroLeagueGames(now_time, soup):
+def get_euroleague_games(now_time, soup):
     all_games = soup.find_all('div', class_='livescore')[
         1].find_all('div', class_='game')
 
@@ -80,15 +78,11 @@ def getEuroLeagueGames(now_time, soup):
             game_away_team = team_info_by_official.get(
                 game_clubs[1].find('span', class_='name').text).reddit
 
-            game_md = "{home_team} - {away_team} | {hours}:{minutes} CET".format(home_team=bold(
-                game_home_team), away_team=bold(game_away_team), hours=game_date.strftime('%H'), minutes=game_date.strftime('%M'))
+            game_md = "{home_team} - {away_team} | {hours}:{minutes} CET".format(home_team=rh.bold(
+                game_home_team), away_team=rh.bold(game_away_team), hours=game_date.strftime('%H'), minutes=game_date.strftime('%M'))
             games_markdown.append((game_date, game_md))
 
     return games_markdown
-
-
-def bold(text):
-    return '**' + text + '**'
 
 
 def get_games_markdown_list(args_info, now_time, games_markdown=[], game_number=None):
@@ -105,7 +99,9 @@ def get_games_markdown_list(args_info, now_time, games_markdown=[], game_number=
     day_markdown = args_info.markdown_function(now_time, soup)
     games_markdown.extend(day_markdown)
 
+    # Top-down approach: last round to be analysed is the 1st
     if game_number == 1:
+        games_markdown.sort(key=lambda d: d[0])
         return games_markdown
     else:
         stage_round_spans = soup.find(
@@ -117,49 +113,50 @@ def get_games_markdown_list(args_info, now_time, games_markdown=[], game_number=
         return get_games_markdown_list(args_info, now_time, games_markdown, round_int)
 
 
-if __name__ == '__main__':
+def get_competition_info(competition):
     ArgsParseTuple = namedtuple(
         'ArgsParseTuple', 'results_url comp_full_name comp_small_name markdown_function')
     args_dict = dict()
 
     args_dict['EL'] = ArgsParseTuple(
-        'https://www.euroleague.net/main/results', 'EuroLeague', 'EL', getEuroLeagueGames)
+        'https://www.euroleague.net/main/results', 'EuroLeague', 'EL', get_euroleague_games)
     args_dict['EC'] = ArgsParseTuple(
-        'https://www.eurocupbasketball.com/eurocup/games/results', 'EuroCup', 'EC', getEuroCupGames)
+        'https://www.eurocupbasketball.com/eurocup/games/results', 'EuroCup', 'EC', get_eurocup_games)
 
-    if(sys.argv[1] not in args_dict):
+    return args_dict.get(sys.argv[1])
+
+
+def build_thread_title_and_markdown(games_markdown_list, competition_info, now_time):
+    if len(games_markdown_list) < 1:
+        print("No games today in {}".format(
+            competition_info.comp_full_name))
         sys.exit()
+    final_markdown = rh.double_newline_join(
+        [*(list(zip(*games_markdown_list))[1]),  'Asking for or sharing illegal streams is NOT allowed!'])
+    final_title = "{today_date} {competition} Matches Live Thread".format(
+        today_date=now_time.strftime('%d %B %Y'), competition=competition_info.comp_full_name)
 
-    args_info = args_dict.get(sys.argv[1])
+    return final_title, final_markdown
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Live thread creator')
+    parser.add_argument('competition', metavar='C',
+                        type=str, choices=['EL', 'EC'])
+
+    args = parser.parse_args()
+    competition_info = get_competition_info(args.competition)
+
     now_time = datetime.now()
 
-    games_markdown = get_games_markdown_list(args_info, now_time)
-    games_markdown.sort(key=lambda d: d[0])
+    games_markdown_list = get_games_markdown_list(competition_info, now_time)
+    title, markdown = build_thread_title_and_markdown(
+        games_markdown_list, competition_info, now_time)
 
-    if len(games_markdown) < 1:
-        print("No games today in {}".format(args_info.comp_full_name))
-        sys.exit()
-    final_markdown = DOUBLE_NEWLINE.join(
-        [*(list(zip(*games_markdown))[1]),  'Asking for or sharing illegal streams is NOT allowed!'])
-    final_title = "{today_date} {competition} Matches Live Thread".format(
-        today_date=now_time.strftime('%d %B %Y'), competition=args_info.comp_full_name)
+    subreddit = sr.get_subreddit()
+    sr.submit_text_post(subreddit, title, markdown, sticky=True,
+                        suggested_sort='new', flair_text=competition_info.comp_small_name)
 
-    print(final_markdown)
 
-    reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
-                         client_secret=os.getenv("REDDIT_APP_SECRET"),
-                         password=os.getenv("REDDIT_PASSWORD"),
-                         username=os.getenv("REDDIT_ACCOUNT"),
-                         user_agent="r/EuroLeague Live Game Thread Generator Script")
-
-    reddit.validate_on_submit = True
-    el_sub = reddit.subreddit('Euroleague')
-
-    submission = el_sub.submit(title=final_title, selftext=final_markdown)
-    submission.mod.sticky()
-    submission.mod.suggested_sort('new')
-
-    flair_choices = submission.flair.choices()
-    template_id = next(x for x in flair_choices if x['flair_text'].replace(
-        ':', '') == args_info.comp_small_name)['flair_template_id']
-    submission.flair.select(template_id)
+if __name__ == '__main__':
+    main()

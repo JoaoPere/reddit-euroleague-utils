@@ -1,32 +1,21 @@
 from reddit_utils.team_structs import team_info_by_official
-import requests
+import reddit_utils.helpers as rh
 from bs4 import BeautifulSoup
+from datetime import datetime, timezone, tzinfo
+import requests
 import praw
 import sys
-from datetime import datetime, timezone, tzinfo
+import argparse
 
 
-CELL_ALLIGNMENT = ':-:'
-TABLE_DELIM = '|'
-NEWLINE = '\n'
-
-
-def appendTableDelimitors(content):
-    return TABLE_DELIM + content + TABLE_DELIM
-
-
-def getScheduleTable(week):
+def get_schedule_table(week):
     r = requests.get(
         'https://www.euroleague.net/main/results?gamenumber={}&phasetypecode=RS&seasoncode=E2020'.format(week))
 
     soup = BeautifulSoup(r.text, 'html.parser')
 
-    reddit_table_head = appendTableDelimitors(
-        TABLE_DELIM.join(['ROUND', 'DATE', 'HOME', 'AWAY', 'TIME']))
-    reddit_cell_allignment = appendTableDelimitors(
-        TABLE_DELIM.join([CELL_ALLIGNMENT] * 5))
-
-    final_table = NEWLINE.join([reddit_table_head, reddit_cell_allignment])
+    final_table = rh.get_reddit_table_head_and_cell_alignment(
+        ['ROUND', 'DATE', 'HOME', 'AWAY', 'TIME'])
 
     # Result in 2nd element
     livescores = soup.find_all("div", class_="livescore")
@@ -56,13 +45,21 @@ def getScheduleTable(week):
 
         cond_day = game_date.day
 
-        row_markdown = appendTableDelimitors(TABLE_DELIM.join(
-            [el_round, el_date, home_team_name, away_team_name, game_date.strftime("%H:%M")]))
+        row_markdown = rh.build_table_delimitors(
+            [el_round, el_date, home_team_name, away_team_name, game_date.strftime("%H:%M")])
 
-        final_table = NEWLINE.join([final_table, row_markdown])
+        final_table = rh.newline_join([final_table, row_markdown])
 
     return final_table
 
 
+def main():
+    parser = argparse.ArgumentParser(description='Sidebar schedule creator')
+    parser.add_argument('week', metavar='W', type=str)
+
+    args = parser.parse_args()
+    print(get_schedule_table(args.week))
+
+
 if __name__ == '__main__':
-    print(getScheduleTable(sys.argv[1]))
+    main()

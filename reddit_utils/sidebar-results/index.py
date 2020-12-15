@@ -1,34 +1,21 @@
 from reddit_utils.team_structs import team_info_by_official
-import requests
+import reddit_utils.helpers as rh
 from bs4 import BeautifulSoup
+from datetime import datetime, timezone, tzinfo
+import requests
 import praw
 import sys
-from datetime import datetime, timezone, tzinfo
+import argparse
 
 
-CELL_ALLIGNMENT = ':-:'
-TABLE_DELIM = '|'
-NEWLINE = '\n'
-
-
-def appendTableDelimitors(content):
-    return TABLE_DELIM + content + TABLE_DELIM
-
-# TODO: Add support to playoffs
-
-
-def getResultsTable(week):
+def get_results_table(week):
     r = requests.get(
         'https://www.euroleague.net/main/results?gamenumber={}&phasetypecode=RS&seasoncode=E2020'.format(week))
 
     soup = BeautifulSoup(r.text, 'html.parser')
 
-    reddit_table_head = appendTableDelimitors(
-        TABLE_DELIM.join(['ROUND', 'HOME', 'AWAY', 'RESULT']))
-    reddit_cell_allignment = appendTableDelimitors(
-        TABLE_DELIM.join([CELL_ALLIGNMENT] * 4))
-
-    final_table = NEWLINE.join([reddit_table_head, reddit_cell_allignment])
+    final_table = rh.get_reddit_table_head_and_cell_alignment(
+        ['ROUND', 'HOME', 'AWAY', 'RESULT'])
 
     # Result in 2nd element
     livescores = soup.find_all("div", class_="livescore")
@@ -54,13 +41,21 @@ def getResultsTable(week):
         result = "[{}-{}]()".format(home_team_score,
                                     away_team_score) if home_team_score != '-' and away_team_score != '-' else 'POSTPONED'
 
-        row_markdown = appendTableDelimitors(TABLE_DELIM.join(
-            [el_round, home_team_name, away_team_name, result]))
+        row_markdown = rh.build_table_delimitors(
+            [el_round, home_team_name, away_team_name, result])
 
-        final_table = NEWLINE.join([final_table, row_markdown])
+        final_table = rh.newline_join([final_table, row_markdown])
 
     return final_table
 
 
+def main():
+    parser = argparse.ArgumentParser(description='Sidebar results creator')
+    parser.add_argument('week', metavar='W', type=str)
+
+    args = parser.parse_args()
+    print(get_results_table(args.week))
+
+
 if __name__ == '__main__':
-    print(getResultsTable(sys.argv[1]))
+    main()

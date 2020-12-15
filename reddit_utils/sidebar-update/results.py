@@ -1,50 +1,15 @@
 from reddit_utils import prepare_dot_env
 from reddit_utils.team_structs import team_info_by_official
-import requests
+from reddit_utils.subreddit import get_subreddit
+import reddit_utils.helpers as rh
 from bs4 import BeautifulSoup
-import sys
 from collections import namedtuple
 from datetime import datetime, timezone, tzinfo
+import requests
+import sys
 import praw
 import os
-
-
-CELL_ALLIGNMENT = ':-:'
-TABLE_DELIM = '|'
-NEWLINE = '\n'
-DOUBLE_NEWLINE = '\n\n'
-
-
-reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
-                     client_secret=os.getenv("REDDIT_APP_SECRET"),
-                     password=os.getenv("REDDIT_PASSWORD"),
-                     username=os.getenv("REDDIT_ACCOUNT"),
-                     user_agent="r/EuroLeague Post Game Thread Generator Script")
-
-el_sub = reddit.subreddit('Euroleague')
-
-# Since new returns an iterator, it's obligatory to convert to list so that elements are not consumed
-new_submissions = list(el_sub.new(limit=100))
-
-
-def appendTableDelimitors(content):
-    return TABLE_DELIM + content + TABLE_DELIM
-
-# Returns the href to the result thread
-
-
-def getResultThread(home_team, away_team, competition_stage, round_or_game):
-    reddit_home_team = team_info_by_official.get(home_team).reddit
-    reddit_away_team = team_info_by_official.get(away_team).reddit
-
-    title_to_find = 'Post-Match Thread: {home_team} - {away_team} [EuroLeague {competition_stage}, {round_or_game}]'.format(
-        home_team=reddit_home_team, away_team=reddit_away_team, competition_stage=competition_stage, round_or_game=round_or_game)
-
-    for submission in new_submissions:
-        if submission.title == title_to_find:
-            return submission.url
-
-    return None
+import argparse
 
 
 class PlayoffMatchUp():
@@ -71,16 +36,12 @@ class PlayoffMatchUp():
     def __repr__(self):
         repr_games = [repr(g) for g in self.games]
 
-        reddit_table_head = appendTableDelimitors(
-            TABLE_DELIM.join(['GAME', 'HOME', 'AWAY', 'RESULT']))
-        reddit_cell_allignment = appendTableDelimitors(
-            TABLE_DELIM.join([CELL_ALLIGNMENT] * 4))
+        final_table = rh.get_reddit_table_head_and_cell_alignment(
+            ['GAME', 'HOME', 'AWAY', 'RESULT'])
 
-        final_table = NEWLINE.join([reddit_table_head, reddit_cell_allignment])
+        return rh.newline_join([final_table, *repr_games])
 
-        return NEWLINE.join([final_table, *repr_games])
-
-    def addGame(self, game):
+    def add_game(self, game):
         self.games.append(game)
 
 
@@ -114,9 +75,21 @@ class Game():
     def number(self, value):
         self._number = value
 
+    def get_result_thread(self):
+        reddit_home_team = team_info_by_official.get(self.home_team).reddit
+        reddit_away_team = team_info_by_official.get(self.away_team).reddit
+
+        title_to_find = 'Post-Match Thread: {home_team} - {away_team} [EuroLeague {competition_stage}, {round_or_game}]'.format(
+            home_team=reddit_home_team, away_team=reddit_away_team, competition_stage=self.comp_stage, round_or_game=self.game_str)
+
+        for submission in Game.submissions:
+            if submission.title == title_to_find:
+                return submission.url
+
+        return None
+
     def __repr__(self):
-        submission_url = getResultThread(
-            self.home_team, self.away_team, self.comp_stage, self.game_str)
+        submission_url = self.get_result_thread()
 
         result = "[{home_team_score}-{away_team_score}]({submission_url})".format(home_team_score=str(
             self.score[0]), away_team_score=str(self.score[1]), submission_url=submission_url) if self.score[0] != '-' and self.score[1] != '-' else 'POSTPONED'
@@ -124,27 +97,21 @@ class Game():
         home_team_3lmd = team_info_by_official.get(self.home_team).letter3_md
         away_team_3lmd = team_info_by_official.get(self.away_team).letter3_md
 
-        # [>game, >home_team, away_team, >result]
-
         game_or_round_md = str(self.game_number) if self.bool_md_round else ""
 
-        row_markdown = appendTableDelimitors(TABLE_DELIM.join(
-            [game_or_round_md, home_team_3lmd, away_team_3lmd, result]))
+        row_markdown = rh.build_table_delimitors(
+            [game_or_round_md, home_team_3lmd, away_team_3lmd, result])
         return row_markdown
 
 
-def getResultsTableForRegularSeason(week):
+def get_results_table_for_regular_season(week):
     r = requests.get(
         'https://www.euroleague.net/main/results?gamenumber={}&seasoncode=E2020'.format(week))
 
     soup = BeautifulSoup(r.text, 'html.parser')
 
-    reddit_table_head = appendTableDelimitors(
-        TABLE_DELIM.join(['ROUND', 'HOME', 'AWAY', 'RESULT']))
-    reddit_cell_allignment = appendTableDelimitors(
-        TABLE_DELIM.join([CELL_ALLIGNMENT] * 4))
-
-    final_table = NEWLINE.join([reddit_table_head, reddit_cell_allignment])
+    final_table = rh.get_reddit_table_head_and_cell_alignment(
+        ['ROUND', 'HOME', 'AWAY', 'RESULT'])
 
     # Result in 2nd element
     livescores = soup.find_all("div", class_="livescore")
@@ -173,15 +140,15 @@ def getResultsTableForRegularSeason(week):
 
         game = Game(comp_stage, round_str, home_team_official,
                     away_team_official, (home_team_score, away_team_score), bool_md_round)
-        final_table = NEWLINE.join([final_table, repr(game)])
+        final_table = rh.newline_join([final_table, repr(game)])
 
-    final_table = NEWLINE.join(
+    final_table = rh.newline_join(
         [final_table, '**Note:** Access the post-match threads by clicking in the result'])
 
     return final_table
 
 
-def getResultsTableForPlayoffs(week):
+def get_results_table_for_playoffs(week):
     week_int = int(week)
     week_loop = 31
 
@@ -210,16 +177,12 @@ def getResultsTableForPlayoffs(week):
             home_team_official = both_clubs[0].find("span", class_="name").text
             away_team_official = both_clubs[1].find("span", class_="name").text
 
-            # TODO: Check if scores were changed. I believe the data-score attribute was added this year, so for testing purposes scores are mock objects
             home_team_score = both_clubs[0].find(
                 "span", class_="score").attrs['data-score']
-            #home_team_score = str(90)
 
             away_team_score = both_clubs[1].find(
                 "span", class_="score").attrs['data-score']
-            #away_team_score = str(91)
 
-            # Needs refactoring -> look into a method that simplifies this
             matchup_game = PlayoffMatchUp(
                 home_team_official, away_team_official)
             if not matchup_game in matchup_list:
@@ -230,22 +193,35 @@ def getResultsTableForPlayoffs(week):
 
             game = Game(comp_stage, game_str, home_team_official,
                         away_team_official, (home_team_score, away_team_score))
-            existing_matchup.addGame(game)
+            existing_matchup.add_game(game)
 
         week_loop += 1
 
-    return DOUBLE_NEWLINE.join([repr(m) for m in matchup_list])
+    return rh.double_newline_join([repr(m) for m in matchup_list])
 
 
-def getResultsTable(week):
+def get_results_table(week):
+    el_sub = get_subreddit()
+
+    # Since new returns an iterator, it's obligatory to convert to list so that elements are not consumed
+    Game.submissions = list(el_sub.new(limit=100))
     week_int = int(week)
+
     if week_int == 0:
         return "**Round 1 hasn't finished. No results available right now**"
     if week_int < 31:
-        return getResultsTableForRegularSeason(week)
+        return get_results_table_for_regular_season(week)
     else:
-        return getResultsTableForPlayoffs(week)
+        return get_results_table_for_playoffs(week)
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Sidebar results creator')
+    parser.add_argument('week', metavar='W', type=str)
+
+    args = parser.parse_args()
+    print(get_results_table(args.week))
 
 
 if __name__ == '__main__':
-    print(getResultsTable(sys.argv[1]))
+    main()

@@ -1,10 +1,11 @@
 from reddit_utils import prepare_dot_env
+from reddit_utils.subreddit import get_subreddit
 import praw
 import os
 import sqlite3
 
 
-def getRedditorsYetToConvert(conn):
+def get_redditors_yet_to_convert(conn):
     cursor = conn.cursor()
 
     cursor.execute(
@@ -14,12 +15,12 @@ def getRedditorsYetToConvert(conn):
     return [user[0] for user in all_users]
 
 
-def getRedditorsWithFlair(subreddit):
+def get_redditors_with_flair(subreddit):
     return [template['user'].name
             for template in subreddit.flair(limit=None)]
 
 
-def updateConvertedRedditors(redditors_with_flair, redditors_yet_to_convert, conn):
+def update_converted_redditors(redditors_with_flair, redditors_yet_to_convert, conn):
     cursor = conn.cursor()
     for redditor in redditors_yet_to_convert:
         if redditor in redditors_with_flair:
@@ -29,27 +30,23 @@ def updateConvertedRedditors(redditors_with_flair, redditors_yet_to_convert, con
     conn.commit()
 
 
-def updateDMConvert(subreddit):
+def update_converted_dms(subreddit):
     conn = sqlite3.connect('el_flairs.db')
 
-    redditors_yet_to_convert = getRedditorsYetToConvert(conn)
-    redditors_with_flair = getRedditorsWithFlair(subreddit)
+    redditors_yet_to_convert = get_redditors_yet_to_convert(conn)
+    redditors_with_flair = get_redditors_with_flair(subreddit)
 
-    updateConvertedRedditors(redditors_with_flair,
-                             redditors_yet_to_convert, conn)
+    update_converted_redditors(redditors_with_flair,
+                               redditors_yet_to_convert, conn)
 
     conn.close()
 
 
+def main():
+    subreddit = get_subreddit()
+
+    update_converted_dms(subreddit)
+
+
 if __name__ == "__main__":
-    flairs_dict = dict()
-
-    reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
-                         client_secret=os.getenv("REDDIT_APP_SECRET"),
-                         password=os.getenv("REDDIT_PASSWORD"),
-                         username=os.getenv("REDDIT_ACCOUNT"),
-                         user_agent="r/EuroLeague Post Game Thread Generator Script")
-
-    subreddit = reddit.subreddit("Euroleague")
-
-    updateDMConvert(subreddit)
+    main()
