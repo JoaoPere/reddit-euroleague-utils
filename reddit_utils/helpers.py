@@ -28,4 +28,4 @@ def get_reddit_table_head_and_cell_alignment(table_head: list):
 
 
 def bold(text: str):
-    return BOLD_MARKDOWN + text + BOLD_MARKDOWN
+    return BOLD_MARKDOWN + text + BOLD_MARKDOWN + ' '

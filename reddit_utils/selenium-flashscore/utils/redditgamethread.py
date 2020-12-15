@@ -30,8 +30,9 @@ class RedditGameThread():
         str_list.append(
             'State: {} / {}'.format(self.thread_state, self.game_state))
         str_list.append('Game Link: {}'.format(self.game_link))
-        str_list.append('Reddit Submission: {}'.format(
-            'https://old.reddit.com/r/Euroleague/comments/' + str(self.reddit_submission)))
+        if self.reddit_submission is not None:
+            str_list.append('Reddit Submission: {}'.format(
+                'https://old.reddit.com/r/Euroleague/comments/' + str(self.reddit_submission)))
         return '\n'.join(str_list)
 
     def __eq__(self, other):
