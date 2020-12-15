@@ -1,9 +1,9 @@
 reddit_utils/selenium-flashscore/geckodriver.log
 reddit_utils/selenium-flashscore/postgame.pyc
-__pycache__/
-credentials.env
-credentials_bot.env
+reddit_utils/flair-dm/el_flairs.db
 redditutils.egg-info/
+__pycache__/
 .vscode
 geckodriver
-reddit_utils/flair-dm/el_flairs.db
+credentials.env
+credentials_bot.env
