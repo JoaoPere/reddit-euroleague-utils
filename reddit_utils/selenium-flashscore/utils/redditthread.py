@@ -3,7 +3,6 @@ from reddit_utils.team_structs import team_info_by_fs
 import reddit_utils.constants as rc
 import reddit_utils.helpers as rh
 from reddit_utils.subreddit import submit_text_post
-from utils.redditgamethread import RedditGameThread
 import requests
 from requests.adapters import HTTPAdapter
 from bs4 import BeautifulSoup
@@ -132,18 +131,6 @@ def get_scores_table(soup, home_team, away_team):
 def is_page_ready(soup):
     # Checks if the top scores panel exists
     return not (soup.find('div', id='ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_gamescorestatic') is None)
-
-
-def create_empty_thread(home_team, away_team, comp_round, comp_stage):
-    home_team_parsed = team_info_by_fs.get(home_team).reddit
-    away_team_parsed = team_info_by_fs.get(away_team).reddit
-
-    title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(
-        comp=RedditGameThread.comp_info.comp_full_name, home_team=home_team_parsed, away_team=away_team_parsed, comp_round=comp_round, comp_stage=comp_stage)
-    final_markdown = rc.REDDIT_THREAD_PLACEHOLDER_TEXT
-
-    return submit_text_post(RedditGameThread.subreddit, title, final_markdown,
-                            flair_text=RedditGameThread.comp_info.comp_small_name)
 
 
 def handle_thread_update(home_team, away_team, submission, game_link):

@@ -74,10 +74,6 @@ def service_shutdown(driver, timer, *args):
     driver.quit()
 
 
-def printUsage():
-    pass
-
-
 def get_games_list(driver):
     games_list = populate_existing_postmatch_threads()
     print('Populated {} games from Reddit'.format(len(games_list)))
@@ -119,7 +115,7 @@ def main():
     RedditGameThread.set_competition_info(comp_info)
 
     driver = webdriver.Firefox()
-    driver.get(comp_info.fslink)
+    driver.get(comp_info.fs_link)
 
     games_list = get_games_list(driver)
 

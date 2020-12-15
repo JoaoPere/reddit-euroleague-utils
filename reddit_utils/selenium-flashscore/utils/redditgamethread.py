@@ -1,6 +1,9 @@
 from .enumstates import ThreadState, GameState
-from .redditthread import create_empty_thread, handle_thread_update
+from .redditthread import handle_thread_update
 from reddit_utils.subreddit import get_subreddit
+from reddit_utils.constants import REDDIT_THREAD_PLACEHOLDER_TEXT
+from reddit_utils.subreddit import submit_text_post
+from reddit_utils.team_structs import team_info_by_fs
 
 
 class RedditGameThread():
@@ -111,17 +114,22 @@ class RedditGameThread():
     def reddit_submission(self, value):
         self._reddit_submission = value
 
-    # Improve error handling
     def publish_thread(self):
         self.thread_state = ThreadState.PUBLISHING
 
-        self.reddit_submission = create_empty_thread(
-            self.home_team, self.away_team, self.comp_round, self.comp_stage)
+        home_team_parsed = team_info_by_fs.get(self.home_team).reddit
+        away_team_parsed = team_info_by_fs.get(self.away_team).reddit
+
+        title = 'Post-Match Thread: {home_team} - {away_team} [{comp} {comp_stage}, {comp_round}]'.format(
+            comp=RedditGameThread.comp_info.comp_full_name, home_team=home_team_parsed, away_team=away_team_parsed, comp_round=self.comp_round, comp_stage=self.comp_stage)
+        markdown = REDDIT_THREAD_PLACEHOLDER_TEXT
+
+        self.reddit_submission = submit_text_post(RedditGameThread.subreddit, title, markdown,
+                                                  flair_text=RedditGameThread.comp_info.comp_small_name)
 
         if self.reddit_submission is not None:
             self.thread_state = ThreadState.PUBLISHED
 
-    # Improve error handling
     def update_thread(self):
         if self.reddit_submission is None:
             raise ValueError('Reddit Thread should not be null')
