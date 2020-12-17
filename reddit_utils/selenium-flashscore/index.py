@@ -61,9 +61,11 @@ def loop(driver, games_list):
         reddit_game_thread = RedditGameThread(
             home_team, away_team, game_state=game_state)
 
-        index = games_list.index(reddit_game_thread)
-        if index is not None:
+        try:
+            index = games_list.index(reddit_game_thread)
             games_list[index].game_state = game_state
+        except:
+            continue
 
     handle_thread_updates(games_list)
 
