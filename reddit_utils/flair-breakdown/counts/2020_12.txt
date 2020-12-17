@@ -1,6 +1,6 @@
 Flair| Count
 ---|---
-Žalgiris | 107
+Žalgiris | 108
 Fenerbahçe | 81
 Panathinaikos | 73
 Olympiacos | 50
@@ -13,8 +13,8 @@ Real Madrid | 26
 Barcelona | 23
 Alba Berlin | 18
 Saski Baskonia | 15
+EuroLeague | 14
 Rytas | 14
-EuroLeague | 13
 CSKA Moscow | 9
 Bayern München | 8
 Galatasaray | 8

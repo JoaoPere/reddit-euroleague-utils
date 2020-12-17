@@ -20,7 +20,7 @@ def get_quarter_scores_markdown(soup):
     table_head_elements = [th.text.upper()
                            for th in quarter_table_rows[0].find_all('th')]
     final_table = rh.get_reddit_table_head_and_cell_alignment(
-        table_head_elements)
+        table_head_elements, left_align_first=True)
 
     for row in quarter_table_rows[1:]:
         quarter_table_cols = row.find_all('td')
@@ -69,7 +69,7 @@ def get_table_markdown(table, name, coach):
         cols_markdown = rh.build_table_delimitors(cols)
         final_table = rh.newline_join([final_table, cols_markdown])
 
-    head_coach_markdown = rh.bold("Head Coach: ") + coach
+    head_coach_markdown = rh.bold("Head Coach:") + coach
     final_table = rh.newline_join(
         [head_coach_markdown, rc.NEWLINE, final_table])
 
@@ -78,7 +78,7 @@ def get_table_markdown(table, name, coach):
 
 def get_final_score_markdown(home_team_name, home_team_score, away_team_name, away_team_score):
     final_table = rh.get_reddit_table_head_and_cell_alignment(
-        ['TEAM', 'SCORE'])
+        ['TEAM', 'SCORE'], left_align_first=True)
 
     home_team_md = team_info_by_official.get(home_team_name).full_md
     away_team_md = team_info_by_official.get(away_team_name).full_md
@@ -105,10 +105,10 @@ def get_game_information_markdown(soup):
     referees_info = soup.find(
         id='ctl00_ctl00_ctl00_ctl00_maincontainer_maincontent_contentpane_boxscorepane_ctl00_lblReferees').text
 
-    date_info_cet_markdown = rh.bold('Event Date: ') + date_info_cet
-    stadium_info_markdown = rh.bold('Stadium: ') + stadium_info
-    attendance_info_markdown = rh.bold('Attendance: ') + attendance_info
-    referees_info_markdown = rh.bold('Referees: ') + referees_info
+    date_info_cet_markdown = rh.bold('Event Date:') + date_info_cet
+    stadium_info_markdown = rh.bold('Stadium:') + stadium_info
+    attendance_info_markdown = rh.bold('Attendance:') + attendance_info
+    referees_info_markdown = rh.bold('Referees:') + referees_info
 
     return rh.newline_join([date_info_cet_markdown, rc.NEWLINE, stadium_info_markdown, rc.NEWLINE, attendance_info_markdown, rc.NEWLINE, referees_info_markdown])
 
@@ -188,9 +188,11 @@ def main():
     title, markdown = build_thread_title_and_markdown(
         soup, competition_info.comp_full_name)
 
-    subreddit = sr.get_subreddit()
-    sr.submit_text_post(subreddit, title, markdown,
-                        flair_text=args.competition)
+    print(markdown)
+
+    # subreddit = sr.get_subreddit()
+    # sr.submit_text_post(subreddit, title, markdown,
+    #                     flair_text=args.competition)
 
 
 if __name__ == '__main__':

@@ -25,7 +25,7 @@ def get_quarter_scores_markdown(soup, home_team, away_team):
     table_head_elements = [th.text.upper()
                            for th in quarter_table_rows[0].find_all('th')]
     final_table = rh.get_reddit_table_head_and_cell_alignment(
-        table_head_elements)
+        table_head_elements, left_align_first=True)
 
     for idx, row in enumerate(quarter_table_rows[1:]):
         quarter_table_cols = row.find_all('td')
@@ -84,7 +84,7 @@ def get_table_markdown(table, name, coach):
 
 def get_final_score_markdown(home_team_name, home_team_score, away_team_name, away_team_score):
     final_table = rh.get_reddit_table_head_and_cell_alignment(
-        ['TEAM', 'SCORE'])
+        ['TEAM', 'SCORE'], left_align_first=True)
 
     home_team_md = team_info_by_fs.get(home_team_name).full_md
     away_team_md = team_info_by_fs.get(away_team_name).full_md
