@@ -1,0 +1,1194 @@
+1609153157909	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileCzeL5M"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609153161721	Marionette	INFO	Listening on port 8546
+1609153162064	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609153173925	Marionette	INFO	Stopped listening on port 8546
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609153189500	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile2RCaFZ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609153192208	Marionette	INFO	Listening on port 8636
+1609153192627	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609153199641	Marionette	INFO	Stopped listening on port 8636
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609153266174	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileCMarJ4"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609153269144	Marionette	INFO	Listening on port 8781
+1609153269306	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource:///modules/FaviconLoader.jsm, line 582: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource:///modules/FaviconLoader.jsm, line 582: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+[Child 17448, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 545
+1609153273852	Marionette	INFO	Stopped listening on port 8781
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609153592825	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileqkagj5"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609153595574	Marionette	INFO	Listening on port 9115
+1609153595959	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609153609099	Marionette	INFO	Stopped listening on port 9115
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609153883614	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile5yqdn7"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609153886330	Marionette	INFO	Listening on port 9426
+1609153886737	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 11696: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/framework39.js, line 550: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 3960: NS_ERROR_UNEXPECTED
+1609153894565	Marionette	INFO	Stopped listening on port 9426
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609153942549	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileRUpuwl"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609153945261	Marionette	INFO	Listening on port 9537
+1609153945692	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 11696: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/framework39.js, line 550: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 3960: NS_ERROR_UNEXPECTED
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x39013F,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+1609153950157	Marionette	INFO	Stopped listening on port 9537
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609153976498	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile8qI0AC"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609153979457	Marionette	INFO	Listening on port 9615
+1609153979636	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609153985728	Marionette	INFO	Stopped listening on port 9615
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609154003175	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileQFp7W6"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609154006056	Marionette	INFO	Listening on port 9693
+1609154006312	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609154036417	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile1MHg5d"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609154039160	Marionette	INFO	Listening on port 9773
+1609154039539	Marionette	WARN	TLS certificate errors will be ignored for this session
+SourceActor threw an exception: [Exception... "Failed to open input source 'javascript:false'"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: mainThreadFetch/< :: line 661"  data: yes]
+Stack: mainThreadFetch/<@resource://devtools/shared/DevToolsUtils.js:661:15
+mainThreadFetch@resource://devtools/shared/DevToolsUtils.js:509:10
+_fetchURLContents@resource://devtools/server/actors/utils/TabSources.js:440:22
+urlContents@resource://devtools/server/actors/utils/TabSources.js:407:17
+_resurrectSource@resource://devtools/server/actors/thread.js:2105:69
+addAllSources@resource://devtools/server/actors/thread.js:1500:14
+onSources@resource://devtools/server/actors/thread.js:1506:10
+onPacket@resource://devtools/server/devtools-server-connection.js:379:58
+receiveMessage@resource://devtools/shared/transport/child-transport.js:66:16
+Line: 661, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 661: NS_ERROR_NOT_AVAILABLE: Failed to open input source 'javascript:false'
+1609154086511	Marionette	INFO	Stopped listening on port 9773
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609154097821	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileWKWb8I"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609154100582	Marionette	INFO	Listening on port 9878
+1609154100948	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 11696: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/framework39.js, line 550: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 3960: NS_ERROR_UNEXPECTED
+1609154109270	Marionette	INFO	Stopped listening on port 9878
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609154119864	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileEz1R08"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609154123063	Marionette	INFO	Listening on port 9955
+1609154123492	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+[Parent 20560, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+1609154140969	Marionette	INFO	Stopped listening on port 9955
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609154152550	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileRlXNxd"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609154156483	Marionette	INFO	Listening on port 10048
+1609154156877	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+[Child 1548, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 545
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609154275989	Marionette	INFO	Stopped listening on port 10048
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+okielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+Marionette threw an error: TypeError: this.curBrowser.messageManager is null
+GeckoDriver.prototype.sendAsync/<@chrome://marionette/content/driver.js:394:7
+executeWhenReady@chrome://marionette/content/browser.js:574:7
+GeckoDriver.prototype.sendAsync@chrome://marionette/content/driver.js:391:19
+send/<@chrome://marionette/content/proxy.js:194:12
+send@chrome://marionette/content/proxy.js:128:12
+get/<@chrome://marionette/content/proxy.js:41:29
+GeckoDriver.prototype._getCurrentURL@chrome://marionette/content/driver.js:352:33
+GeckoDriver.prototype.navigateTo@chrome://marionette/content/driver.js:1221:33
+observe@resource://gre/modules/AsyncShutdown.jsm:554:16
+
+1609154233266	Marionette	INFO	Stopped listening on port 10159
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609154260842	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile6RXjzc"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609154264325	Marionette	INFO	Listening on port 10223
+1609154265421	Marionette	INFO	Stopped listening on port 10223
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609154276232	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileXD8st9"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609154278997	Marionette	INFO	Listening on port 10271
+1609154279509	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 11696: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/framework39.js, line 550: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 3960: NS_ERROR_UNEXPECTED
+1609154284184	Marionette	INFO	Stopped listening on port 10271
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609154412108	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilekVyNg6"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609154414756	Marionette	INFO	Listening on port 10375
+1609154415231	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1609154422955	Marionette	INFO	Stopped listening on port 10375
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609155248425	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileRFDDgh"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609155251361	Marionette	INFO	Listening on port 10886
+1609155251549	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609155258161	Marionette	INFO	Stopped listening on port 10886
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609155483475	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileZFCQic"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609155486148	Marionette	INFO	Listening on port 11142
+1609155486605	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609155494014	Marionette	INFO	Stopped listening on port 11142
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609157117633	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile6GPkDJ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609157120529	Marionette	INFO	Listening on port 12706
+1609157120761	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609157144008	Marionette	INFO	Stopped listening on port 12706
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609157154583	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilezU6JDo"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609157157244	Marionette	INFO	Listening on port 12796
+1609157157708	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609157166206	Marionette	INFO	Stopped listening on port 12796
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609157398842	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileHlIBHR"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609157401581	Marionette	INFO	Listening on port 13100
+1609157401973	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609157413553	Marionette	INFO	Stopped listening on port 13100
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609157459543	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile2adQme"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609157462709	Marionette	INFO	Listening on port 13234
+1609157463188	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609157617421	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile3B9psd"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609157620258	Marionette	INFO	Listening on port 13435
+1609157620547	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609157660694	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilegbkUIW"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609157663460	Marionette	INFO	Listening on port 13526
+1609157663565	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609157688579	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile98q2py"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609157691569	Marionette	INFO	Listening on port 13601
+1609157691709	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xB50006,name=PWebSocket::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+1609157701392	Marionette	INFO	Stopped listening on port 13601
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609157822546	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilewRJ9tM"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609157825193	Marionette	INFO	Listening on port 13763
+1609157825675	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609157830418	Marionette	INFO	Stopped listening on port 13763
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609157886966	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileZ2fhEl"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609157889684	Marionette	INFO	Listening on port 13872
+1609157890102	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 19100, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 545
+1609157897825	Marionette	INFO	Stopped listening on port 13872
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609158012379	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileayuQiz"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609158015092	Marionette	INFO	Listening on port 14066
+1609158015508	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609158635638	Marionette	INFO	Stopped listening on port 14066
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609158197631	Marionette	INFO	Listening on port 14335
+1609158198051	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609158204898	Marionette	INFO	Stopped listening on port 14335
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609158381730	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileld0nVR"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609158386582	Marionette	INFO	Listening on port 14563
+1609158386980	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609158636837	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileNYqtpc"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609158640594	Marionette	INFO	Listening on port 14907
+1609158640978	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609158967875	Marionette	INFO	Stopped listening on port 14907
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+//gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609158775879	Marionette	INFO	Listening on port 1143
+1609158776095	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609158781736	Marionette	INFO	Stopped listening on port 1143
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609158855881	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilelWHbCA"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609158859658	Marionette	INFO	Listening on port 1265
+1609158860005	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609158869719	Marionette	INFO	Stopped listening on port 1265
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609159010374	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileBGJu3b"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609159013763	Marionette	INFO	Listening on port 1508
+1609159014000	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609159040744	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel eJavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609159044160	Marionette	INFO	Listening on port 1617
+1609159044374	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609159070811	Marionette	INFO	Stopped listening on port 1617
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609159555727	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilevf0R8C"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609159559376	Marionette	INFO	Listening on port 2099
+1609159559855	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609159572828	Marionette	INFO	Stopped listening on port 2099
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x39013F,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xB50006,name=PWebSocket::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609159606919	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileQDKjB7"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609159609569	Marionette	INFO	Listening on port 2200
+1609159610043	Marionette	WARN	TLS certificate errors will be ignored for this session
+Marionette threw an error: TypeError: URL constructor: undefined is not a valid URL.
+GeckoDriver.prototype._getCurrentURL@chrome://marionette/content/driver.js:356:10
+observe@resource://gre/modules/AsyncShutdown.jsm:554:16
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1609159615288	Marionette	INFO	Stopped listening on port 2200
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609159719222	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileSw8Vas"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609159722059	Marionette	INFO	Listening on port 2320
+1609159722346	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609159941399	Marionette	INFO	Stopped listening on port 2320
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609159894072	Marionette	INFO	Listening on port 2506
+1609159894338	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 11696: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/framework39.js, line 550: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 3960: NS_ERROR_UNEXPECTED
+1609159902191	Marionette	INFO	Stopped listening on port 2506
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609159908142	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile8T3lNQ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609159910930	Marionette	INFO	Listening on port 2567
+1609159911270	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609159922892	Marionette	INFO	Stopped listening on port 2567
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x39013F,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xB50006,name=PWebSocket::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609160500753	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilevWCHmD"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609160503435	Marionette	INFO	Listening on port 2926
+1609160503879	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1609160505727	Marionette	INFO	Stopped listening on port 2926
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609160513178	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileP7SZl0"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1609160516230	Marionette	INFO	Listening on port 2973
+1609160516304	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609160528862	Marionette	INFO	Stopped listening on port 2973
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609171185423	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile76hqK3"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609171189154	Marionette	INFO	Listening on port 9425
+1609171189564	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609171196689	Marionette	INFO	Stopped listening on port 9425
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609171228102	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileqjoha5"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609171230881	Marionette	INFO	Listening on port 9490
+1609171231228	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609171274989	Marionette	INFO	Stopped listening on port 9490
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609171278296	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileHLGq3K"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609171280974	Marionette	INFO	Listening on port 9603
+1609171281419	Marionette	WARN	TLS certificate errors will be ignored for this session
+SourceActor threw an exception: [Exception... "Failed to open input source 'javascript:false'"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: mainThreadFetch/< :: line 661"  data: yes]
+Stack: mainThreadFetch/<@resource://devtools/shared/DevToolsUtils.js:661:15
+mainThreadFetch@resource://devtools/shared/DevToolsUtils.js:509:10
+_fetchURLContents@resource://devtools/server/actors/utils/TabSources.js:440:22
+urlContents@resource://devtools/server/actors/utils/TabSources.js:407:17
+_resurrectSource@resource://devtools/server/actors/thread.js:2105:69
+addAllSources@resource://devtools/server/actors/thread.js:1500:14
+onSources@resource://devtools/server/actors/thread.js:1506:10
+onPacket@resource://devtools/server/devtools-server-connection.js:379:58
+receiveMessage@resource://devtools/shared/transport/child-transport.js:66:16
+Line: 661, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 661: NS_ERROR_NOT_AVAILABLE: Failed to open input source 'javascript:false'
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1609171448239	Marionette	INFO	Stopped listening on port 9603
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609171452554	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileN0jHcF"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609171455386	Marionette	INFO	Listening on port 9862
+1609171455684	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609171501956	Marionette	INFO	Stopped listening on port 9862
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609171506493	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofiledDm3ZD"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609171509266	Marionette	INFO	Listening on port 9955
+1609171509616	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609171536010	Marionette	INFO	Stopped listening on port 9955
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609172543238	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileo9dnmN"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609172545928	Marionette	INFO	Listening on port 10714
+1609172546362	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609172558659	Marionette	INFO	Stopped listening on port 10714
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609173577755	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileWIZfvP"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609173581399	Marionette	INFO	Listening on port 11471
+1609173581886	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609173871491	Marionette	INFO	Stopped listening on port 11471
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+//gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609173604852	Marionette	INFO	Listening on port 11561
+1609173605511	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609173873540	Marionette	INFO	Stopped listening on port 11561
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+//gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609173667124	Marionette	INFO	Listening on port 11688
+1609173667472	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609173694261	Marionette	INFO	Stopped listening on port 11688
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609174082342	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile5k4RYX"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609174086748	Marionette	INFO	Listening on port 12031
+1609174087079	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 11696: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/framework39.js, line 550: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 3960: NS_ERROR_UNEXPECTED
+1609174102652	Marionette	INFO	Stopped listening on port 12031
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609180506603	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileO7UM7H"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609180511145	Marionette	INFO	Listening on port 3100
+1609180511346	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609180565287	Marionette	INFO	Stopped listening on port 3100
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609180563649	Marionette	INFO	Listening on port 3201
+1609180563738	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xB50006,name=PWebSocket::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+1609180573030	Marionette	INFO	Stopped listening on port 3201
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609181156986	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileHMI14J"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609181160766	Marionette	INFO	Listening on port 3841
+1609181161115	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609181257717	Marionette	INFO	Stopped listening on port 3841
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609181217859	Marionette	INFO	Listening on port 3957
+1609181218280	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609181258142	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilenYuGzg"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609181262763	Marionette	INFO	Listening on port 4053
+1609181262780	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+Marionette threw an error: TypeError: URL constructor: undefined is not a valid URL.
+GeckoDriver.prototype._getCurrentURL@chrome://marionette/content/driver.js:356:10
+observe@resource://gre/modules/AsyncShutdown.jsm:554:16
+
+1609181296474	Marionette	INFO	Stopped listening on port 4053
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609181387084	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileTfHvXC"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609181389783	Marionette	INFO	Listening on port 4271
+1609181390208	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: can't convert undefined to object
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609181420239	Marionette	INFO	Stopped listening on port 4271
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609184021556	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileFNbr5x"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609184027441	Marionette	INFO	Listening on port 6786
+1609184027800	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 11696: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/framework39.js, line 550: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/res/_fs/build/modules.2714903.js, line 1: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://www.flashscore.com/x/js/core_2_1883000000.js, line 3960: NS_ERROR_UNEXPECTED
+1609184066170	Marionette	INFO	Stopped listening on port 6786
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609184085274	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilesoEjfD"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609184088836	Marionette	INFO	Listening on port 6970
+1609184088901	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609184116680	Marionette	INFO	Stopped listening on port 6970
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609184163934	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileJ5Ubfd"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609184167657	Marionette	INFO	Listening on port 7141
+1609184168066	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: t is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609184209244	Marionette	INFO	Stopped listening on port 7141
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609184229303	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile9OAQAx"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609184233026	Marionette	INFO	Listening on port 7323
+1609184233441	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: can't convert undefined to object
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609184261929	Marionette	INFO	Stopped listening on port 7323
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609185373760	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileQFiOIy"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609185376820	Marionette	INFO	Listening on port 8511
+1609185377125	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: can't convert undefined to object
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609185407720	Marionette	INFO	Stopped listening on port 8511
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609186522121	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileQ076yb"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609186526075	Marionette	INFO	Listening on port 9666
+1609186526249	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609186557632	Marionette	INFO	Stopped listening on port 9666
+[Child 13524, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 545
+[Child 13524, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 545
+[Child 13524, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 545
+[Child 13524, Chrome_ChildThread] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 545
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609186681595	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilenJ6cUk"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609186684225	Marionette	INFO	Listening on port 9899
+1609186684724	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609186709517	Marionette	INFO	Stopped listening on port 9899
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x560018,name=PHal::Msg_UnlockScreenOrientation) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609186982805	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile1CTGC8"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609186986998	Marionette	INFO	Listening on port 10299
+1609186987034	Marionette	WARN	TLS certificate errors will be ignored for this session
+1609187008303	Marionette	INFO	Stopped listening on port 10299
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609187017488	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileUcXvex"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609187020125	Marionette	INFO	Listening on port 10410
+1609187020612	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609187048703	Marionette	INFO	Stopped listening on port 10410
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609190847859	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilemkql1j"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609190853117	Marionette	INFO	Listening on port 14197
+1609190853598	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609190920555	Marionette	INFO	Stopped listening on port 14197
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609190928857	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileBJldVJ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609190931561	Marionette	INFO	Listening on port 14345
+1609190931989	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609190961233	Marionette	INFO	Stopped listening on port 14345
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609191034446	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileF21K1G"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609191038096	Marionette	INFO	Listening on port 14528
+1609191038580	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609191064172	Marionette	INFO	Stopped listening on port 14528
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609192489479	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileClwS2o"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609192493347	Marionette	INFO	Listening on port 2151
+1609192493614	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609192523639	Marionette	INFO	Stopped listening on port 2151
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609193588980	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileftL6mu"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609193594877	Marionette	INFO	Listening on port 3346
+1609193595215	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+1609193627064	Marionette	INFO	Stopped listening on port 3346
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
