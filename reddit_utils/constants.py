@@ -6,6 +6,7 @@ REDDIT_HR = NEWLINE + '----' + NEWLINE
 CENTER_CELL_ALIGNMENT = ':-:'
 LEFT_CELL_ALIGNMENT = ':-'
 BOLD_MARKDOWN = '**'
+HORIZONTAL_LINE = '___'
 
 # Post game table helpers
 NUMBER = '#'

@@ -1,9 +1,10 @@
-from reddit_utils import prepare_dot_env
+from reddit_utils.prepare_dot_env import get_bot_credentials, get_test_credentials
 import os
 import praw
 
 
 def get_subreddit():
+    get_bot_credentials()
     reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
                          client_secret=os.getenv("REDDIT_APP_SECRET"),
                          password=os.getenv("REDDIT_PASSWORD"),
@@ -12,6 +13,20 @@ def get_subreddit():
 
     reddit.validate_on_submit = True
     subreddit = reddit.subreddit('Euroleague')
+
+    return subreddit
+
+
+def get_test_subreddit():
+    get_test_credentials()
+    reddit = praw.Reddit(client_id=os.getenv("REDDIT_APP_ID"),
+                         client_secret=os.getenv("REDDIT_APP_SECRET"),
+                         password=os.getenv("REDDIT_PASSWORD"),
+                         username=os.getenv("REDDIT_ACCOUNT"),
+                         user_agent="r/thekingpin")
+
+    reddit.validate_on_submit = True
+    subreddit = reddit.subreddit('thekingpin')
 
     return subreddit
 
