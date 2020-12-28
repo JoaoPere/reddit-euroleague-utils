@@ -188,11 +188,9 @@ def main():
     title, markdown = build_thread_title_and_markdown(
         soup, competition_info.comp_full_name)
 
-    print(markdown)
-
-    # subreddit = sr.get_subreddit()
-    # sr.submit_text_post(subreddit, title, markdown,
-    #                     flair_text=args.competition)
+    subreddit = sr.get_subreddit()
+    sr.submit_text_post(subreddit, title, markdown,
+                        flair_text=args.competition)
 
 
 if __name__ == '__main__':
