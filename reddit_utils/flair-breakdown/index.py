@@ -23,18 +23,26 @@ def get_split_cells(table: str):
     return dict(cell.split(' | ') for cell in table)
 
 
-def func_map(active_cell, last_cells):
-    team_name = active_cell[0]
+def func_difference(active_cells, last_cells):
+    team_name = active_cells[0]
 
     if team_name in last_cells.keys():
-        diff = int(active_cell[1]) - int(last_cells[team_name])
+        diff = int(active_cells[1]) - int(last_cells[team_name])
 
         if diff == 0:
             return None
     else:
-        diff = int(active_cell[1])
+        diff = int(active_cells[1])
 
     return '{} | {}'.format(team_name, diff)
+
+
+def func_difference_no_longer_used(last_cells, active_cells):
+    team_name = last_cells[0]
+
+    if team_name not in active_cells.keys():
+        diff = -(int(last_cells[1]))
+        return '{} | {}'.format(team_name, diff)
 
 
 def func_sort(e: list):
@@ -46,8 +54,10 @@ def get_difference_list(active_table: str, last_table: str):
     last_cells = get_split_cells(last_table)
 
     difference = filter(lambda x: x is not None, map(
-        func_map, active_cells.items(), repeat(last_cells)))
-    return list(sorted(difference, key=func_sort, reverse=True))
+        func_difference, active_cells.items(), repeat(last_cells)))
+    new_unused_flairs = filter(lambda x: x is not None, map(
+        func_difference_no_longer_used, last_cells.items(), repeat(active_cells)))
+    return sorted(list(difference) + list(new_unused_flairs), key=func_sort, reverse=True)
 
 
 def pad_month(month: int):
