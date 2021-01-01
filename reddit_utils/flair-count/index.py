@@ -45,9 +45,12 @@ def print_redditors_from_club(subreddit, club):
 
 
 def save_flair_count(flair_table_list, year, month):
+    if len(month) == 1:
+        month = '0' + month
     count_filename = "{}_{}.txt".format(year, month)
     counts_filepath = os.path.join(
         os.getcwd(), '..', 'flair-breakdown', 'counts', count_filename)
+
     with open(counts_filepath, mode='w', encoding='utf8') as f:
         f.writelines("%s\n" % line for line in flair_table_list[:-1])
         f.write("%s" % flair_table_list[-1])
