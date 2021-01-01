@@ -1,6 +1,6 @@
 Flair| Count
 ---|---
-Žalgiris | 115
+Žalgiris | 116
 Fenerbahçe | 84
 Panathinaikos | 74
 Olympiacos | 51
@@ -44,7 +44,6 @@ Sporting CP | 2
 Aquila Trento | 2
 Fortitudo Bologna | 1
 Gran Canaria | 1
-Cedevita Zagreb | 1
 Oostende | 1
 UNICS Kazan | 1
 Tofaş | 1
@@ -64,4 +63,5 @@ Steaua CSM Bucureşti | 1
 BK Ventspils | 1
 Arka Gdynia | 1
 CB Canarias | 1
+Lietkabelis | 1
 Reyer Venezia | 1
