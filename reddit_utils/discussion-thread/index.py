@@ -1,6 +1,6 @@
 from collections import namedtuple
 from datetime import date, timedelta, datetime
-from reddit_utils.subreddit import get_subreddit, submit_text_post
+from reddit_utils.subreddit import get_subreddit, submit_text_post, get_test_subreddit
 from reddit_utils.helpers import double_newline_join, bold
 from reddit_utils.constants import HORIZONTAL_LINE
 from selenium import webdriver
@@ -80,6 +80,10 @@ def get_competitions():
         'https://www.flashscore.com/basketball/russia/vtb-united-league/fixtures/', 'VTB United League', 'VTB', None, 'https://www.flashscore.com/basketball/russia/vtb-united-league/standings/')
     aba_tuple = CompTuple(
         'https://www.flashscore.com/basketball/europe/aba-league/fixtures/', 'ABA Liga', 'ABA', None, 'https://www.flashscore.com/basketball/europe/aba-league/standings/')
+    bcl_tuple = CompTuple(
+        'https://www.flashscore.com/basketball/europe/champions-league/fixtures/', 'Basketball Champions League', 'BCL', None, 'https://www.flashscore.com/basketball/europe/champions-league/standings/')
+    fec_tuple = CompTuple(
+        'https://www.flashscore.com/basketball/europe/fiba-europe-cup/', 'FIBA Europe Cup', 'FEC', None, 'https://www.flashscore.com/basketball/europe/fiba-europe-cup/standings/')
 
     competitions = list()
     competitions.append([acb_tuple, lnb_tuple])
@@ -87,6 +91,7 @@ def get_competitions():
     competitions.append([bsl_tuple, gbl_tuple])
     competitions.append([wl_tuple, lkl_tuple])
     competitions.append([vtb_tuple, aba_tuple])
+    competitions.append([bcl_tuple, fec_tuple])
 
     return competitions
 
@@ -158,10 +163,12 @@ def build_competition_group_thread(subreddit, week_start: str, week_end: str, gr
         comp_full_names.append(competition.full_name)
         markdown_list.append(
             '{}- [Standings]({})'.format(bold(competition.full_name), competition.standings))
+
         if len(games) > 0:
             markdown_list.extend([str(g) for g in games])
         else:
             markdown_list.append('No games scheduled this week')
+
         markdown_list.append(HORIZONTAL_LINE)
 
         if competition.country is not None:

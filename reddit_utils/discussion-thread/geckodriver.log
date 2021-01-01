@@ -1192,3 +1192,36 @@ JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1609516425255	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofilee4Q5Dc"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609516430235	Marionette	INFO	Listening on port 1928
+1609516430501	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609516473786	Marionette	INFO	Stopped listening on port 1928
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1609516541743	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileQ383tp"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1609516548225	Marionette	INFO	Listening on port 2111
+1609516548674	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: t is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: mt.preferenceCenterGroup is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.8.0/otBannerSdk.js, line 7: TypeError: n is undefined
+1609516589217	Marionette	INFO	Stopped listening on port 2111
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
