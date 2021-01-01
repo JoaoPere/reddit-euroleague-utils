@@ -5,5 +5,6 @@ redditutils.egg-info/
 __pycache__/
 .vscode
 geckodriver
+geckodriver.log
 credentials.env
 credentials_bot.env
